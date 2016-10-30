@@ -45,6 +45,16 @@ Some highlights of things you'll find inside:
 Known bugs/concerns:
 * The API is semi-spammy on the server, it's not supposed to talk to the
   api.guildwars2.com servers when its idle, but something in this keeps it polling them
-  It's got anit-spam code, but this should probably be fixed first.
+  It's got anit-spam code, but this should probably be fixed ahead of anything else.
+* The API for getting gold/gem price conversions is currently broken and needs updating.
 * The Mystic Forge recipes may need updates, 
   They are static and not obtained from any API
+
+
+Author requests:
+* Seriously, do not pull in incomplete data into the statics (most of what I've looked
+  at there omits little things like # of bags opened, or amount of gold obtained
+  Pulling in incomplete stuff, or trying to infer what's missing will skew the results.
+* Seriously do not merge drops/salvage data rows.  The more detail the better (to a
+  point, but there's a trick I have for coping *correctly* with too much detail,
+  which not yet implemented).
