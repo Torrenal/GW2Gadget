@@ -1,0 +1,31 @@
+SALVAGE/BASIC=Shredded Garment
+# Line 1 is always to identify what bag is being opened.
+# The remaining lines are the contents, in the format of:
+#<setSize>|<Item 1>|<Item 1 Count>|<Item 2>|<Item 2 Count> | ...
+#Tokens/Coins are represented with their enum type, eg: COIN_TOKEN, KARMA_TOKEN, etc
+########################
+#Begin drops 2016-05-22
+50|Jute Scrap|98
+50|Jute Scrap|95
+100|Jute Scrap|174
+50|Jute Scrap|86
+50|Jute Scrap|88
+#Begin drops 2016-05-26
+50|Jute Scrap|97
+50|Jute Scrap|95
+50|Jute Scrap|93
+50|Jute Scrap|85
+50|Jute Scrap|83
+#Begin drops 2016-06-08
+50|Jute Scrap|100
+50|Jute Scrap|94
+76|Jute Scrap|142
+76|Jute Scrap|142
+#Begin drops 2016-10-08
+125|Jute Scrap|222
+125|Jute Scrap|227
+125|Jute Scrap|232
+125|Jute Scrap|221
+100|Jute Scrap|184
+#Null Row:
+#0|Jute Scrap|0

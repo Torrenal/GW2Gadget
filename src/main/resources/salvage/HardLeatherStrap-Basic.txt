@@ -1,0 +1,28 @@
+SALVAGE/BASIC=Hard Leather Strap
+# Line 1 is always to identify what bag is being opened.
+# The remaining lines are the contents, in the format of:
+#<setSize>|<Item 1>|<Item 1 Count>|<Item 2>|<Item 2 Count> | ...
+#Tokens/Coins are represented with their enum type, eg: COIN_TOKEN, KARMA_TOKEN, etc
+########################
+#Begin drops 2016-05-22
+5|Thick Leather Section|4|Hardened Leather Section|1
+31|Thick Leather Section|51|Hardened Leather Section|3
+25|Thick Leather Section|37|Hardened Leather Section|1
+25|Thick Leather Section|34|Hardened Leather Section|1
+25|Thick Leather Section|32|Hardened Leather Section|3
+25|Thick Leather Section|31|Hardened Leather Section|1
+25|Thick Leather Section|35|Hardened Leather Section|2
+25|Thick Leather Section|33|Hardened Leather Section|1
+25|Thick Leather Section|37|Hardened Leather Section|2
+25|Thick Leather Section|24|Hardened Leather Section|5
+25|Thick Leather Section|25|Hardened Leather Section|3
+25|Thick Leather Section|41|Hardened Leather Section|2
+250|Thick Leather Section|332|Hardened Leather Section|21
+250|Thick Leather Section|327|Hardened Leather Section|17
+250|Thick Leather Section|335|Hardened Leather Section|15
+250|Thick Leather Section|324|Hardened Leather Section|15
+35|Thick Leather Section|52|Hardened Leather Section|3
+250|Thick Leather Section|325|Hardened Leather Section|17
+197|Thick Leather Section|270|Hardened Leather Section|13
+#Null Row:
+#0|Thick Leather Section|0|Hardened Leather Section|0

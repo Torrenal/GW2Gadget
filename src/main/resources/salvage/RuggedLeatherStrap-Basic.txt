@@ -1,0 +1,10 @@
+SALVAGE/BASIC=Rugged Leather Strap
+# Line 1 is always to identify what bag is being opened.
+# The remaining lines are the contents, in the format of:
+#<setSize>|<Item 1>|<Item 1 Count>|<Item 2>|<Item 2 Count> | ...
+#Tokens/Coins are represented with their enum type, eg: COIN_TOKEN, KARMA_TOKEN, etc
+########################
+#Begin drops 2016-05-22
+7|Rugged Leather Section|10|Thick Leather Section|3
+#Null Row:
+#0|Rugged Leather Section|0|Thick Leather Section|0

@@ -1,0 +1,10 @@
+RESOURCE=Bag of Alchemical Materials
+# Line 1 is always to identify what bag is being opened.
+# The remaining lines are the contents, in the format of:
+#<setSize>|<Item 1>|<Item 1 Count>|<Item 2>|<Item 2 Count> | ...
+#Tokens/Coins are represented with their enum type, eg: COIN_TOKEN, KARMA_TOKEN, etc
+########################
+#Begin drops 2016-04-22
+7|COIN_TOKEN|22|Silk Scrap|4|Thick Leather Section|3|Vial of Potent Blood (Fine)|1|Large Claw (Fine)|1|Potent Venom Sac (Fine)|1|
+#Null Row:
+#0|COIN_TOKEN|0|Silk Scrap|0|Gossamer Scrap|0|Thick Leather Section|0|Hardened Leather Section|0|Vial of Potent Blood (Fine)|0|Vial of Powerful Blood (Rare)|0|Large Bone (Fine)|0|Ancient Bone (Rare)|0|Large Claw (Fine)|0|Vicious Claw (Rare)|0|Pile of Incandescent Dust (Fine)|0|Pile of Crystalline Dust (Rare)|0|Large Fang (Fine)|0|Vicious Fang (Rare)|0|Large Scale (Fine)|0|Armored Scale (Rare)|0|Intricate Totem (Fine)|0|Elaborate Totem (Rare)|0|Potent Venom Sac (Fine)|0|Powerful Venom Sac (Rare)|0|Almond|0|Apple|0|Banana|0|Bay Leaf [15]|0|Black Bean|0|Cherry|0|Cinnamon Stick|0|Coconut|0|Orange [45]|0|Raspberry [65]|0|Slab of Poultry Meat (Fine)|0|Slab of Red Meat (Fine)|0|Beryl Crystal [65](Masterwork)|0|Beryl Orb [80](Rare)|0|Chrysocola Crystal [65](Masterwork)|0|Chrysocola Orb [80](Rare)|0|Coral Tentacle [65](Masterwork)|0|Coral Orb [80](Rare)|0|Emerald Crystal [65](Masterwork)|0|Emerald Orb [80](Rare)|0|Opal Crystal [65](Masterwork)|0|Ruby Crystal [65](Masterwork)|0|Ruby Orb [80](Rare)|0|Sapphire Crystal [65](Masterwork)|0|Medallion of the Magi [65](Masterwork)|0|Medallion of the Rabid [65](Masterwork)|0|Medallion of the Shaman [65](Masterwork)|0|Medallion of the Soldier [65](Masterwork)|0|Crest of the Rabid [80](Rare)|0|Crest of the Shaman [80](Rare)|0|Crest of the Soldier [80](Rare)|0|Crude Salvage Kit|0|Orichalcum Harvesting Sickle [60](Fine)|0|Orichalcum Logging Axe [60](Fine)|0|Orichalcum Mining Pick [60](Fine)|0|

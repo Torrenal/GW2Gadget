@@ -1,0 +1,12 @@
+RESOURCE=Large Bag of Trinkets
+# Line 1 is always to identify what bag is being opened.
+# The remaining lines are the contents, in the format of:
+#<setSize>|<Item 1>|<Item 1 Count>|<Item 2>|<Item 2 Count> | ...
+#Tokens/Coins are represented with their enum type, eg: COIN_TOKEN, KARMA_TOKEN, etc
+########################
+#Begin drops 2016-05-27
+25|COIN_TOKEN| 76|Silk Scrap|6|Thick Leather Section|5|Vial of Potent Blood (Fine)|1|Large Bone (Fine)|3|Large Claw (Fine)|1|Pile of Incandescent Dust (Fine)|5|Large Fang (Fine)|4|Intricate Totem (Fine)|4|Large Skull (Rare)|1
+25|COIN_TOKEN| 85|Silk Scrap|5|Thick Leather Section|4|Vial of Potent Blood (Fine)|6|Large Bone (Fine)|2|Large Claw (Fine)|4|Pile of Incandescent Dust (Fine)|2|Large Fang (Fine)|3|Intricate Totem (Fine)|2
+39|COIN_TOKEN|121|Silk Scrap|20|Thick Leather Section|8|Vial of Potent Blood (Fine)|5|Large Bone (Fine)|5|Large Claw (Fine)|7|Pile of Incandescent Dust (Fine)|2|Large Fang (Fine)|2|Intricate Totem (Fine)|3
+#Null Row:
+#0|COIN_TOKEN|0|Silk Scrap|0|Gossamer Scrap|0|Thick Leather Section|0|Hardened Leather Section|0|Mithril Ore|0|Vial of Potent Blood (Fine)|0|Vial of Powerful Blood (Rare)|0|Large Bone (Fine)|0|Ancient Bone (Rare)|0|Large Claw (Fine)|0|Vicious Claw (Rare)|0|Pile of Incandescent Dust (Fine)|0|Pile of Crystalline Dust (Rare)|0|Large Fang (Fine)|0|Vicious Fang (Rare)|0|Large Scale (Fine)|0|Armored Scale (Rare)|0|Intricate Totem (Fine)|0|Elaborate Totem (Rare)|0|Potent Venom Sac (Fine)|0|Powerful Venom Sac (Rare)|0|Charged Core (Rare)|0|Charged Lodestone (Exotic)|0|Corrupted Core (Rare)|0|Corrupted Lodestone (Exotic)|0|Crystal Core (Rare)|0|Crystal Lodestone (Exotic)|0|Destroyer Core (Rare)|0|Destroyer Lodestone (Exotic)|0|Glacial Core (Rare)|0|Glacial Lodestone (Exotic)|0|Molten Core (Rare)|0|Molten Lodestone (Exotic)|0|Onyx Core (Rare)|0|Onyx Lodestone (Exotic)|0|Pile of Vile Essence (Rare)|0|Pile of Putrid Essence (Exotic)|0|Kite Fortune (Rare)|0|Quartz Crystal|0|

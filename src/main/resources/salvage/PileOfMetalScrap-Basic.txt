@@ -1,0 +1,10 @@
+SALVAGE/BASIC=Pile of Metal Scrap
+# Line 1 is always to identify what bag is being opened.
+# The remaining lines are the contents, in the format of:
+#<setSize>|<Item 1>|<Item 1 Count>|<Item 2>|<Item 2 Count> | ...
+#Tokens/Coins are represented with their enum type, eg: COIN_TOKEN, KARMA_TOKEN, etc
+########################
+#Begin drops 2016-05-22
+5|Silver Ore|1|Iron Ore|6|Copper Ore|2
+#Null Row:
+#0|Silver Ore|0|Iron Ore|0|Copper Ore|0

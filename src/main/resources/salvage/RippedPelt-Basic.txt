@@ -1,0 +1,10 @@
+SALVAGE/BASIC=Ripped Pelt
+# Line 1 is always to identify what bag is being opened.
+# The remaining lines are the contents, in the format of:
+#<setSize>|<Item 1>|<Item 1 Count>|<Item 2>|<Item 2 Count> | ...
+#Tokens/Coins are represented with their enum type, eg: COIN_TOKEN, KARMA_TOKEN, etc
+########################
+#Begin drops 2016-05-22
+50|Thin Leather Section|69|Rawhide Leather Section|19
+#Null Row:
+#0|Thin Leather Section|0|Rawhide Leather Section|0

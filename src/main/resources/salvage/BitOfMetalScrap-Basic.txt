@@ -1,0 +1,86 @@
+SALVAGE/BASIC=Bit of Metal Scrap
+# Line 1 is always to identify what bag is being opened.
+# The remaining lines are the contents, in the format of:
+#<setSize>|<Item 1>|<Item 1 Count>|<Item 2>|<Item 2 Count> | ...
+#Tokens/Coins are represented with their enum type, eg: COIN_TOKEN, KARMA_TOKEN, etc
+########################
+#Begin drops 2016-05-22
+50|Copper Ore|94
+50|Copper Ore|93
+50|Copper Ore|97
+50|Copper Ore|97
+50|Copper Ore|94
+50|Copper Ore|85
+50|Copper Ore|91
+50|Copper Ore|90
+50|Copper Ore|92
+50|Copper Ore|79
+50|Copper Ore|87
+50|Copper Ore|102
+50|Copper Ore|89
+50|Copper Ore|100
+50|Copper Ore|96
+50|Copper Ore|90
+#Begin drops 2016-05-26
+50|Copper Ore|92
+50|Copper Ore|101
+50|Copper Ore|87
+50|Copper Ore|85
+50|Copper Ore|91
+50|Copper Ore|78
+50|Copper Ore|95
+50|Copper Ore|89
+50|Copper Ore|88
+50|Copper Ore|93
+50|Copper Ore|97
+50|Copper Ore|96
+50|Copper Ore|94
+50|Copper Ore|92
+50|Copper Ore|92
+50|Copper Ore|78
+125|Copper Ore|224
+125|Copper Ore|229
+#Begin drops 2016-06-06
+125|Copper Ore|233
+62|Copper Ore|104
+158|Copper Ore|284
+#Begin drops 2016-10-08
+125|Copper Ore|220
+125|Copper Ore|228
+125|Copper Ore|218
+125|Copper Ore|221
+125|Copper Ore|209
+125|Copper Ore|232
+125|Copper Ore|216
+125|Copper Ore|232
+125|Copper Ore|212
+125|Copper Ore|237
+125|Copper Ore|223
+125|Copper Ore|236
+125|Copper Ore|231
+125|Copper Ore|219
+125|Copper Ore|229
+125|Copper Ore|225
+125|Copper Ore|219
+125|Copper Ore|220
+125|Copper Ore|234
+125|Copper Ore|232
+125|Copper Ore|224
+125|Copper Ore|227
+125|Copper Ore|219
+125|Copper Ore|222
+125|Copper Ore|214
+125|Copper Ore|229
+125|Copper Ore|229
+125|Copper Ore|221
+125|Copper Ore|216
+125|Copper Ore|223
+125|Copper Ore|228
+125|Copper Ore|238
+125|Copper Ore|219
+125|Copper Ore|228
+125|Copper Ore|221
+125|Copper Ore|219
+#Null Row:
+#0|Copper Ore|0
+

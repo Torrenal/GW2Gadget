@@ -1,0 +1,14 @@
+SALVAGE/BASIC=Glob of Ectoplasm (Exotic)
+# Line 1 is always to identify what bag is being opened.
+# The remaining lines are the contents, in the format of:
+#<setSize>|<Item 1>|<Item 1 Count>|<Item 2>|<Item 2 Count> | ...
+#Tokens/Coins are represented with their enum type, eg: COIN_TOKEN, KARMA_TOKEN, etc
+########################
+#Begin drops 2016-05-21
+50|Pile of Crystalline Dust (Rare)|87|Essence of Luck (Fine)|335|Essence of Luck (Masterwork)|30|Essence of Luck (Rare)|0|Essence of Luck (Exotic)|0
+50|Pile of Crystalline Dust (Rare)|75|Essence of Luck (Fine)|357|Essence of Luck (Masterwork)|23|Essence of Luck (Rare)|4|Essence of Luck (Exotic)|2
+50|Pile of Crystalline Dust (Rare)|81|Essence of Luck (Fine)|302|Essence of Luck (Masterwork)|33|Essence of Luck (Rare)|4|Essence of Luck (Exotic)|4
+50|Pile of Crystalline Dust (Rare)|69|Essence of Luck (Fine)|359|Essence of Luck (Masterwork)|21|Essence of Luck (Rare)|2|Essence of Luck (Exotic)|0
+50|Pile of Crystalline Dust (Rare)|74|Essence of Luck (Fine)|347|Essence of Luck (Masterwork)|21|Essence of Luck (Rare)|7|Essence of Luck (Exotic)|0
+#Null Row:
+#0|Pile of Crystalline Dust (Rare)|0|Essence of Luck (Fine)|0|Essence of Luck (Masterwork)|0|Essence of Luck (Rare)|0|Essence of Luck (Exotic)|0

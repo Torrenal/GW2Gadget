@@ -1,0 +1,13 @@
+SALVAGE/MASTER=Glob of Ectoplasm (Exotic)
+# Line 1 is always to identify what bag is being opened.
+# The remaining lines are the contents, in the format of:
+#<setSize>|<Item 1>|<Item 1 Count>|<Item 2>|<Item 2 Count> | ...
+#Tokens/Coins are represented with their enum type, eg: COIN_TOKEN, KARMA_TOKEN, etc
+########################
+#Begin drops 2016-05-21
+50|Pile of Crystalline Dust (Rare)|51|Essence of Luck (Fine)|371|Essence of Luck (Masterwork)|22|Essence of Luck (Rare)|3|Essence of Luck (Exotic)|1
+50|Pile of Crystalline Dust (Rare)|84|Essence of Luck (Fine)|374|Essence of Luck (Masterwork)|20|Essence of Luck (Rare)|8|Essence of Luck (Exotic)|0
+50|Pile of Crystalline Dust (Rare)|98|Essence of Luck (Fine)|338|Essence of Luck (Masterwork)|32|Essence of Luck (Rare)|3|Essence of Luck (Exotic)|0
+50|Pile of Crystalline Dust (Rare)|99|Essence of Luck (Fine)|377|Essence of Luck (Masterwork)|13|Essence of Luck (Rare)|6|Essence of Luck (Exotic)|0
+#Null Row:
+#0|Pile of Crystalline Dust (Rare)|0|Essence of Luck (Fine)|0|Essence of Luck (Masterwork)|0|Essence of Luck (Rare)|0|Essence of Luck (Exotic)|0

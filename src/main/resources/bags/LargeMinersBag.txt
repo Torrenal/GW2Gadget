@@ -1,0 +1,10 @@
+RESOURCE=Large Miner's Bag
+# Line 1 is always to identify what bag is being opened.
+# The remaining lines are the contents, in the format of:
+#<setSize>|<Item 1>|<Item 1 Count>|<Item 2>|<Item 2 Count> | ...
+#Tokens/Coins are represented with their enum type, eg: COIN_TOKEN, KARMA_TOKEN, etc
+########################
+#Date=2016-05-28
+19|COIN_TOKEN|61|Silk Scrap|6|Thick Leather Section|6|Large Bone (Fine)|1|Large Claw (Fine)|1|Pile of Incandescent Dust (Fine)|1|Intricate Totem (Fine)|3|Coral Tentacle [65](Masterwork)|3
+#Null Row:
+#0|COIN_TOKEN|0|Silk Scrap|0|Thick Leather Section|0|Large Bone (Fine)|0|Vial of Potent Blood (Fine)|0|Large Claw (Fine)|0|Pile of Incandescent Dust (Fine)|0|Pile of Filthy Essence (Rare)|0|Pile of Vile Essence (Rare)|0|Large Fang (Fine)|0|Large Scale (Fine)|0|Intricate Totem (Fine)|0|Potent Venom Sac (Fine)|0

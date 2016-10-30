@@ -1,0 +1,10 @@
+RESOURCE=Heavy Thorned Bag (Masterwork)
+# Line 1 is always to identify what bag is being opened.
+# The remaining lines are the contents, in the format of:
+#<setSize>|<Item 1>|<Item 1 Count>|<Item 2>|<Item 2 Count> | ...
+#Tokens/Coins are represented with their enum type, eg: COIN_TOKEN, KARMA_TOKEN, etc
+########################
+#Date=2016-05-28
+42|COIN_TOKEN|150|Silk Scrap|19|Thick Leather Section|10|Vial of Potent Blood (Fine)|7|Pile of Incandescent Dust (Fine)|5|Pile of Crystalline Dust (Rare)|1|Intricate Totem (Fine)|1|Potent Venom Sac (Fine)|4|Powerful Venom Sac (Rare)|1|Mordrem Sliver (Rare)|5|Eggplant|1
+#Null Row:
+#0|COIN_TOKEN|0|Silk Scrap|0|Thick Leather Section|0|Large Bone (Fine)|0|Vial of Potent Blood (Fine)|0|Large Claw (Fine)|0|Pile of Incandescent Dust (Fine)|0|Pile of Filthy Essence (Rare)|0|Pile of Vile Essence (Rare)|0|Large Fang (Fine)|0|Large Scale (Fine)|0|Intricate Totem (Fine)|0|Potent Venom Sac (Fine)|0

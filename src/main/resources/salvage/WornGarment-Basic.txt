@@ -1,0 +1,13 @@
+SALVAGE/BASIC=Worn Garment
+# Line 1 is always to identify what bag is being opened.
+# The remaining lines are the contents, in the format of:
+#<setSize>|<Item 1>|<Item 1 Count>|<Item 2>|<Item 2 Count> | ...
+#Tokens/Coins are represented with their enum type, eg: COIN_TOKEN, KARMA_TOKEN, etc
+########################
+#Begin drops 2016-05-22
+5|Jute Scrap|2|Wool Scrap|7
+25|Jute Scrap|10|Wool Scrap|29
+25|Jute Scrap|13|Wool Scrap|21
+12|Jute Scrap|2|Wool Scrap|17
+#Null Row:
+#0|Jute Scrap|0|Wool Scrap|0

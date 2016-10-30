@@ -1,0 +1,1475 @@
+﻿# The gold and karma values can range from 1 to 1000
+# The higher the value, the more 'expensive' that currency is considered.
+# Basically, the comparison made is karma*karmaValue and coin * coinValue.
+# Changes to the values trigger a grand recalculate of all pricing.
+
+karmaValue = 500
+coinValue = 1
+
+#Pricing Import configurables
+#Mininum Buy offers: Prices for items not meeting this number of minimum buy offers will not be imported
+# Mostly to keep low or no velocity items from turning up as marketplace items. Mostly, this filters
+#account bound items which (currently) can be ordered.
+
+MinimumBuyOffers = 1
+MinimumSellOffers = 1
+
+
+# Sometimes, buy offers are so Bloody low nobody will ever fill them, this adjusts how low-buy offers are ignored.
+# For a 1 gold item (low sell offer), a gap ratio of .30 will ignore buy pricing if the buy offer is under 70 silver. (30% below sale offer)
+MaxBuySellGapRatio = 0.30
+
+################## Raw Material refinement #########################
+Recipe|1|Orichalcum Ingot|Refinement|400|2|Orichalcum Ore
+Recipe|1|Mithril Ingot|Refinement|300|2|Mithril Ore
+Recipe|1|Platinum Ingot|Refinement|225|2|Platinum Ore
+Recipe|1|Darksteel Ingot|Refinement|150|2|Platinum Ore|1|Lump of Primordium
+Recipe|1|Gold Ingot|Refinement|150|2|Gold Ore
+Recipe|1|Steel Ingot|Refinement|150|3|Iron Ore|1|Lump of Coal
+Recipe|1|Silver Ingot|Refinement|75|2|Silver Ore
+Recipe|1|Iron Ingot|Refinement|75|3|Iron Ore
+Recipe|5|Bronze Ingot|Refinement|0|10|Copper Ore|1|Lump of Tin
+Recipe|1|Copper Ingot|Refinement|0|2|Copper Ore
+
+Recipe|1|Bolt of Gossamer|Refinement|400|2|Gossamer Scrap
+Recipe|1|Bolt of Silk|Refinement|300|3|Silk Scrap
+Recipe|1|Bolt of Linen|Refinement|225|2|Linen Scrap
+Recipe|1|Bolt of Cotton|Refinement|150|2|Cotton Scrap
+Recipe|1|Bolt of Wool|Refinement|75|2|Wool Scrap
+Recipe|1|Bolt of Jute|Refinement|0|2|Jute Scrap
+
+Recipe|1|Cured Hardened Leather Square|Refinement|400|3|Hardened Leather Section
+Recipe|1|Cured Thick Leather Square|Refinement|300|4|Thick Leather Section
+Recipe|1|Cured Rugged Leather Square|Refinement|225|2|Rugged Leather Section
+Recipe|1|Cured Coarse Leather Square|Refinement|150|2|Coarse Leather Section
+Recipe|1|Cured Thin Leather Square|Refinement|75|2|Thin Leather Section
+Recipe|1|Stretched Rawhide Leather Square|Refinement|0|2|Rawhide Leather Section
+
+Recipe|1|Ancient Wood Plank|Refinement|400|3|Ancient Wood Log
+Recipe|1|Elder Wood Plank|Refinement|300|3|Elder Wood Log
+Recipe|1|Hard Wood Plank|Refinement|225|3|Hard Wood Log
+Recipe|1|Seasoned Wood Plank|Refinement|150|3|Seasoned Wood Log
+Recipe|1|Soft Wood Plank|Refinement|75|2|Soft Wood Log
+Recipe|1|Green Wood Plank|Refinement|0|3|Green Wood Log
+################## BAZZAR RECIPES #########################
+#Recipe|1|Charged Quartz Crystal (Rare)|Upgrade @ commune skillpoint location||25|Quartz Crystal (Masterwork)|
+#Recipe|1|Zephyr Sanctum Supply Box|Zephyr Trader||125|Copper Ore
+#Recipe|1|Zephyr Sanctum Supply Box|Zephyr Trader||55|Iron Ore
+#Recipe|1|Zephyr Sanctum Supply Box|Zephyr Trader||75|Silver Ore
+#Recipe|1|Zephyr Sanctum Supply Box|Zephyr Trader||30|Gold Ore
+#Recipe|1|Zephyr Sanctum Supply Box|Zephyr Trader||25|Platinum Ore
+#Recipe|1|Zephyr Sanctum Supply Box|Zephyr Trader||50|Mithril Ore
+#Recipe|1|Zephyr Sanctum Supply Box|Zephyr Trader||8|Orichalcum Ore
+#Recipe|1|Zephyr Sanctum Supply Box|Zephyr Trader||250|Green Wood Log
+#Recipe|1|Zephyr Sanctum Supply Box|Zephyr Trader||60|Soft Wood Log
+#Recipe|1|Zephyr Sanctum Supply Box|Zephyr Trader||35|Seasoned Wood Log
+#Recipe|1|Zephyr Sanctum Supply Box|Zephyr Trader||65|Hard Wood Log
+#Recipe|1|Zephyr Sanctum Supply Box|Zephyr Trader||55|Elder Wood Log
+#Recipe|1|Zephyr Sanctum Supply Box|Zephyr Trader||30|Ancient Wood Log
+#Recipe|1|Zephyr Sanctum Supply Box|Zephyr Trader||500|Rawhide Leather Section
+#Recipe|1|Zephyr Sanctum Supply Box|Zephyr Trader||400|Thin Leather Section
+#Recipe|1|Zephyr Sanctum Supply Box|Zephyr Trader||90|Coarse Leather Section
+#Recipe|1|Zephyr Sanctum Supply Box|Zephyr Trader||60|Rugged Leather Section
+#Recipe|1|Zephyr Sanctum Supply Box|Zephyr Trader||250|Thick Leather Section
+#Recipe|1|Zephyr Sanctum Supply Box|Zephyr Trader||185|Hardened Leather Section
+#Recipe|1|Zephyr Sanctum Supply Box|Zephyr Trader||225|Jute Scrap
+#Recipe|1|Zephyr Sanctum Supply Box|Zephyr Trader||75|Wool Scrap
+#Recipe|1|Zephyr Sanctum Supply Box|Zephyr Trader||30|Cotton Scrap
+#Recipe|1|Zephyr Sanctum Supply Box|Zephyr Trader||45|Linen Scrap
+#Recipe|1|Zephyr Sanctum Supply Box|Zephyr Trader||250|Silk Scrap
+#Recipe|1|Zephyr Sanctum Supply Box|Zephyr Trader||20|Gossamer Scrap
+#Recipe|1|Zephyr Sanctum Supply Box|Zephyr Trader||150|Piece of Candy Corn
+#Recipe|1|Zephyr Sanctum Supply Box|Zephyr Trader||300|Piece of Zhaitaffy
+
+
+########## Bound items
+# Items that cannot be purchased or sold on the market.
+
+#Bound|Apple
+#Bound|Celery Stalk
+#Bound|Cumin
+#Bound|Green Bean
+#Bound|Lemon
+#Bound|Nutmeg Seed
+#Bound|Tomato
+#Bound|Glass of Buttermilk
+#Bound|Cheese Wedge
+#Bound|Packet of Yeast
+#Bound|Rice Ball (Fine)
+#Bound|Banana
+#Bound|Basil Leaf
+#Bound|Bell Pepper
+#Bound|Black Bean
+#Bound|Kidney Bean
+#Bound|Bowl of Sour Cream
+#Bound|Lime
+#Bound|Ginger Root
+#Bound|Cherry
+#Bound|Avocado
+#Bound|Almond
+#Bound|Chickpea
+#Bound|Coconut
+#Bound|Horseradish Root
+#Bound|Pear
+#Bound|Pinenut
+#Bound|Shallot
+#Bound|Peach
+#Bound|Eggplant
+#Bound|Mango
+
+#Bound|Almonds in Bulk
+#Bound|Apples in Bulk
+#Bound|Avocados in Bulk
+#Bound|Bananas in Bulk
+#Bound|Basil Leaves in Bulk
+#Bound|Bay Leaves in Bulk
+#Bound|Bell Peppers in Bulk
+#Bound|Black Beans in Bulk
+#Bound|Black Peppercorns in Bulk
+#Bound|Butter in Bulk
+#Bound|Buttermilk in Bulk
+#Bound|Celery Stalks in Bulk
+#Bound|Cheese Wedges in Bulk
+#Bound|Cherries in Bulk
+#Bound|Chickpeas in Bulk
+#Bound|Chocolate Bars in Bulk
+#Bound|Cinnamon Sticks in Bulk
+#Bound|Coconuts in Bulk
+#Bound|Cumin in Bulk
+#Bound|Eggs in Bulk
+#Bound|Eggplants in Bulk
+#Bound|Ginger Root in Bulk
+#Bound|Green Beans in Bulk
+#Bound|Horseradish Root in Bulk
+#Bound|Kidney Beans in Bulk
+#Bound|Lemons in Bulk
+#Bound|Limes in Bulk
+#Bound|Mangos in Bulk
+#Bound|Nutmeg Seeds in Bulk
+#Bound|Oranges in Bulk
+#Bound|Peaches in Bulk
+#Bound|Pears in Bulk
+#Bound|Pinenuts in Bulk
+#Bound|Rice in Bulk
+#Bound|Shallots in Bulk
+#Bound|Sour Cream in Bulk
+#Bound|Thyme Leaves in Bulk
+#Bound|Tomatoes in Bulk
+#Bound|Vanilla Beans in Bulk
+#Bound|Walnuts in Bulk
+#Bound|Yeast in Bulk
+#Bound|Milling Basin
+
+#FOTM Merchants
+Merchant|Mists Stone (Exotic)|BUY-2046PFR in Mistlock Observatory|Pristine_Fractal_Relics 5
+
+#Geode Merchants
+Merchant|Brick of Clay (Fine)|Dry Top Merchants|Geode_Tokens 7
+
+Merchant|Jar of Vinegar|Master Chef|Coin 8
+Merchant|Packet of Baking Powder|Master Chef|Coin 8
+Merchant|Jar of Vegetable Oil|Master Chef|Coin 8
+Merchant|Packet of Salt|Master Chef|Coin 8
+Merchant|Bag of Sugar|Master Chef|Coin 8
+Merchant|Jug of Water|Master Chef|Coin 8
+Merchant|Bag of Starch|Master Chef|Coin 8
+Merchant|Bag of Flour|Master Chef|Coin 8
+Merchant|Bottle of Soy Sauce|Master Chef|Coin 8
+Merchant|Milling Basin|Master Chef|Coin 56
+
+Merchant|Cheese Wedges in Bulk|Zenn|Karma 35
+Merchant|Buttermilk in Bulk|Master Chef|Karma 35
+Merchant|Yeast in Bulk|Master Chef|Karma 35
+Merchant|Rice in Bulk|Master Chef|Karma 49
+Merchant|Sour Cream in Bulk|Master Chef|Karma 77
+
+Merchant|Tomatoes in Bulk|Master Chef|Karma 35
+Merchant|Ginger Root in Bulk|Master Chef|Karma 77
+Merchant|Basil Leaves in Bulk|Master Chef|Karma 49
+Merchant|Bell Peppers in Bulk|Master Chef|Karma 49
+
+#Merchant|Tomatoes in Bulk|WvW Crafter|Coin 40
+#Merchant|Ginger Root in Bulk|WvW Crafter|Coin 88
+#Merchant|Basil Leaves in Bulk|WvW Crafter|Coin 56
+#Merchant|Bell Peppers in Bulk|WvW Crafter|Coin 56
+
+Merchant|Nutmeg Seeds in Bulk|Milton Brook @ Cornucopian Fields, Gendarran Fields|Karma 35
+Merchant|Lemons in Bulk|Milton Brook @ Cornucopian Fields, Gendarran Fields|Karma 35
+Merchant|Cumin in Bulk|Milton Brook @ Cornucopian Fields, Gendarran Fields|Karma 35
+Merchant|Celery Stalks in Bulk|Milton Brook @ Cornucopian Fields, Gendarran Fields|Karma 35
+
+Merchant|Cumin in Bulk|Sagum Relicseeker|Karma 35
+
+Merchant|Green Beans in Bulk|Albin Chronicler @ Icesteppes|Karma 35
+
+Merchant|Lemons in Bulk|Eona @ Ventry Bay (Soundless Village) in Caledon Forest|Karma 35
+
+Merchant|Lemons in Bulk|Researcher Hrappa @ Voloxian Passage, Metrica Province|Karma 35
+
+Merchant|Apples in Bulk|Farmer Eda @ Shaemoor Fields, Queensdale|Karma 35
+Merchant|Nutmeg Seeds in Bulk|Farmer Eda @ Shaemoor Fields, Queensdale|Karma 35
+
+
+Merchant|Nutmeg Seeds in Bulk|Deputy Jenks @ Giant's Passage|Karma 35
+Merchant|Black Beans in Bulk|Deputy Jenks @ Giant's Passage|Karma 49
+Merchant|Black Beans in Bulk|Vice Chief Hernandez @ Osprey Pillars|Karma 49
+Merchant|Bananas in Bulk|Deputy Jenks @ Giant's Passage|Karma 49
+
+Merchant|Tomatoes in Bulk|Mei Hawkslayer @ Loreclaw Expanse|Karma 35
+
+Merchant|Buttermilk in Bulk|Veska Bladesinger @ Wodron Glens|Karma 35
+
+
+Merchant|Packet of Baking Powder|Eltun @ Salma District|Coin 8
+Merchant|Bag of Sugar|Eltun @ Salma District|Coin 8
+Merchant|Bag of Flour|Eltun @ Salma District|Coin 8
+
+Merchant|Bottle of Rice Wine|Jen @ Divinity's Reach|Coin 16
+Merchant|Rice Ball (Fine)|Jen @ Divinity's Reach|Coin 32
+
+Merchant|Banana|Jeev|Karma 3
+
+Merchant|Bananas in Bulk|Sangdo Swiftwing|Karma 49
+
+Merchant|Bananas in Bulk|Vejj @ Almuten Estates, Gendarran Fields|Karma 49
+
+Merchant|Bananas in Bulk|Seraph Soldier Goran @ The Wendon Steps|Karma 49
+
+Merchant|Black Beans in Bulk|Field Medic Leius @ Nebo Terrace|Karma 49
+
+Merchant|Kidney Beans in Bulk|Kastaz Strongpaw|Karma 49
+Merchant|Kidney Beans in Bulk|Seraph Archer Brian|Karma 49
+Merchant|Kidney Beans in Bulk|Hune in Lornar's Pass|Karma 49
+
+Merchant|Almonds in Bulk|Disa @ Snowslide Ravine in Dredgehaunt Cliffs|Karma 77
+Merchant|Cherries in Bulk|Disa @ Snowslide Ravine in Dredgehaunt Cliffs|Karma 77
+
+Merchant|Almonds in Bulk|Lieutenant Pickins @ Seraphs's Landing in Harathi Hinterlands|Karma 77
+
+Merchant|Avocados in Bulk|Fallen Angel Makayla @ Ebonhawke|Karma 77
+
+Merchant|Cherries in Bulk|Lieutenant Summers @ Nightguard Beach, Harathi Hinterlands|Karma 77
+
+Merchant|Limes in Bulk|Shelp @ Blazeridge Stepps|Karma 77
+
+Merchant|Chickpeas in Bulk|Naknar @ Ebbing Heart Run, Iron Marches|Karma 112
+
+Merchant|Coconuts in Bulk|Lionscout Tunnira @ Archen Foreland, Bloodtide Coast|Karma 112
+Merchant|Coconuts in Bulk|Vice Chief Hernandez @ Osprey Pillars, Ember Bay|Karma 112
+
+Merchant|Horseradish Root in Bulk|Wupwup Chief @ Apostate Wastes, Fireheart Rise|Karma 112
+
+Merchant|Horseradish Root in Bulk|Laudren, Thundertroll Swamp, Sparkfly Fen|Karma 21
+
+Merchant|Pears in Bulk|Braxa Scalehunter @ Champions Shield, Iron Marches|Karma 112
+
+Merchant|Pinenuts in Bulk|Scholar Tholin @ Krongar Pass, Timberline Falls|Karma 112
+
+Merchant|Shallots in Bulk|Ichtaca @ Hunting Banks, Timberline Falls|Karma 112
+
+Merchant|Eggplants in Bulk|Enviromental Activist Jenrys @ Benthic Kelp Beds, Mount Maelstrom|Karma 112
+
+Merchant|Eggplants in Bulk|Enviromental Activist Jenrys @ Benthic Kelp Beds, Mount Maelstrom|Karma 112
+
+Merchant|Peaches in Bulk|Nrocroc Chief @ Apostate Wastes, Fireheart Rise|Karma 154
+
+Merchant|Mangos in Bulk|Agent Crandle @ Fort Trinity, Straits of Devestation|Karma 203
+
+Merchant|Apple|Apple Jack @ Cornucopian Fields in Gendarran Fields|Coin 16
+
+Merchant|Basil Leaf|Hatcher @ Lions Arch|Karma 6
+Merchant|Bell Pepper|Hatcher @ Lions Arch|Karma 6
+Merchant|Ginger Root|Hatcher @ Lions Arch|Karma 9
+
+Merchant|Celery Stalks in Bulk|Bjarni @ Hangrammr Climb|Karma 35
+-----
+
+
+Merchant|Loaf of Bread|Araina|Coin 40
+Merchant|Loaf of Bread|Jara|Coin 40
+Merchant|Loaf of Bread|Hallin|Coin 40
+
+Merchant|Sun Bead|Cuadinti @ Astrozintli Forelands Sparkfly Fen|Karma 21
+
+# Metalworking/clothworking stuffs:
+
+#Merchant|Lump of Tin|Katlin Verndjes|Coin 8
+#Merchant|Lump of Coal|Katlin Verndjes|Coin 16
+#Merchant|Lump of Primordium|Katlin Verndjes|Coin 48
+#Merchant|Spool of Jute Thread|Katlin Verndjes|Coin 8
+#Merchant|Spool of Wool Thread|Katlin Verndjes|Coin 16
+#Merchant|Spool of Cotton Thread|Katlin Verndjes|Coin 24
+#Merchant|Spool of Linen Thread|Katlin Verndjes|Coin 32
+#Merchant|Spool of Silk Thread|Katlin Verndjes|Coin 48
+#Merchant|Spool of Gossamer Thread|Katlin Verndjes|Coin 64
+
+#Merchant|Lump of Tin|Brencis|Coin 8
+#Merchant|Spool of Jute Thread|Brencis|Coin 18
+#Merchant|Spool of Wool Thread|Brencis|Coin 32
+#Merchant|Spool of Cotton Thread|Brencis|Coin 56
+#Merchant|Spool of Linen Thread|Brencis|Coin 80
+#Merchant|Spool of Silk Thread|Brencis|Coin 104
+#Merchant|Spool of Gossamer Thread|Brencis|Coin 120
+
+#Merchant|Lump of Tin|Morgaah Bloodseeker|Coin 8
+#Merchant|Lump of Coal|Morgaah Bloodseeker|Coin 16
+#Merchant|Spool of Jute Thread|Morgaah Bloodseeker|Coin 16
+#Merchant|Spool of Wool Thread|Morgaah Bloodseeker|Coin 32
+#Merchant|Spool of Cotton Thread|Morgaah Bloodseeker|Coin 56
+#Merchant|Spool of Linen Thread|Morgaah Bloodseeker|Coin 80
+#Merchant|Spool of Silk Thread|Morgaah Bloodseeker|Coin 104
+#Merchant|Spool of Gossamer Thread|Morgaah Bloodseeker|Coin 120
+
+Merchant|Lump of Tin|Master Crafter|Coin 8
+Merchant|Lump of Coal|Master Crafter|Coin 16
+Merchant|Lump of Primordium|Master Crafter|Coin 48
+Merchant|Spool of Jute Thread|Master Crafter|Coin 8
+Merchant|Spool of Wool Thread|Master Crafter|Coin 16
+Merchant|Spool of Cotton Thread|Master Crafter|Coin 24
+Merchant|Spool of Linen Thread|Master Crafter|Coin 32
+Merchant|Spool of Silk Thread|Master Crafter|Coin 48
+Merchant|Spool of Gossamer Thread|Master Crafter|Coin 64
+
+#Merchant|Lump of Tin|Master Crafter|Coin 8
+#Merchant|Lump of Coal|Master Crafter|Coin 16
+#Merchant|Lump of Primordium|Master Crafter|Coin 48
+
+#Merchant|Spool of Jute Thread|Snaarl Strainedclaw|Coin 8
+#Merchant|Spool of Wool Thread|Snaarl Strainedclaw|Coin 16
+#Merchant|Spool of Cotton Thread|Snaarl Strainedclaw|Coin 24
+#Merchant|Spool of Linen Thread|Snaarl Strainedclaw|Coin 32
+#Merchant|Spool of Silk Thread|Snaarl Strainedclaw|Coin 48
+#Merchant|Spool of Gossamer Thread|Snaarl Strainedclaw|Coin 64
+
+#Merchant|Spool of Jute Thread|Rikkta|Coin 8
+#Merchant|Spool of Wool Thread|Rikkta|Coin 18
+#Merchant|Spool of Cotton Thread|Rikkta|Coin 24
+#Merchant|Spool of Linen Thread|Rikkta|Coin 32
+#Merchant|Spool of Silk Thread|Rikkta|Coin 48
+#Merchant|Spool of Gossamer Thread|Rikkta|Coin 64
+
+#Merchant|Spool of Jute Thread|Iriun|Coin 8
+#Merchant|Spool of Wool Thread|Iriun|Coin 16
+#Merchant|Spool of Cotton Thread|Iriun|Coin 24
+#Merchant|Spool of Linen Thread|Iriun|Coin 32
+#Merchant|Spool of Silk Thread|Iriun|Coin 48
+#Merchant|Spool of Gossamer Thread|Iriun|Coin 64
+
+Merchant|Thermocatalytic Reagent (Ascended)|Master Crafter|Coin 149.6
+
+Merchant|Minor Rune of Holding|Master Craftsmen|Coin 496
+Merchant|Rune of Holding (Fine)|Master Craftsmen|Coin 1480
+Merchant|Major Rune of Holding (Masterwork)|Master Craftsmen|Coin 5000
+Merchant|Greater Rune of Holding (Rare)|Master Craftsmen|Coin 20000
+Merchant|Superior Rune of Holding (Exotic)|Master Craftsmen|Coin 100000
+
+Merchant|Icy Runestone (Legendary)|Rojan the Penitent @ Frostgorge after the Claw of Jormag|Coin 10000
+
+Merchant|Stein of Highlander Beer|Brewmaster Olaf @ Leopard's Tail Valley in Frostgorge Sound|Coin 16
+Merchant|Stein of Highlander Beer|Innkeeper Aela @ Postern Ward in Lion's Arch|Coin 16
+Merchant|Stein of Highlander Beer|Consortium Beverage Vendor @ Pearl Islet in Southsun Cove|Coin 16
+
+Merchant|Philosopher's Stone|Miyani|SkillPoint 0.1
+Merchant|Mystic Crystal|Miyani|SkillPoint 0.6
+Merchant|Bottle of Elonian Wine (Legendary)|Miyani|Coin 2504
+Merchant|Eldritch Scroll (Legendary)|Miyani|SkillPoint 50
+Merchant|Bloodstone Shard (Legendary)|Miyani|SkillPoint 200
+Merchant|Siege Masters Guide|Miyani|SkillPoint 1
+Merchant|Augur's Stone (Ascended)|Miyani|SkillPoint 20
+
+Merchant|Basic Salvage Kit|Standard Merchant|Coin 88
+Merchant|Fine Salvage Kit (Fine)|Standard Merchant|Coin 288
+Merchant|Journeyman's Salvage Kit (Masterwork)|Standard Merchant|Coin 800
+Merchant|Master's Salvage Kit (Rare)|Standard Merchant|Coin 1536
+Merchant|Leather Bag|Standard Merchant|Coin 36
+
+#WvW Merchants
+Merchant|Flame Ram Blueprints|Siege Merchant|Coin 600
+Merchant|Arrow Cart Blueprints|Siege Merchant|Coin 600
+Merchant|Ballista Blueprints|Siege Merchant|Coin 1000
+Merchant|Catapult Blueprints|Siege Merchant|Coin 1200
+Merchant|Trebuchet Blueprints|Siege Merchant|Coin 2400
+Merchant|Alpha Siege Golem Blueprints|Siege Merchant|Coin 10000
+
+Merchant|Flame Ram Blueprints|Siege Merchant|WvW_TOKENS 6
+Merchant|Arrow Cart Blueprints|Siege Merchant|WvW_TOKENS 6
+Merchant|Ballista Blueprints|Siege Merchant|WvW_TOKENS 10
+Merchant|Catapult Blueprints|Siege Merchant|WvW_TOKENS 12
+Merchant|Trebuchet Blueprints|Siege Merchant|WvW_TOKENS 24
+Merchant|Alpha Siege Golem Blueprints|Siege Merchant|WvW_TOKENS 100
+
+#Merchant|Obsidian Shard (Legendary)|Laurel Merchant|LAURELS 1
+#Merchant|Unidentified Dye|Laurel Merchant|LAURELS 0.5
+Merchant|Mystic Binding Agent (Fine)|Laurel Merchant|LAURELS 1
+#Merchant|Flame Ram Blueprints|Laurel Merchant|LAURELS 0.5
+#Merchant|Arrow Cart Blueprints|Laurel Merchant|LAURELS 0.5
+#Merchant|Ballista Blueprints|Laurel Merchant|LAURELS .6666666666
+#Merchant|Catapult Blueprints|Laurel Merchant|LAURELS 1
+#Merchant|Trebuchet Blueprints|Laurel Merchant|LAURELS 2
+
+Merchant|Crystalline Bottle (Fine)|Master Crafter|Coin 32
+Merchant|Bag of Mortar (Fine)|Master Crafter|Coin 104
+Merchant|Crafter's Backpack Frame|Master Crafter|Coin 8
+Merchant|Essence of Elegance (Rare)|Master Crafter|Coin 5000
+Merchant|Basic Basket|Master Crafter|Coin 5000
+Merchant|Basic Bookshelf|Master Crafter|Coin 5000
+Merchant|Basic Chair|Master Crafter|Coin 5000
+Merchant|Basic Crate|Master Crafter|Coin 5000
+Merchant|Basic Table|Master Crafter|Coin 5000
+Merchant|Basic Boulder|Master Crafter|Coin 5000
+Merchant|Basic Planter|Master Crafter|Coin 5000
+Merchant|Basic Shrub|Master Crafter|Coin 5000
+Merchant|Basic Tree|Master Crafter|Coin 5000
+Merchant|Basic Pedestal|Master Crafter|Coin 5000
+Merchant|Basic Candle|Master Crafter|Coin 5000
+Merchant|Basic Column|Master Crafter|Coin 5000
+Merchant|Basic Flagpole|Master Crafter|Coin 5000
+Merchant|Basic Fountain|Master Crafter|Coin 5000
+Merchant|White Balloon|Master Crafter|Coin 5000
+Merchant|Basic Torch|Master Crafter|Coin 5000
+
+# Consume-to-upgrades - lodestone type mats
+Consume|1|Evergreen Fragment (Rare)|2|Evergreen Sliver (Rare)
+Consume|1|Evergreen Shard (Rare)|2|Evergreen Fragment (Rare)
+Consume|1|Evergreen Core (Rare)|2|Evergreen Shard (Rare)
+Consume|1|Evergreen Lodestone (Exotic)|2|Evergreen Core (Rare)
+Consume|1|Mordrem Fragment (Rare)|2|Mordrem Sliver (Rare)
+Consume|1|Mordrem Shard (Rare)|2|Mordrem Fragment (Rare)
+Consume|1|Mordrem Core (Rare)|2|Mordrem Shard (Rare)
+Consume|1|Mordrem Lodestone (Exotic)|2|Mordrem Core (Rare)
+
+
+# Harvest Nodes:
+Task|Blueberry|Harvest|Plains of Ashford|Gunbreach Hills, SE of Osenfold Waypoint
+Task|Head of Lettuce|Harvest|Caledon Forest|NE part of zone. Beware Jungle Raptors (lvl 14-15)
+Task|Dragonite Ore (Ascended)|Battle|The World|Defeat World Bosses
+Task|Empyreal Fragment (Ascended)|Adventure|The World|Complete Jumping Puzzels and Guild Puzzles/Rushes
+Task|Pile of Bloodstone Dust (Ascended)|Pillage|The World|Open Exotic level champion loot bags
+Task|Glob of Dark Matter (Ascended)|Scrounge|The World|Salvage high level exotic items
+Task|Essence of Luck (Fine)|Scrounge|The World|Salvage Fine/Masterwork Gear
+Task|Essence of Luck (Masterwork)|Scrounge|The World|Salvage Fine/Masterwork Gear and ectos
+Task|Essence of Luck (Masterwork)|Scrounge|The World|Salvage Fine/Masterwork Gear and ectos
+Task|Essence of Luck (Rare)|Scrounge|The World|Salvage Fine/Masterwork Gear and ectos
+Task|Essence of Luck (Exotic)|Scrounge|The World|Salvage Fine/Masterwork Gear and ectos
+
+
+
+Task|Gift of Exploration (Legendary)|Explore|Explore the World|Get Map Completion to 100%
+Task|Bag of Jewels|Obtain|Obtain as a drop|Random drops from dungeon chests
+Task|Vial of Condensed Mists Essence (Ascended)|Obtain|Obtain as a drop|Random drops from Fractals of the Mists levels 1-9
+Task|Glob of Coagulated Mists Essence (Ascended)|Obtain|Obtain as a drop|Random drops from Fractals of the Mists levels 10-19
+Task|Shard of Crystallized Mists Essence (Ascended)|Obtain|Obtain as a drop|Random drops from Fractals of the Mists levels 20+
+Task|Pile of Auric Dust (Ascended)|Loot Auric Basin|Obtain from Exalted Chests|Random drops from all Exalted Chests
+
+
+
+# Event Rewards
+Task|Sclerite Karka Shell [80](Exotic)|Obtain|Obtain as achievement reward|Complete 25 of the Secret of Southsun achievements.
+
+# Packages
+#importBuyAt = true
+Package|Almonds in Bulk|Almond|25
+Package|Apples in Bulk|Apple|25
+Package|Avocados in Bulk|Avocado|25
+Package|Bananas in Bulk|Banana|25
+Package|Basil Leaves in Bulk|Basil Leaf|25
+Package|Bay Leaves in Bulk|Bay Leaf|25
+Package|Bell Peppers in Bulk|Bell Pepper|25
+Package|Black Beans in Bulk|Black Bean|25
+Package|Black Peppercorns in Bulk|Black Pepipercorn|25
+Package|Butter in Bulk|Stick of Butter|25
+Package|Buttermilk in Bulk|Glass of Buttermilk|25
+Package|Celery Stalks in Bulk|Celery Stalk|25
+Package|Cheese Wedges in Bulk|Cheese Wedge|25
+Package|Cherries in Bulk|Cherry|25
+Package|Chickpeas in Bulk|Chickpea|25
+Package|Chocolate Bars in Bulk|Chocolate Bar|25
+Package|Cinnamon Sticks in Bulk|Cinnamon Stick|25
+Package|Coconuts in Bulk|Coconut|25
+Package|Cumin in Bulk|Cumin|25
+Package|Eggs in Bulk|Egg|25
+Package|Eggplants in Bulk|Eggplant|25
+Package|Ginger Root in Bulk|Ginger Root|25
+Package|Green Beans in Bulk|Green Bean|25
+Package|Horseradish Root in Bulk|Horseradish Root|25
+Package|Kidney Beans in Bulk|Kidney Bean|25
+Package|Lemons in Bulk|Lemon|25
+Package|Limes in Bulk|Lime|25
+Package|Mangos in Bulk|Mango|25
+Package|Nutmeg Seeds in Bulk|Nutmeg Seed|25
+Package|Oranges in Bulk|Orange|25
+Package|Peaches in Bulk|Peach|25
+Package|Pears in Bulk|Pear|25
+Package|Pinenuts in Bulk|Pinenut|25
+Package|Rice in Bulk|Rice Ball (Fine)|25
+Package|Shallots in Bulk|Shallot|25
+Package|Sour Cream in Bulk|Bowl of Sour Cream|25
+Package|Thyme Leaves in Bulk|Thyme Leaf|25
+Package|Tomatoes in Bulk|Tomato|25
+Package|Vanilla Beans in Bulk|Vanilla Bean|25
+Package|Walnuts in Bulk|Walnut|25
+Package|Yeast in Bulk|Packet of Yeast|25
+#Collectors
+Merchant|Gift of Ascalon (Legendary)|Dungeon Rewards Trader|AC_TOKENS 500
+Merchant|Gift of Baelfire (Legendary)|Dungeon Rewards Trader|CF_TOKENS 500
+Merchant|Gift of Battle (Legendary)|WvW Rewards Trader|WvW_TOKENS 500|Coin 5000
+Merchant|Gift of Knowledge (Legendary)|Dungeon Rewards Trader|CoE_TOKENS 500
+Merchant|Gift of the Forgeman (Legendary)|Dungeon Rewards Trader|SE_TOKENS 500
+Merchant|Gift of the Nobleman (Legendary)|Dungeon Rewards Trader|CM_TOKENS 500
+Merchant|Gift of the Sanctuary (Legendary)|Dungeon Rewards Trader|HotW_TOKENS 500
+Merchant|Gift of Thorns (Legendary)|Dungeon Rewards Trader|TA_TOKENS 500
+Merchant|Gift of Zhaitan (Legendary)|Dungeon Rewards Trader|Arah_TOKENS 500
+Merchant|Gift of Ascension (Ascended)|Dungeon Rewards Trader|FRACTAL_TOKENS 500
+Merchant|Obsidian Shard (Legendary)|Dungeon Rewards Trader|FRACTAL_TOKENS 15
+Merchant|Obsidian Shard (Legendary)|Balthazar Temple Karma Vendor|Karma 2100
+
+
+
+
+Merchant|Prototype Fractal Capacitor [80](Exotic)|Dungeon Rewards Trader|FRACTAL_TOKENS 13500
+
+Merchant|Offering of Baelfire (Exotic)|Dungeon Rewards Trader|CF_TOKENS 200
+Merchant|Offering of Knowledge (Exotic)|Dungeon Rewards Trader|CoE_TOKENS 200
+Merchant|Offering of Zhaitan (Exotic)|Dungeon Rewards Trader|Arah_TOKENS 200
+Merchant|Offering of Ascalon (Exotic)|Dungeon Rewards Trader|AC_TOKENS 200
+Merchant|Offering of the Forgeman (Exotic)|Dungeon Rewards Trader|SE_TOKENS 200
+Merchant|Offering of the Sanctuary (Exotic)|Dungeon Rewards Trader|HotW_TOKENS 200
+Merchant|Offering of Thorns (Exotic)|Dungeon Rewards Trader|TA_TOKENS 200
+Merchant|Offering of the Nobleman (Exotic)|Dungeon Rewards Trader|CM_TOKENS 200       
+
+## Hack - treat token currency as token items.
+#Merchant|Knowledge Crystal|Currency as Itself|CoE_TOKENS 1
+#Merchant|Fractal Relic (Fine)|Currency as Itself|FRACTAL_TOKENS 1
+#Merchant|Knowledge Crystal (Rare)|Currency as Itself|CoE_TOKENS 1
+#Merchant|Shard of Zhaitan (Rare)|Currency as Itself|Arah_TOKENS 1
+#Merchant|Ascalonian Tear (Rare)|Currency as Itself|AC_TOKENS 1
+#Merchant|Flame Legion Charr Carving (Rare)|Currency as Itself|CF_TOKENS 1
+#Merchant|Manifesto of the Moletariate (Rare)|Currency as Itself|SE_TOKENS 1
+#Merchant|Symbol of Koda (Rare)|Currency as Itself|HotW_TOKENS 1
+#Merchant|Deadly Bloom (Rare)|Currency as Itself|TA_TOKENS 1
+#Merchant|Seal of Beetletun (Rare)|Currency as Itself|CM_TOKENS 1
+
+# Gem Store Goodies
+Merchant|Box o' Fun (Fine)|Gem Store|Gems 80
+Merchant|Box o' Fun (Fine)|Gem Store(Bulk)|Gems 64
+Merchant|Experience Booster (Masterwork)|Gem Store|Gems 150
+Merchant|Experience Booster (Masterwork)|Gem Store|Gems 110
+Merchant|Karma Booster (Masterwork)|Gem Store|Gems 75
+Merchant|Karma Booster (Masterwork)|Gem Store(bulk)|Gems 55
+Merchant|Magic Find Booster (Masterwork)|Gem Store|Gems 150
+Merchant|Magic Find Booster (Masterwork)|Gem Store(Bulk)|Gems 110
+Merchant|Mystic Forge Stone|Gem Store(Bulk)|Gems 50
+Merchant|Mystic Forge Stone|Gem Store(Bulk)|Gems 45
+
+###################### Recipes Missing from the API ##########################################
+Recipe|1|Pile of Zesty Herbs [80]|Chef|400|1|Pile of Ascalonian Herbs [20]|1|Cayenne Pepper [65]|5|Saffron Thread [80]|5|Head of Garlic [20]
+Recipe|1|Plate of Spicy Herbed Chicken [80](Fine)|Chef|400|5|Slab of Poultry Meat (Fine)|1|Pile of Zesty Herbs [80]|1|Bowl of Fancy Tangy Sautee Mix [60]|13|Ghost Pepper [80]
+Recipe|1|Bowl of Zesty Turnip Soup [80](Fine)|Chef|400|8|Turnip [20]|2|Bowl of Cream Soup Base [25]|1|Pile of Zesty Herbs [80]|1|Bowl of Fancy Tangy Sautee Mix [60]
+########################## Mystic Forge ######################################################
+
+Recipe|1|Omega Siege Golem Blueprints|Mystic Forge||5|Alpha Siege Golem Blueprints|3|Siege Masters Guide|10|Mithril Ore|10|Elder Wood Log
+Recipe|1|Superior Arrow Cart Blueprints|Mystic Forge||2|Arrow Cart Blueprints|1|Siege Masters Guide|5|Mithril Ore|5|Elder Wood Log
+Recipe|1|Superior Ballista Blueprints|Mystic Forge||2|Ballista Blueprints|1|Siege Masters Guide|5|Mithril Ore|5|Elder Wood Log
+Recipe|1|Superior Catapult Blueprints|Mystic Forge||2|Catapult Blueprints|1|Siege Masters Guide|5|Mithril Ore|5|Elder Wood Log
+Recipe|1|Superior Flame Ram Blueprints|Mystic Forge||2|Flame Ram Blueprints|1|Siege Masters Guide|5|Mithril Ore|5|Elder Wood Log
+Recipe|1|Superior Trebuchet Blueprints|Mystic Forge||2|Trebuchet Blueprints|1|Siege Masters Guide|10|Mithril Ore|10|Elder Wood Log
+
+Recipe|1|Beta Fractal Capacitor [80](Ascended)|Mystic Forge||1|Prototype Fractal Capacitor [80](Ascended)|1|Gift of Ascension (Ascended)|250|Glob of Ectoplasm (Exotic)|1|Glob of Coagulated Mists Essence (Ascended)
+Recipe|1|Book of Secrets [80](Ascended)|Mystic Forge||1|Vial of Condensed Mists Essence (Ascended)|40|Mystic Crystal|50|Glob of Ectoplasm (Exotic)|250|Vial of Powerful Blood (Rare)
+Recipe|1|Book of Secrets (Infused) [80](Ascended)|Mystic Forge||1|Book of Secrets [80](Ascended)|1|Gift of Ascension (Ascended)|250|Glob of Ectoplasm (Exotic)|1|Glob of Coagulated Mists Essence (Ascended)
+Recipe|1|Bowyer's Delight [80](Ascended)|Mystic Forge||1|Vial of Condensed Mists Essence (Ascended)|240|Philosopher's Stone|50|Glob of Ectoplasm (Exotic)|250|Vicious Fang (Rare)
+Recipe|1|Bowyer's Delight (Infused) [80](Ascended)|Mystic Forge||1|Bowyer's Delight [80](Ascended)|1|Gift of Ascension (Ascended)|250|Glob of Ectoplasm (Exotic)|1|Glob of Coagulated Mists Essence (Ascended)
+Recipe|1|Endless Quiver [80](Ascended)|Mystic Forge||1|Vial of Condensed Mists Essence (Ascended)|240|Philosopher's Stone|50|Glob of Ectoplasm (Exotic)|250|Ancient Bone (Rare)
+Recipe|1|Endless Quiver (Infused) [80](Ascended)|Mystic Forge||1|Endless Quiver [80](Ascended)|1|Gift of Ascension (Ascended)|250|Glob of Ectoplasm (Exotic)|1|Glob of Coagulated Mists Essence (Ascended)
+Recipe|1|Fractal Capacitor (Infused) [80](Ascended)|Mystic Forge||1|Beta Fractal Capacitor [80](Ascended)|1|Gift of Ascension (Ascended)|250|Glob of Ectoplasm (Exotic)|1|Shard of Crystallized Mists Essence (Ascended)
+#Recipe|1|Glob of Coagulated Mists Essence (Ascended)|Mystic Forge||5|Vial of Condensed Mists Essence (Ascended)|1|Mystic Coin (Rare)|1|Glob of Ectoplasm (Exotic)|1|Pile of Crystalline Dust (Rare)
+Recipe|3|Glob of Coagulated Mists Essence (Ascended)|Mystic Forge||1|Shard of Crystallized Mists Essence (Ascended)|1|Mystic Coin (Rare)|1|Pile of Crystalline Dust (Rare)|1|Master's Salvage Kit (Rare)
+Recipe|1|Koss on Koss [80](Ascended)|Mystic Forge||1|Vial of Condensed Mists Essence (Ascended)|40|Mystic Crystal|50|Glob of Ectoplasm (Exotic)|250|Vicious Fang (Rare)
+Recipe|1|Koss on Koss (Infused) [80](Ascended)|Mystic Forge||1|Koss on Koss [80](Ascended)|1|Gift of Ascension (Ascended)|250|Glob of Ectoplasm (Exotic)|1|Glob of Coagulated Mists Essence (Ascended)
+Recipe|1|Prototype Fractal Capacitor [80](Ascended)|Mystic Forge||1|Prototype Fractal Capacitor [80](Exotic)|1|Gift of Ascension (Ascended)|40|Mystic Crystal|1|Vial of Condensed Mists Essence (Ascended)
+Recipe|1|Prototype Fractal Capacitor [80](Ascended)|Mystic Forge||1|Prototype Fractal Capacitor [80](Exotic)|1|Gift of Ascension (Ascended)|240|Philosopher's Stone|1|Vial of Condensed Mists Essence (Ascended)
+Recipe|1|Quiver of a Thousand Arrows [80](Ascended)|Mystic Forge||1|Vial of Condensed Mists Essence (Ascended)|240|Philosopher's Stone|50|Glob of Ectoplasm (Exotic)|250|Vicious Claw (Rare)
+Recipe|1|Quiver of a Thousand Arrows (Infused) [80](Ascended)|Mystic Forge||1|Quiver of a Thousand Arrows [80](Ascended)|1|Gift of Ascension (Ascended)|250|Glob of Ectoplasm (Exotic)|1|Glob of Coagulated Mists Essence (Ascended)
+Recipe|1|Quiver of Swift Flight [80](Ascended)|Mystic Forge||1|Vial of Condensed Mists Essence (Ascended)|240|Philosopher's Stone|50|Glob of Ectoplasm (Exotic)|250|Vial of Powerful Blood (Rare)
+Recipe|1|Quiver of Swift Flight (Infused) [80](Ascended)|Mystic Forge||1|Quiver of Swift Flight [80](Ascended)|1|Gift of Ascension (Ascended)|250|Glob of Ectoplasm (Exotic)|1|Glob of Coagulated Mists Essence (Ascended)
+Recipe|1|Sclerite Karka Shell [80](Ascended)|Mystic Forge||1|Sclerite Karka Shell [80](Exotic)|50|Glob of Ectoplasm (Exotic)|250|Karka Shell (Fine)|100|Passion Flower [65](Masterwork)
+#Recipe|1|Shard of Crystallized Mists Essence (Ascended)|Mystic Forge||1|Glob of Coagulated Mists Essence (Ascended)|1|Mystic Coin (Rare)|1|Glob of Ectoplasm (Exotic)|1|Pile of Crystalline Dust (Rare)
+Recipe|1|Sights Be True [80](Ascended)|Mystic Forge||1|Vial of Condensed Mists Essence (Ascended)|240|Philosopher's Stone|50|Glob of Ectoplasm (Exotic)|250|Armored Scale (Rare)
+Recipe|1|Sights Be True (Infused) [80](Ascended)|Mystic Forge||1|Sights Be True [80](Ascended)|1|Gift of Ascension (Ascended)|250|Glob of Ectoplasm (Exotic)|1|Glob of Coagulated Mists Essence (Ascended)
+Recipe|1|Symon's History of Ascalon [80](Ascended)|Mystic Forge||1|Vial of Condensed Mists Essence (Ascended)|40|Mystic Crystal|50|Glob of Ectoplasm (Exotic)|250|Armored Scale (Rare)
+Recipe|1|Symon's History of Ascalon (Infused) [80](Ascended)|Mystic Forge||1|Symon's History of Ascalon [80](Ascended)|1|Gift of Ascension (Ascended)|250|Glob of Ectoplasm (Exotic)|1|Glob of Coagulated Mists Essence (Ascended)
+Recipe|1|There with Yakkington: A Traveler's Tale [80](Ascended)|Mystic Forge||1|Vial of Condensed Mists Essence (Ascended)|40|Mystic Crystal|50|Glob of Ectoplasm (Exotic)|250|Vicious Claw (Rare)
+Recipe|1|There with Yakkington: A Traveler's Tale (Infused) [80](Ascended)|Mystic Forge||1|There with Yakkington: A Traveler's Tale [80](Ascended)|1|Gift of Ascension (Ascended)|250|Glob of Ectoplasm (Exotic)|1|Glob of Coagulated Mists Essence (Ascended)
+Recipe|1|Tome of the Rubicon [80](Ascended)|Mystic Forge||1|Vial of Condensed Mists Essence (Ascended)|40|Mystic Crystal|50|Glob of Ectoplasm (Exotic)|250|Ancient Bone (Rare)
+Recipe|1|Tome of the Rubicon (Infused) [80](Ascended)|Mystic Forge||1|Tome of the Rubicon [80](Ascended)|1|Gift of Ascension (Ascended)|250|Glob of Ectoplasm (Exotic)|1|Glob of Coagulated Mists Essence (Ascended)
+Recipe|1|Triforge Pendant [80](Ascended)|Mystic Forge||1|Triforge Pendant [80](Exotic)|1|Glob of Ectoplasm (Exotic)|1|Mystic Coin (Rare)|50|Pile of Crystalline Dust (Rare)
+Recipe|3|Vial of Condensed Mists Essence (Ascended)|Mystic Forge||1|Glob of Coagulated Mists Essence (Ascended)|1|Mystic Coin (Rare)|1|Pile of Crystalline Dust (Rare)|1|Master's Salvage Kit (Rare)
+Recipe|15|Ancient Wood Log|Mystic Forge||250|Elder Wood Log|1|Ancient Wood Log|5|Pile of Crystalline Dust (Rare)|5|Philosopher's Stone
+Recipe|15|Ancient Wood Plank|Mystic Forge||250|Elder Wood Plank|1|Ancient Wood Plank|5|Pile of Crystalline Dust (Rare)|10|Philosopher's Stone
+Recipe|2|Blue Moa Tonic|Mystic Forge||1|Mystery Tonic|1|Mystery Tonic|1|Tiny Fang (Fine)|1|Slab of Poultry Meat (Fine)
+Recipe|2|Boar Tonic|Mystic Forge||1|Mystery Tonic|1|Mystery Tonic|1|Slab of Red Meat (Fine)|1|Tattered Hide
+Recipe|86|Bolt of Cotton|Mystic Forge||250|Bolt of Wool|1|Bolt of Cotton|5|Pile of Radiant Dust (Fine)|4|Philosopher's Stone
+Recipe|15|Bolt of Gossamer|Mystic Forge||250|Bolt of Silk|1|Bolt of Gossamer|5|Pile of Crystalline Dust (Rare)|10|Philosopher's Stone
+Recipe|86|Bolt of Linen|Mystic Forge||250|Bolt of Cotton|1|Bolt of Linen|5|Pile of Radiant Dust (Fine)|6|Philosopher's Stone
+Recipe|86|Bolt of Silk|Mystic Forge||250|Bolt of Linen|1|Bolt of Silk|5|Pile of Incandescent Dust (Fine)|8|Philosopher's Stone
+Recipe|86|Bolt of Wool|Mystic Forge||250|Bolt of Jute|1|Bolt of Wool|5|Pile of Shimmering Dust (Fine)|2|Philosopher's Stone
+Recipe|1|Booster Multipack (Masterwork)|Mystic Forge||1|Experience Booster (Masterwork)|1|Karma Booster (Masterwork)|1|Magic Find Booster (Masterwork)|1|Leather Bag
+Recipe|86|Coarse Leather Section|Mystic Forge||250|Thin Leather Section|1|Coarse Leather Section|5|Pile of Radiant Dust (Fine)|2|Philosopher's Stone
+Recipe|86|Cotton Scrap|Mystic Forge||250|Wool Scrap|1|Cotton Scrap|5|Pile of Radiant Dust (Fine)|2|Philosopher's Stone
+Recipe|86|Cured Coarse Leather Square|Mystic Forge||250|Cured Thin Leather Square|1|Cured Coarse Leather Square|5|Pile of Radiant Dust (Fine)|4|Philosopher's Stone
+Recipe|15|Cured Hardened Leather Square|Mystic Forge||250|Cured Thick Leather Square|1|Cured Hardened Leather Square|5|Pile of Crystalline Dust (Rare)|10|Philosopher's Stone
+Recipe|86|Cured Rugged Leather Square|Mystic Forge||250|Cured Coarse Leather Square|1|Cured Rugged Leather Square|5|Pile of Radiant Dust (Fine)|6|Philosopher's Stone
+Recipe|86|Cured Thick Leather Square|Mystic Forge||250|Cured Rugged Leather Square|1|Cured Thick Leather Square|5|Pile of Incandescent Dust (Fine)|8|Philosopher's Stone
+Recipe|86|Cured Thin Leather Square|Mystic Forge||250|Stretched Rawhide Leather Square|1|Cured Thin Leather Square|5|Pile of Shimmering Dust (Fine)|2|Philosopher's Stone
+Recipe|2|Devourer Tonic|Mystic Forge||1|Mystery Tonic|1|Mystery Tonic|1|Tiny Scale (Fine)|1|Tiny Scale (Fine)
+Recipe|2|Eagle Raptor Tonic|Mystic Forge||1|Mystery Tonic|1|Mystery Tonic|1|Vial of Weak Blood (Fine)|1|Slab of Poultry Meat (Fine)
+Recipe|2|Eagle Tonic|Mystic Forge||1|Mystery Tonic|1|Mystery Tonic|1|Slab of Red Meat (Fine)|1|Slab of Poultry Meat (Fine)
+Recipe|86|Elder Wood Log|Mystic Forge||250|Hard Wood Log|1|Elder Wood Log|5|Pile of Incandescent Dust (Fine)|4|Philosopher's Stone
+Recipe|86|Elder Wood Plank|Mystic Forge||250|Hard Wood Plank|1|Elder Wood Plank|5|Pile of Incandescent Dust (Fine)|8|Philosopher's Stone
+Recipe|2|Floater Tonic|Mystic Forge||1|Mystery Tonic|1|Mystery Tonic|1|Silver Ore|1|Silver Ore
+Recipe|86|Gold Ingot|Mystic Forge||250|Silver Ingot|1|Gold Ingot|5|Pile of Radiant Dust (Fine)|4|Philosopher's Stone
+Recipe|86|Gold Ore|Mystic Forge||250|Silver Ore|1|Gold Ore|5|Pile of Radiant Dust (Fine)|2|Philosopher's Stone
+Recipe|15|Gossamer Scrap|Mystic Forge||250|Silk Scrap|1|Gossamer Scrap|5|Pile of Crystalline Dust (Rare)|5|Philosopher's Stone
+Recipe|86|Hard Wood Log|Mystic Forge||250|Seasoned Wood Log|1|Hard Wood Log|5|Pile of Radiant Dust (Fine)|3|Philosopher's Stone
+Recipe|86|Hard Wood Plank|Mystic Forge||250|Seasoned Wood Plank|1|Hard Wood Plank|5|Pile of Radiant Dust (Fine)|6|Philosopher's Stone
+Recipe|15|Hardened Leather Section|Mystic Forge||250|Thick Leather Section|1|Hardened Leather Section|5|Pile of Crystalline Dust (Rare)|5|Philosopher's Stone
+Recipe|2|Imp Tonic|Mystic Forge||1|Mystery Tonic|1|Mystery Tonic|1|Pile of Glittering Dust (Fine)|1|Pile of Glittering Dust (Fine)
+Recipe|86|Iron Ingot|Mystic Forge||250|Bronze Ingot|1|Iron Ingot|5|Pile of Shimmering Dust (Fine)|2|Philosopher's Stone
+Recipe|86|Iron Ore|Mystic Forge||250|Copper Ore|1|Iron Ore|5|Pile of Shimmering Dust (Fine)|1|Philosopher's Stone
+Recipe|2|Jackalope Tonic|Mystic Forge||1|Mystery Tonic|1|Mystery Tonic|1|Bone Chip (Fine)|1|Vial of Weak Blood (Fine)
+Recipe|2|Krait Tonic|Mystic Forge||1|Mystery Tonic|1|Mystery Tonic|1|Tiny Fang (Fine)|1|Tiny Scale (Fine)
+Recipe|2|Leopard Tonic|Mystic Forge||1|Mystery Tonic|1|Mystery Tonic|1|Tiny Fang (Fine)|1|Slab of Red Meat (Fine)
+Recipe|86|Linen Scrap|Mystic Forge||250|Cotton Scrap|1|Linen Scrap|5|Pile of Radiant Dust (Fine)|3|Philosopher's Stone
+Recipe|2|Minotaur Tonic|Mystic Forge||1|Mystery Tonic|1|Mystery Tonic|1|Slab of Red Meat (Fine)|1|Vial of Weak Blood (Fine)
+Recipe|86|Mithril Ingot|Mystic Forge||250|Platinum Ingot|1|Mithril Ingot|5|Pile of Incandescent Dust (Fine)|8|Philosopher's Stone
+Recipe|86|Mithril Ingot|Mystic Forge||250|Darksteel Ingot|1|Mithril Ingot|5|Pile of Luminous Dust (Fine)|6|Philosopher's Stone
+Recipe|86|Mithril Ore|Mystic Forge||250|Platinum Ore|1|Mithril Ore|5|Pile of Incandescent Dust (Fine)|4|Philosopher's Stone
+Recipe|2|Ooze Tonic|Mystic Forge||1|Mystery Tonic|1|Mystery Tonic|1|Stick of Butter|1|Stick of Butter
+Recipe|15|Orichalcum Ingot|Mystic Forge||250|Mithril Ingot|1|Orichalcum Ingot|5|Pile of Crystalline Dust (Rare)|10|Philosopher's Stone
+Recipe|15|Orichalcum Ore|Mystic Forge||250|Mithril Ore|1|Orichalcum Ore|5|Pile of Crystalline Dust (Rare)|5|Philosopher's Stone
+Recipe|2|Owl Tonic|Mystic Forge||1|Mystery Tonic|1|Mystery Tonic|1|Slab of Poultry Meat (Fine)|1|Tiny Claw (Fine)
+Recipe|2|Pig Tonic|Mystic Forge||1|Mystery Tonic|1|Mystery Tonic|1|Slab of Red Meat (Fine)|1|Slab of Red Meat (Fine)
+Recipe|2|Pink Moa Tonic|Mystic Forge||1|Mystery Tonic|1|Mystery Tonic|1|Slab of Poultry Meat (Fine)|1|Bone Chip (Fine)
+Recipe|2|Plant Wolf Tonic|Mystic Forge||1|Mystery Tonic|1|Mystery Tonic|1|Green Wood Log|1|Tiny Fang (Fine)
+Recipe|86|Platinum Ingot|Mystic Forge||250|Gold Ingot|1|Platinum Ingot|5|Pile of Luminous Dust (Fine)|6|Philosopher's Stone
+Recipe|86|Platinum Ore|Mystic Forge||250|Gold Ore|1|Platinum Ore|5|Pile of Luminous Dust (Fine)|4|Philosopher's Stone
+Recipe|86|Platinum Ore|Mystic Forge||250|Iron Ore|1|Platinum Ore|5|Pile of Radiant Dust (Fine)|2|Philosopher's Stone
+Recipe|2|Ram Tonic|Mystic Forge||1|Mystery Tonic|1|Mystery Tonic|1|Bone Chip (Fine)|1|Bone Chip (Fine)
+Recipe|86|Rugged Leather Section|Mystic Forge||250|Coarse Leather Section|1|Rugged Leather Section|5|Pile of Radiant Dust (Fine)|3|Philosopher's Stone
+Recipe|86|Seasoned Wood Log|Mystic Forge||250|Soft Wood Log|1|Seasoned Wood Log|5|Pile of Radiant Dust (Fine)|2|Philosopher's Stone
+Recipe|86|Seasoned Wood Plank|Mystic Forge||250|Soft Wood Plank|1|Seasoned Wood Plank|5|Pile of Radiant Dust (Fine)|4|Philosopher's Stone
+Recipe|86|Silk Scrap|Mystic Forge||250|Linen Scrap|1|Silk Scrap|5|Pile of Incandescent Dust (Fine)|4|Philosopher's Stone
+Recipe|86|Silver Ingot|Mystic Forge||250|Copper Ingot|1|Silver Ingot|5|Pile of Shimmering Dust (Fine)|2|Philosopher's Stone
+Recipe|2|Skale Tonic|Mystic Forge||1|Mystery Tonic|1|Mystery Tonic|1|Tiny Venom Sac (Fine)|1|Tiny Venom Sac (Fine)
+Recipe|2|Skritt Tonic|Mystic Forge||1|Mystery Tonic|1|Mystery Tonic|1|Tiny Claw (Fine)|1|Slab of Red Meat (Fine)
+Recipe|2|Snow Owl Tonic|Mystic Forge||1|Mystery Tonic|1|Mystery Tonic|1|Tiny Claw (Fine)|1|Tiny Claw (Fine)
+Recipe|86|Soft Wood Log|Mystic Forge||250|Green Wood Log|1|Soft Wood Log|5|Pile of Shimmering Dust (Fine)|1|Philosopher's Stone
+Recipe|86|Soft Wood Plank|Mystic Forge||250|Green Wood Plank|1|Soft Wood Plank|5|Pile of Shimmering Dust (Fine)|2|Philosopher's Stone
+Recipe|2|Spider Tonic|Mystic Forge||1|Mystery Tonic|1|Mystery Tonic|1|Tiny Claw (Fine)|1|Tiny Venom Sac (Fine)
+Recipe|2|Stag Tonic|Mystic Forge||1|Mystery Tonic|1|Mystery Tonic|1|Bone Chip (Fine)|1|Slab of Red Meat (Fine)
+Recipe|2|Steam Ogre Tonic|Mystic Forge||1|Mystery Tonic|1|Mystery Tonic|1|Iron Ore|1|Iron Ore
+Recipe|86|Steel Ingot|Mystic Forge||250|Iron Ingot|1|Steel Ingot|5|Pile of Radiant Dust (Fine)|4|Philosopher's Stone
+Recipe|86|Thick Leather Section|Mystic Forge||250|Rugged Leather Section|1|Thick Leather Section|5|Pile of Incandescent Dust (Fine)|4|Philosopher's Stone
+Recipe|86|Thin Leather Section|Mystic Forge||250|Rawhide Leather Section|1|Thin Leather Section|5|Pile of Shimmering Dust (Fine)|1|Philosopher's Stone
+Recipe|2|Wolf Tonic|Mystic Forge||1|Mystery Tonic|1|Mystery Tonic|1|Tiny Claw (Fine)|1|Tiny Fang (Fine)
+Recipe|86|Wool Scrap|Mystic Forge||250|Jute Scrap|1|Wool Scrap|5|Pile of Shimmering Dust (Fine)|1|Philosopher's Stone
+Recipe|1|Abyssal Scepter [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|100|Mystic Coin (Rare)|250|Glob of Ectoplasm (Exotic)|250|Ancient Scepter Rod
+Recipe|1|Accursed Chains [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|30|Mystic Coin (Rare)|250|Steel Ingot|50|Orichalcum Ingot
+Recipe|1|Aether [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|100|Mystic Coin (Rare)|1|Gift of Light (Legendary)|250|Ancient Short-Bow Stave
+Recipe|1|Ambrosia [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|10|Mystic Coin (Rare)|10|Orichalcum Ingot|1|Stein of Highlander Beer
+Recipe|1|Arachnophobia [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|100|Mystic Coin (Rare)|1|Gift of Spiders [40](Exotic)|20|Superior Sigil of the Night [60](Exotic)
+Recipe|1|Azureflame [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|100|Mystic Coin (Rare)|1|Gift of Light (Legendary)|250|Ancient Longbow Stave
+Recipe|1|Cooguloosh [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|30|Mystic Coin (Rare)|30|Coral Orb [80](Rare)|30|Opal Orb [80](Rare)
+Recipe|1|Courage [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|20|Mystic Coin (Rare)|20|Pile of Crystalline Dust (Rare)|1|Bottle of Elonian Wine (Legendary)
+Recipe|1|Cragstone [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|100|Mystic Coin (Rare)|50|Obsidian Shard (Legendary)|250|Onyx Lodestone (Exotic)
+Recipe|1|Dreadwing [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|10|Mystic Coin (Rare)|10|Small Ancient Haft|10|Onyx Lodestone (Exotic)
+Recipe|1|Eidolon [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|100|Mystic Coin (Rare)|1|Gift of Light (Legendary)|250|Orichalcum Shield Boss
+Recipe|1|Emerald Pendant [80](Exotic)|Mystic Forge||250|Pile of Crystalline Dust (Rare)|250|Gold Ingot|250|Emerald Orb [80](Rare)|50|Mystic Coin (Rare)
+Recipe|1|Eye of Rodgort [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|100|Mystic Coin (Rare)|250|Vial of Powerful Blood (Rare)|1|Lidless Eye [80](Exotic)
+Recipe|1|Feathers of Dwayna [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|100|Mystic Coin (Rare)|1|Gift of Light (Legendary)|20|Superior Sigil of Nullification [60](Exotic)
+Recipe|1|Firebringer [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|30|Mystic Coin (Rare)|250|Orichalcum Sword Blade|50|Molten Lodestone (Exotic)
+Recipe|1|Flux Matrix [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|40|Mystic Coin (Rare)|60|Mystic Crystal|100|Pile of Crystalline Dust (Rare)
+Recipe|1|Foefire's Essence [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|70|Mystic Coin (Rare)|1|Gift of Light (Legendary)|250|Orichalcum Greatsword Blade
+Recipe|1|Foefire's Power [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|100|Mystic Coin (Rare)|1|Gift of Light (Legendary)|250|Orichalcum Hammer Head
+Recipe|1|Gaze [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|40|Mystic Coin (Rare)|5|Mystic Crystal|50|Large Skull (Rare)
+Recipe|1|Glint's Scale [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|30|Mystic Coin (Rare)|30|Mystic Crystal|10|Bottle of Elonian Wine (Legendary)
+Recipe|1|Goblet of Kings [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|30|Mystic Coin (Rare)|250|Gold Ingot|1|Bag of Jewels
+Recipe|1|Godswalk Enchiridion [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|30|Mystic Coin (Rare)|250|Pile of Crystalline Dust (Rare)|1|Siege Masters Guide
+Recipe|1|Heart of Mellaggan [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|30|Mystic Coin (Rare)|250|Pearl (Fine)|20|Opal Orb [80](Rare)
+Recipe|1|Ignus Fatuus [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|50|Mystic Coin (Rare)|250|Glob of Ectoplasm (Exotic)|250|Orichalcum Spear Head
+Recipe|1|Illusion [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|50|Mystic Coin (Rare)|250|Glob of Ectoplasm (Exotic)|250|Large Ancient Haft
+Recipe|1|Ilya [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|50|Mystic Coin (Rare)|250|Glob of Ectoplasm (Exotic)|250|Ancient Pistol Frame
+Recipe|1|Immobulus [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|30|Mystic Coin (Rare)|250|Giant Eye (Rare)|250|Pile of Crystalline Dust (Rare)
+Recipe|1|Infinite Light [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|100|Mystic Coin (Rare)|250|Orichalcum Sword Blade|250|Charged Lodestone (Exotic)
+Recipe|1|Jormag's Breath [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|50|Mystic Coin (Rare)|100|Orichalcum Sword Blade|50|Corrupted Lodestone (Exotic)
+Recipe|1|Jormag's Needle [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|30|Mystic Coin (Rare)|50|Glacial Lodestone (Exotic)|50|Corrupted Lodestone (Exotic)
+Recipe|1|Kryta's Salvation [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|10|Mystic Coin (Rare)|10|Small Ancient Haft|100|Vicious Fang (Rare)
+Recipe|1|Lidless Eye [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|50|Mystic Coin (Rare)|250|Vial of Powerful Blood (Rare)|1|Giant Eye (Rare)
+Recipe|1|Lyss [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|50|Mystic Coin (Rare)|250|Glob of Ectoplasm (Exotic)|250|Orichalcum Pistol Barrel
+Recipe|1|Malice [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|30|Mystic Coin (Rare)|100|Lemongrass [80]|100|Spool of Gossamer Thread
+Recipe|1|Melandru's Gaze [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|50|Mystic Coin (Rare)|250|Ancient Wood Plank|1|Giant Eye (Rare)
+Recipe|1|Mirage [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|100|Mystic Coin (Rare)|250|Glob of Ectoplasm (Exotic)|250|Orichalcum Trident Head
+Recipe|1|Mjölnir [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|100|Mystic Coin (Rare)|1|Gift of Lightning (Legendary)|250|Charged Lodestone (Exotic)
+Recipe|1|Mystic Artifact [80](Exotic)|Mystic Forge||30|Mystic Coin (Rare)|1|Eldritch Scroll (Legendary)|5|Ancient Focus Core|5|Ancient Focus Casing
+Recipe|1|Mystic Barricade [80](Exotic)|Mystic Forge||30|Mystic Coin (Rare)|1|Eldritch Scroll (Legendary)|5|Orichalcum Shield Boss|5|Orichalcum Shield Backing
+Recipe|1|Mystic Battleaxe [80](Exotic)|Mystic Forge||30|Mystic Coin (Rare)|1|Eldritch Scroll (Legendary)|5|Orichalcum Axe Blade|5|Small Ancient Haft
+Recipe|1|Mystic Battlehammer [80](Exotic)|Mystic Forge||30|Mystic Coin (Rare)|1|Eldritch Scroll (Legendary)|5|Orichalcum Hammer Head|5|Large Ancient Haft
+Recipe|1|Mystic Caller [80](Exotic)|Mystic Forge||30|Mystic Coin (Rare)|1|Eldritch Scroll (Legendary)|5|Orichalcum Warhorn Mouthpiece|5|Orichalcum Horn
+Recipe|1|Mystic Claymore [80](Exotic)|Mystic Forge||30|Mystic Coin (Rare)|1|Eldritch Scroll (Legendary)|5|Orichalcum Greatsword Blade|5|Orichalcum Greatsword Hilt
+Recipe|1|Mystic Crescent [80](Exotic)|Mystic Forge||30|Mystic Coin (Rare)|1|Eldritch Scroll (Legendary)|5|Ancient Short-Bow Stave|5|Hardened String
+Recipe|1|Mystic Cudgel [80](Exotic)|Mystic Forge||30|Mystic Coin (Rare)|1|Eldritch Scroll (Legendary)|5|Orichalcum Mace Head|5|Small Ancient Haft
+Recipe|1|Mystic Hornbow [80](Exotic)|Mystic Forge||30|Mystic Coin (Rare)|1|Eldritch Scroll (Legendary)|5|Ancient Longbow Stave|5|Hardened String
+Recipe|1|Mystic Pistol [80](Exotic)|Mystic Forge||30|Mystic Coin (Rare)|1|Eldritch Scroll (Legendary)|5|Orichalcum Pistol Barrel|5|Ancient Pistol Frame
+Recipe|1|Mystic Rifle [80](Exotic)|Mystic Forge||30|Mystic Coin (Rare)|1|Eldritch Scroll (Legendary)|5|Orichalcum Rifle Barrel|5|Ancient Rifle Stock
+Recipe|1|Mystic Spear [80](Exotic)|Mystic Forge||30|Mystic Coin (Rare)|1|Eldritch Scroll (Legendary)|5|Orichalcum Spear Head|5|Large Ancient Haft
+Recipe|1|Mystic Speargun [80](Exotic)|Mystic Forge||30|Mystic Coin (Rare)|1|Eldritch Scroll (Legendary)|5|Ancient Harpoon|5|Ancient Rifle Stock
+Recipe|1|Mystic Spike [80](Exotic)|Mystic Forge||30|Mystic Coin (Rare)|1|Eldritch Scroll (Legendary)|5|Orichalcum Dagger Blade|5|Orichalcum Dagger Hilt
+Recipe|1|Mystic Staff [80](Exotic)|Mystic Forge||30|Mystic Coin (Rare)|1|Eldritch Scroll (Legendary)|5|Ancient Staff Shaft|5|Ancient Staff Head
+Recipe|1|Mystic Sword [80](Exotic)|Mystic Forge||50|Mystic Coin (Rare)|1|Eldritch Scroll (Legendary)|5|Orichalcum Sword Blade|5|Orichalcum Sword Hilt
+Recipe|1|Mystic Torch [80](Exotic)|Mystic Forge||30|Mystic Coin (Rare)|1|Eldritch Scroll (Legendary)|5|Orichalcum Torch Head|5|Ancient Torch Handle
+Recipe|1|Mystic Trident [80](Exotic)|Mystic Forge||30|Mystic Coin (Rare)|1|Eldritch Scroll (Legendary)|5|Ancient Trident Shaft|5|Orichalcum Trident Head
+Recipe|1|Mystic Wand [80](Exotic)|Mystic Forge||30|Mystic Coin (Rare)|1|Eldritch Scroll (Legendary)|5|Ancient Scepter Rod|5|Ancient Scepter Core
+Recipe|1|Naegling [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|20|Mystic Coin (Rare)|100|Orichalcum Ingot|50|Vial of Powerful Blood (Rare)
+Recipe|1|Phoenix Talon [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|50|Mystic Coin (Rare)|100|Orichalcum Ingot|50|Ruby Orb [80](Rare)
+Recipe|1|Reaver of the Mists [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|50|Mystic Coin (Rare)|20|Crystal Lodestone (Exotic)|250|Glob of Ectoplasm (Exotic)
+Recipe|1|Ruby Pendant [80](Exotic)|Mystic Forge||250|Pile of Crystalline Dust (Rare)|250|Gold Ingot|250|Ruby Orb [80](Rare)|50|Mystic Coin (Rare)
+Recipe|1|Rusttooth [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|10|Mystic Coin (Rare)|10|Steel Ingot|10|Seasoned Wood Plank
+Recipe|1|Sapphire Pendant [80](Exotic)|Mystic Forge||250|Pile of Crystalline Dust (Rare)|250|Gold Ingot|250|Sapphire Orb [80](Rare)|50|Mystic Coin (Rare)
+Recipe|1|Song of the Numberless Pack [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|20|Mystic Coin (Rare)|20|Orichalcum Plated Dowel (Masterwork)|10|Orichalcum Warhorn Mouthpiece
+Recipe|1|Spirit Links [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|70|Mystic Coin (Rare)|250|Glob of Ectoplasm (Exotic)|10|Orichalcum Ingot
+Recipe|1|Squeedily Spooch [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|20|Mystic Coin (Rare)|250|Amber Pebble (Fine)|100|Powerful Venom Sac (Rare)
+Recipe|1|Stygian Blade [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|50|Mystic Coin (Rare)|250|Vial of Powerful Blood (Rare)|250|Vicious Claw (Rare)
+Recipe|1|Tear of Grenth [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|30|Mystic Coin (Rare)|250|Pile of Crystalline Dust (Rare)|10|Molten Lodestone (Exotic)
+Recipe|1|The Anomaly [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|100|Mystic Coin (Rare)|1|Bloodstone Shard (Legendary)|250|Glob of Ectoplasm (Exotic)
+Recipe|1|The Crossing [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|100|Mystic Coin (Rare)|1|Gift of Souls [40](Exotic)|20|Superior Sigil of the Night [60](Exotic)
+Recipe|1|The Fate of Menzies [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|70|Mystic Coin (Rare)|100|Ancient Bone (Rare)|30|Molten Lodestone (Exotic)
+Recipe|1|The Mad Moon [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|100|Mystic Coin (Rare)|1|Gift of the Moon [40](Exotic)|20|Superior Sigil of the Night [60](Exotic)
+Recipe|1|Titans' Vengance [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|50|Mystic Coin (Rare)|50|Destroyer Lodestone (Exotic)|50|Molten Lodestone (Exotic)
+Recipe|1|Triforge Pendant [80](Exotic)|Mystic Forge||1|Emerald Pendant [80](Exotic)|1|Ruby Pendant [80](Exotic)|1|Sapphire Pendant [80](Exotic)|50|Mystic Crystal
+Recipe|1|Unspoken Curse [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|50|Mystic Coin (Rare)|100|Orichalcum Sword Blade|50|Destroyer Lodestone (Exotic)
+Recipe|1|Vision of the Mists [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|100|Mystic Coin (Rare)|250|Glob of Ectoplasm (Exotic)|250|Orichalcum Greatsword Blade
+Recipe|1|Volcanus [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|100|Mystic Coin (Rare)|1|Vial of Liquid Flame (Legendary)|250|Molten Lodestone (Exotic)
+Recipe|1|Wall of the Mists [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|50|Mystic Coin (Rare)|250|Orichalcum Shield Boss|30|Giant Eye (Rare)
+Recipe|1|Whisperblade [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|100|Mystic Coin (Rare)|250|Glob of Ectoplasm (Exotic)|250|Orichalcum Sword Blade
+Recipe|1|Wings of Dwayna [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|100|Mystic Coin (Rare)|1|Gift of Light (Legendary)|20|Superior Sigil of Purity [60](Exotic)
+Recipe|1|Wintersbark [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|100|Mystic Coin (Rare)|1|Gift of Ice (Legendary)|250|Ancient Short-Bow Stave
+Recipe|1|Wintersbite [80](Exotic)|Mystic Forge||1|Eldritch Scroll (Legendary)|100|Mystic Coin (Rare)|1|Gift of Ice (Legendary)|250|Ancient Longbow Stave
+Recipe|16|Bone (Fine)|Mystic Forge||50|Bone Shard (Fine)|1|Bone (Fine)|5|Pile of Radiant Dust (Fine)|2|Philosopher's Stone
+Recipe|16|Bone Shard (Fine)|Mystic Forge||50|Bone Chip (Fine)|1|Bone Shard (Fine)|5|Pile of Shimmering Dust (Fine)|1|Philosopher's Stone
+Recipe|16|Claw (Fine)|Mystic Forge||50|Small Claw (Fine)|1|Claw (Fine)|5|Pile of Radiant Dust (Fine)|2|Philosopher's Stone
+Recipe|15|Delicate Snowflake (Fine)|Mystic Forge||1|Delicate Snowflake (Fine)|1|Philosopher's Stone|50|Tiny Snowflake (Fine)|5|Pile of Shimmering Dust (Fine)
+Recipe|16|Engraved Totem (Fine)|Mystic Forge||50|Totem (Fine)|1|Engraved Totem (Fine)|5|Pile of Luminous Dust (Fine)|3|Philosopher's Stone
+Recipe|16|Fang (Fine)|Mystic Forge||50|Small Fang (Fine)|1|Fang (Fine)|5|Pile of Radiant Dust (Fine)|2|Philosopher's Stone
+Recipe|15|Flawless Snowflake (Fine)|Mystic Forge||1|Flawless Snowflake (Fine)|5|Philosopher's Stone|50|Pristine Snowflake (Fine)|5|Pile of Crystalline Dust (Rare)
+Recipe|16|Full Venom Sac (Fine)|Mystic Forge||50|Venom Sac (Fine)|1|Full Venom Sac (Fine)|5|Pile of Luminous Dust (Fine)|3|Philosopher's Stone
+Recipe|15|Glittering Snowflake (Fine)|Mystic Forge||5|Glittering Snowflake (Fine)|2|Philosopher's Stone|50|Delicate Snowflake (Fine)|5|Pile of Radiant Dust (Fine)
+Recipe|1|Healing Infusion (Fine)|Mystic Forge||50|Philosopher's Stone|20|Mystic Coin (Rare)|250|Karka Shell (Fine)|100|Elaborate Totem (Rare)
+Recipe|16|Heavy Bone (Fine)|Mystic Forge||50|Bone (Fine)|1|Heavy Bone (Fine)|5|Pile of Luminous Dust (Fine)|3|Philosopher's Stone
+Recipe|16|Intricate Totem (Fine)|Mystic Forge||50|Engraved Totem (Fine)|1|Intricate Totem (Fine)|5|Pile of Incandescent Dust (Fine)|4|Philosopher's Stone
+Recipe|16|Large Bone (Fine)|Mystic Forge||50|Heavy Bone (Fine)|1|Large Bone (Fine)|5|Pile of Incandescent Dust (Fine)|4|Philosopher's Stone
+Recipe|16|Large Claw (Fine)|Mystic Forge||50|Sharp Claw (Fine)|1|Large Claw (Fine)|5|Pile of Incandescent Dust (Fine)|4|Philosopher's Stone
+Recipe|16|Large Fang (Fine)|Mystic Forge||50|Sharp Fang (Fine)|1|Large Fang (Fine)|5|Pile of Incandescent Dust (Fine)|4|Philosopher's Stone
+Recipe|16|Large Scale (Fine)|Mystic Forge||50|Smooth Scale (Fine)|1|Large Scale (Fine)|5|Pile of Incandescent Dust (Fine)|4|Philosopher's Stone
+Recipe|1|Malign Infusion (Fine)|Mystic Forge||50|Philosopher's Stone|20|Mystic Coin (Rare)|250|Passion Fruit [80]|100|Powerful Venom Sac (Rare)
+Recipe|1|Mighty Infusion (Fine)|Mystic Forge||50|Philosopher's Stone|20|Mystic Coin (Rare)|250|Passion Fruit [80]|100|Vial of Powerful Blood (Rare)
+Recipe|25|Pile of Crystalline Dust (Rare)|Mystic Forge||250|Pile of Incandescent Dust (Fine)|1|Pile of Crystalline Dust (Rare)|5|Mystic Crystal|5|Philosopher's Stone
+Recipe|25|Pile of Incandescent Dust (Fine)|Mystic Forge||250|Pile of Luminous Dust (Fine)|1|Pile of Incandescent Dust (Fine)|4|Mystic Crystal|4|Philosopher's Stone
+Recipe|25|Pile of Luminous Dust (Fine)|Mystic Forge||250|Pile of Radiant Dust (Fine)|1|Pile of Luminous Dust (Fine)|3|Mystic Crystal|3|Philosopher's Stone
+Recipe|25|Pile of Radiant Dust (Fine)|Mystic Forge||250|Pile of Shimmering Dust (Fine)|1|Pile of Radiant Dust (Fine)|2|Mystic Crystal|2|Philosopher's Stone
+Recipe|25|Pile of Shimmering Dust (Fine)|Mystic Forge||250|Pile of Glittering Dust (Fine)|1|Pile of Shimmering Dust (Fine)|1|Mystic Crystal|1|Philosopher's Stone
+Recipe|16|Potent Venom Sac (Fine)|Mystic Forge||50|Full Venom Sac (Fine)|1|Potent Venom Sac (Fine)|5|Pile of Incandescent Dust (Fine)|4|Philosopher's Stone
+Recipe|1|Precise Infusion (Fine)|Mystic Forge||50|Philosopher's Stone|20|Mystic Coin (Rare)|250|Passion Fruit [80]|100|Vicious Claw (Rare)
+Recipe|15|Pristine Snowflake (Fine)|Mystic Forge||1|Pristine Snowflake (Fine)|4|Philosopher's Stone|50|Unique Snowflake (Fine)|5|Pile of Incandescent Dust (Fine)
+Recipe|1|Recipe: Feast of Ascalonian Salad (Fine)|Mystic Forge||1|Bowl of Ascalonian Salad (Fine)|9|Mystic Crystal|6|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Asparagus and Sage Salad (Fine)|Mystic Forge||1|Bowl of Asparagus and Sage Salad (Fine)|19|Mystic Crystal|16|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Avocado Salsa (Fine)|Mystic Forge||1|Bowl of Avocado Salsa (Fine)|12|Mystic Crystal|9|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Avocado Stirfry (Fine)|Mystic Forge||1|Bowl of Avocado Stirfry (Fine)|15|Mystic Crystal|12|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Bean Salad (Fine)|Mystic Forge||1|Bowl of Bean Salad (Fine)|9|Mystic Crystal|6|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Cabbage and Chickpea Salad (Fine)|Mystic Forge||1|Bowl of Cabbage and Chickpea Salad (Fine)|15|Mystic Crystal|12|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Cabbage Stirfry (Fine)|Mystic Forge||1|Bowl of Cabbage Stirfry (Fine)|12|Mystic Crystal|9|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Cauliflower Sautee (Fine)|Mystic Forge||1|Bowl of Cauliflower Sautee (Fine)|15|Mystic Crystal|12|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Chickpea Fritters (Fine)|Mystic Forge||1|Chickpea Fritter (Fine)|15|Mystic Crystal|12|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Chickpea Salad (Fine)|Mystic Forge||1|Bowl of Chickpea Salad (Fine)|15|Mystic Crystal|12|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Citrus Clove Meat (Fine)|Mystic Forge||1|Plate of Citrus Clove Meat (Fine)|15|Mystic Crystal|12|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Citrus Poultry with Almonds (Fine)|Mystic Forge||1|Plate of Citrus Poultry with Almonds (Fine)|15|Mystic Crystal|12|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Clam Cakes (Fine)|Mystic Forge||1|Clam Cake (Fine)|9|Mystic Crystal|6|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Coleslaw (Fine)|Mystic Forge||1|Bowl of Coleslaw (Fine)|12|Mystic Crystal|9|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Coriander Crusted Meat (Fine)|Mystic Forge||1|Plate of Coriander Crusted Meat (Fine)|15|Mystic Crystal|12|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Coriander Crusted MeatDinner (Fine)|Mystic Forge||1|Plate of Coriander Crusted Meat Dinner (Fine)|15|Mystic Crystal|12|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Deluxe Burgers (Fine)|Mystic Forge||1|Deluxe Burger (Fine)|12|Mystic Crystal|9|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Dill Meatball Dinner (Fine)|Mystic Forge||1|Bowl of Krytan Meatball Dinner (Fine)|12|Mystic Crystal|9|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Dilled Poultry Piccata (Fine)|Mystic Forge||1|Dilled Poultry Piccata (Fine)|12|Mystic Crystal|9|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Divinity Stuffed Mushrooms (Fine)|Mystic Forge||1|Divinity Stuffed Mushroom (Fine)|12|Mystic Crystal|9|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Eggplant Fritters (Fine)|Mystic Forge||1|Eggplant Fritter (Fine)|19|Mystic Crystal|16|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Eggplant Sautee (Fine)|Mystic Forge||1|Bowl of Eggplant Sautee (Fine)|19|Mystic Crystal|16|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Eggplant Stirfry (Fine)|Mystic Forge||1|Bowl of Eggplant Stirfry (Fine)|19|Mystic Crystal|16|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Eztlitl Stuffed Mushrooms (Fine)|Mystic Forge||1|Eztlitl Stuffed Mushroom (Fine)|15|Mystic Crystal|12|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Fancy Truffle Burgers (Fine)|Mystic Forge||1|Fancy Truffle Burger (Fine)|20|Mystic Crystal|17|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Fancy Veggie Pizzas (Fine)|Mystic Forge||1|Fancy Veggie Pizza (Fine)|15|Mystic Crystal|12|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Fire Flank Steak (Fine)|Mystic Forge||1|Plate of Fire Flank Steak (Fine)|20|Mystic Crystal|17|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Fire Salsa (Fine)|Mystic Forge||1|Bowl of Fire Salsa (Fine)|20|Mystic Crystal|17|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Garlic Spinach Sautee (Fine)|Mystic Forge||1|Bowl of Garlic Spinach Sautee (Fine)|9|Mystic Crystal|6|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Ghost Pepper Poppers (Fine)|Mystic Forge||1|Ghost Pepper Popper (Fine)|20|Mystic Crystal|17|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Grilled Portobello Mushrooms (Fine)|Mystic Forge||1|Grilled Portobello Mushroom (Fine)|12|Mystic Crystal|9|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Horseradish Burgers (Fine)|Mystic Forge||1|Horseradish Burger (Fine)|15|Mystic Crystal|12|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Hummus (Fine)|Mystic Forge||1|Bowl of Hummus (Fine)|15|Mystic Crystal|12|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Lemongrass Poultry (Fine)|Mystic Forge||1|Plates of Lemongrass Poultry (Fine)|20|Mystic Crystal|17|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Lotus Fries (Fine)|Mystic Forge||1|Cup of Lotus Fries (Fine)|20|Mystic Crystal|17|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Lotus Stirfry (Fine)|Mystic Forge||1|Bowl of Lotus Stirfry (Fine)|20|Mystic Crystal|17|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Mango Salsa (Fine)|Mystic Forge||1|Bowl of Mango Salsa (Fine)|19|Mystic Crystal|16|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Meatball Dinners (Fine)|Mystic Forge||1|Meatball Dinner (Fine)|9|Mystic Crystal|6|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Mushroom Pizzas (Fine)|Mystic Forge||1|Mushroom Pizza (Fine)|12|Mystic Crystal|9|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Orrian Steak Frittes (Fine)|Mystic Forge||1|Plate of Orrian Steak Frittes (Fine)|20|Mystic Crystal|17|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Pepper Steak Dinners (Fine)|Mystic Forge||1|Pepper Steak Dinner (Fine)|9|Mystic Crystal|6|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Pepper Steaks (Fine)|Mystic Forge||1|Pepper Steak (Fine)|9|Mystic Crystal|6|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Pesto Pasta Salad (Fine)|Mystic Forge||1|Bowl of Pesto Pasta Salad (Fine)|15|Mystic Crystal|12|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Poultry Tarragon Pasta (Fine)|Mystic Forge||1|Bowl of Poultry Tarragon Pasta (Fine)|19|Mystic Crystal|16|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Rare Veggie Pizzas (Fine)|Mystic Forge||1|Rare Veggie Pizza (Fine)|20|Mystic Crystal|17|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Roast Meat with Braised Leeks (Fine)|Mystic Forge||1|Plate of Roast Meat with Braised Leeks (Fine)|19|Mystic Crystal|16|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Roast Meat with Mint Sauce (Fine)|Mystic Forge||1|Plate of Roast Meat with Mint Sauce (Fine)|15|Mystic Crystal|12|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Roasted Artichokes (Fine)|Mystic Forge||1|Roasted Artichoke (Fine)|19|Mystic Crystal|16|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Roasted Lotus Root (Fine)|Mystic Forge||1|Bowl of Roasted Lotus Root (Fine)|20|Mystic Crystal|17|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Roasted Parsnips (Fine)|Mystic Forge||1|Roasted Parsnip (Fine)|19|Mystic Crystal|16|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Roasted Rutabagas (Fine)|Mystic Forge||1|Roasted Rutabaga (Fine)|15|Mystic Crystal|12|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Rosemary Roasted Meat (Fine)|Mystic Forge||1|Filet of Rosemary Roasted Meat (Fine)|12|Mystic Crystal|9|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Saffron Stuffed Mushrooms (Fine)|Mystic Forge||1|Saffron Stuffed Mushroom (Fine)|20|Mystic Crystal|17|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Sage Stuffed Mushrooms (Fine)|Mystic Forge||1|Sage Stuffed Mushroom (Fine)|9|Mystic Crystal|6|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Sage Stuffed Poultrys (Fine)|Mystic Forge||1|Sage Stuffed Poultry (Fine)|9|Mystic Crystal|6|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Sauteed Zucchini with Nutmeg (Fine)|Mystic Forge||1|Bowl of Sauteed Zucchini with Nutmeg (Fine)|12|Mystic Crystal|9|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Seaweed Salad (Fine)|Mystic Forge||1|Bowl of Seaweed Salad (Fine)|20|Mystic Crystal|17|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Sesame Roasted Dinners (Fine)|Mystic Forge||1|Sesame Roasted Dinner (Fine)|12|Mystic Crystal|9|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Sesame Roasted Meat (Fine)|Mystic Forge||1|Filet of Sesame Roasted Meat (Fine)|12|Mystic Crystal|9|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Spiced Mashed Yams (Fine)|Mystic Forge||1|Bowl of Spiced Mashed Yams (Fine)|12|Mystic Crystal|9|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Spicier Flank Steaks (Fine)|Mystic Forge||1|Spicier Flank Steak (Fine)|19|Mystic Crystal|16|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Spicy Cheeseburgers (Fine)|Mystic Forge||1|Spicy Cheeseburger (Fine)|19|Mystic Crystal|16|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Spicy Lime Steaks (Fine)|Mystic Forge||1|Spicy Lime Steak (Fine)|12|Mystic Crystal|9|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Spicy Stuffed Mushrooms (Fine)|Mystic Forge||1|Spicy Stuffed Mushroom (Fine)|19|Mystic Crystal|16|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Spinach Burgers (Fine)|Mystic Forge||1|Spinach Burger (Fine)|9|Mystic Crystal|6|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Steak and Asparagus (Fine)|Mystic Forge||1|Plate of Steak and Asparagus (Fine)|19|Mystic Crystal|16|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Steak and Asparagus Dinner (Fine)|Mystic Forge||1|Plate of Steak and Asparagus Dinner (Fine)|19|Mystic Crystal|16|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Stuffed Peppers (Fine)|Mystic Forge||1|Stuffed Pepper (Fine)|9|Mystic Crystal|6|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Stuffed Zucchinis (Fine)|Mystic Forge||1|Stuffed Zucchini (Fine)|12|Mystic Crystal|9|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Super Veggie Pizzas (Fine)|Mystic Forge||1|Super Veggie Pizza (Fine)|19|Mystic Crystal|16|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Truffle Ravioli (Fine)|Mystic Forge||1|Bowl of Truffle Ravioli (Fine)|20|Mystic Crystal|17|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Truffle Sautee (Fine)|Mystic Forge||1|Bowl of Truffle Sautee (Fine)|20|Mystic Crystal|17|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Truffle Steak (Fine)|Mystic Forge||1|Plate of Truffle Steak (Fine)|20|Mystic Crystal|17|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Truffle Steak Dinner (Fine)|Mystic Forge||1|Plate of Truffle Steak Dinner (Fine)|20|Mystic Crystal|17|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Turnip Casseroles (Fine)|Mystic Forge||1|Turnip Casserole (Fine)|9|Mystic Crystal|6|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Veggie Burgers (Fine)|Mystic Forge||1|Veggie Burger (Fine)|9|Mystic Crystal|6|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Veggie Pizzas (Fine)|Mystic Forge||1|Veggie Pizza (Fine)|9|Mystic Crystal|6|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)
+Recipe|1|Recipe: Feast of Yam Fritters (Fine)|Mystic Forge||1|Yam Fritter (Fine)|12|Mystic Crystal|9|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)
+Recipe|1|Recipe: Giant Chocolate Cake (Fine)|Mystic Forge||1|Chocolate Cake (Fine)|9|Mystic Crystal|6|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)
+Recipe|1|Recipe: Giant Chocolate Cherry Cake (Fine)|Mystic Forge||1|Chocolate Cherry Cake (Fine)|12|Mystic Crystal|9|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)
+Recipe|1|Recipe: Giant Chocolate Omnomberry Cake (Fine)|Mystic Forge||1|Chocolate Omnomberry Cake (Fine)|20|Mystic Crystal|17|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)
+Recipe|1|Recipe: Giant Chocolate Raspberry Cake (Fine)|Mystic Forge||1|Chocolate Raspberry Cake (Fine)|19|Mystic Crystal|16|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)
+Recipe|1|Recipe: Giant Orange Coconut Cake (Fine)|Mystic Forge||1|Orange Coconut Cake (Fine)|15|Mystic Crystal|12|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Artichoke Soup (Fine)|Mystic Forge||1|Bowl of Artichoke Soup (Fine)|19|Mystic Crystal|16|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Beet and Bean Stew (Fine)|Mystic Forge||1|Bowl of Beet and Bean Stew (Fine)|9|Mystic Crystal|6|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Butternut Squash Soup (Fine)|Mystic Forge||1|Bowl of Butternut Squash Soup (Fine)|19|Mystic Crystal|16|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Cauliflower Soup (Fine)|Mystic Forge||1|Bowl of Cauliflower Soup (Fine)|15|Mystic Crystal|12|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Chickpea and Poultry Soup (Fine)|Mystic Forge||1|Bowl of Chickpea and Poultry Soup (Fine)|15|Mystic Crystal|12|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Chickpea Soup (Fine)|Mystic Forge||1|Bowl of Chickpea Soup (Fine)|15|Mystic Crystal|12|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Chili and Avocado (Fine)|Mystic Forge||1|Bowl of Chili and Avocado (Fine)|12|Mystic Crystal|9|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Clam Chowder (Fine)|Mystic Forge||1|Bowl of Clam Chowder (Fine)|9|Mystic Crystal|6|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Creamy Portobello Soup (Fine)|Mystic Forge||1|Bowl of Creamy Portobello Soup (Fine)|12|Mystic Crystal|9|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Curry Butternut Squash Soup (Fine)|Mystic Forge||1|Bowl of Curry Butternut Squash Soup (Fine)|20|Mystic Crystal|17|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Curry Pumpkin Soup (Fine)|Mystic Forge||1|Bowl of Curry Pumpkin Soup (Fine)|20|Mystic Crystal|17|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Dilled Clam Chowder (Fine)|Mystic Forge||1|Bowl of Dilled Clam Chowder (Fine)|12|Mystic Crystal|9|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Fancy Bean Chili (Fine)|Mystic Forge||1|Bowl of Fancy Bean Chili (Fine)|9|Mystic Crystal|6|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Fancy Creamy Mushroom Soup (Fine)|Mystic Forge||1|Bowl of Fancy Creamy Mushroom Soup (Fine)|15|Mystic Crystal|12|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Fancy Potato and Leek Soup (Fine)|Mystic Forge||1|Bowl of Fancy Potato and Leek Soup (Fine)|20|Mystic Crystal|17|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Fire Meat Chili (Fine)|Mystic Forge||1|Bowl of Fire Meat Chili (Fine)|20|Mystic Crystal|17|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Hearty Poultry Soup (Fine)|Mystic Forge||1|Bowl of Hearty Poultry Soup (Fine)|15|Mystic Crystal|12|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Hearty Red Meat Stew (Fine)|Mystic Forge||1|Bowl of Hearty Red Meat Stew (Fine)|9|Mystic Crystal|6|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Kale and Poultry Soup (Fine)|Mystic Forge||1|Bowl of Kale and Poultry Soup (Fine)|12|Mystic Crystal|9|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Kale Soup (Fine)|Mystic Forge||1|Bowl of Kale Soup (Fine)|12|Mystic Crystal|9|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Lemongrass Poultry Soup (Fine)|Mystic Forge||1|Bowl of Lemongrass Poultry Soup (Fine)|20|Mystic Crystal|17|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Meat and Bean Chili (Fine)|Mystic Forge||1|Bowl of Meat and Bean Chili (Fine)|9|Mystic Crystal|6|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Meat and Cabbage Stew (Fine)|Mystic Forge||1|Bowl of Meat and Cabbage Stew (Fine)|12|Mystic Crystal|9|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Meat and Winter Vegetable Stew (Fine)|Mystic Forge||1|Bowl of Meat and Winter Vegetable Stew (Fine)|19|Mystic Crystal|16|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Mushroom and Asparagus Risotto (Fine)|Mystic Forge||1|Bowl of Mushroom and Asparagus Risotto (Fine)|19|Mystic Crystal|16|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Mushroom Risotto (Fine)|Mystic Forge||1|Bowl of Mushroom Risotto (Fine)|15|Mystic Crystal|12|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Orrian Truffle and Meat Stew (Fine)|Mystic Forge||1|Bowl of Orrian Truffle and Meat Stew (Fine)|20|Mystic Crystal|17|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Potato and Leek Soup (Fine)|Mystic Forge||1|Bowl of Potato and Leek Soup (Fine)|19|Mystic Crystal|16|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Poultry and Winter Vegetable Soup (Fine)|Mystic Forge||1|Bowl of Poultry and Winter Vegetable Soup (Fine)|19|Mystic Crystal|16|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Pumpkin Bisque (Fine)|Mystic Forge||1|Bowl of Pumpkin Bisque (Fine)|15|Mystic Crystal|12|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Saffron-scented Poultry Soup (Fine)|Mystic Forge||1|Bowl of Saffron-scented Poultry Soup (Fine)|20|Mystic Crystal|17|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Savory Spinach and Poultry Soup (Fine)|Mystic Forge||1|Bowl of Savory Spinach and Poultry Soup (Fine)|9|Mystic Crystal|6|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Snow Truffle Soup (Fine)|Mystic Forge||1|Bowl of Snow Truffle Soup (Fine)|19|Mystic Crystal|16|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Spiced Meat and Cabbage Stew (Fine)|Mystic Forge||1|Bowl of Spiced Meat and Cabbage Stew (Fine)|15|Mystic Crystal|12|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Spiced Meat Chili (Fine)|Mystic Forge||1|Bowl of Spiced Meat Chili (Fine)|15|Mystic Crystal|12|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Spiced Veggie Chili (Fine)|Mystic Forge||1|Bowl of Spiced Veggie Chili (Fine)|15|Mystic Crystal|12|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Spicy Meat Chili (Fine)|Mystic Forge||1|Bowl of Spicy Meat Chili (Fine)|19|Mystic Crystal|16|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Spicy Veggie Chili (Fine)|Mystic Forge||1|Bowl of Spicy Veggie Chili (Fine)|19|Mystic Crystal|16|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Tomato Zucchini Soup (Fine)|Mystic Forge||1|Bowl of Tomato Zucchini Soup (Fine)|12|Mystic Crystal|9|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Truffle Risotto (Fine)|Mystic Forge||1|Bowl of Truffle Risotto (Fine)|20|Mystic Crystal|17|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Yam Soup (Fine)|Mystic Forge||1|Bowl of Yam Soup (Fine)|12|Mystic Crystal|9|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)
+Recipe|1|Recipe: Pot of Zucchini Chili (Fine)|Mystic Forge||1|Bowl of Zucchini Chili (Fine)|12|Mystic Crystal|9|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Banana Bread (Fine)|Mystic Forge||1|Loaf of Banana Bread (Fine)|9|Mystic Crystal|6|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Banana Cream Pies (Fine)|Mystic Forge||1|Banana Cream Pie (Fine)|9|Mystic Crystal|6|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Blackberry Cookies (Fine)|Mystic Forge||1|Blackberry Cookie (Fine)|15|Mystic Crystal|12|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Blackberry Pear Compote (Fine)|Mystic Forge||1|Bowl of Blackberry Pear Compote (Fine)|15|Mystic Crystal|12|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Blackberry Pies (Fine)|Mystic Forge||1|Blackberry Pie (Fine)|15|Mystic Crystal|12|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Cherry Almond Bars (Fine)|Mystic Forge||1|Cherry Almond Bar (Fine)|12|Mystic Crystal|9|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Cherry Cookies (Fine)|Mystic Forge||1|Cherry Cookie (Fine)|12|Mystic Crystal|9|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Cherry Pies (Fine)|Mystic Forge||1|Cherry Pie (Fine)|12|Mystic Crystal|9|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Cherry Tarts (Fine)|Mystic Forge||1|Cherry Tart (Fine)|12|Mystic Crystal|9|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Cherry Vanilla Compote (Fine)|Mystic Forge||1|Bowl of Cherry Vanilla Compote (Fine)|12|Mystic Crystal|9|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Chocolate Bananas (Fine)|Mystic Forge||1|Chocolate Banana (Fine)|9|Mystic Crystal|6|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Chocolate Cherries (Fine)|Mystic Forge||1|Chocolate Cherry (Fine)|12|Mystic Crystal|9|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Chocolate Chip Cookies (Fine)|Mystic Forge||1|Chocolate Chip Cookie (Fine)|12|Mystic Crystal|9|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Chocolate Mint Cookies (Fine)|Mystic Forge||1|Chocolate Mint Cookie (Fine)|15|Mystic Crystal|12|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Chocolate Omnomberry Creams (Fine)|Mystic Forge||1|Chocolate Omnomberry Cream (Fine)|20|Mystic Crystal|17|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Chocolate Oranges (Fine)|Mystic Forge||1|Chocolate Orange (Fine)|15|Mystic Crystal|12|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Chocolate Raspberry Cookies (Fine)|Mystic Forge||1|Chocolate Raspberry Cookie (Fine)|19|Mystic Crystal|16|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Chocolate Raspberry Creams (Fine)|Mystic Forge||1|Chocolate Raspberry Cream (Fine)|19|Mystic Crystal|16|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Garlic Bread (Fine)|Mystic Forge||1|Slice of Garlic Bread (Fine)|9|Mystic Crystal|6|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Ginger Pear Tarts (Fine)|Mystic Forge||1|Ginger Pear Tart (Fine)|15|Mystic Crystal|12|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Grape Pies (Fine)|Mystic Forge||1|Grape Pie (Fine)|12|Mystic Crystal|9|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Lemon Bars (Fine)|Mystic Forge||1|Lemon Bar (Fine)|9|Mystic Crystal|6|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Mango Pies (Fine)|Mystic Forge||1|Mango Pie (Fine)|20|Mystic Crystal|17|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Mixed Berry Pies (Fine)|Mystic Forge||1|Mixed Berry Pie (Fine)|19|Mystic Crystal|16|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Omnomberry Bars (Fine)|Mystic Forge||1|Omnomberry Bar (Fine)|20|Mystic Crystal|17|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Omnomberry Bread (Fine)|Mystic Forge||1|Loaf of Omnomberry Bread (Fine)|20|Mystic Crystal|17|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Omnomberry Compote (Fine)|Mystic Forge||1|Omnomberry Compote (Fine)|20|Mystic Crystal|17|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Omnomberry Cookies (Fine)|Mystic Forge||1|Omnomberry Cookie (Fine)|20|Mystic Crystal|17|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Omnomberry Pies (Fine)|Mystic Forge||1|Omnomberry Pie (Fine)|20|Mystic Crystal|17|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Omnomberry Tarts (Fine)|Mystic Forge||1|Omnomberry Tart (Fine)|20|Mystic Crystal|17|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Orange Coconut Bars (Fine)|Mystic Forge||1|Orange Coconut Bar (Fine)|15|Mystic Crystal|12|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Peach Cookies (Fine)|Mystic Forge||1|Peach Cookie (Fine)|19|Mystic Crystal|16|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Peach Pies (Fine)|Mystic Forge||1|Peach Pie (Fine)|19|Mystic Crystal|16|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Peach Tarts (Fine)|Mystic Forge||1|Peach Tart (Fine)|19|Mystic Crystal|16|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Pumpkin Bread (Fine)|Mystic Forge||1|Slice of Pumpkin Bread (Fine)|15|Mystic Crystal|12|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Pumpkin Pies (Fine)|Mystic Forge||1|Pumpkin Pie (Fine)|15|Mystic Crystal|12|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Raspberry Peach Bars (Fine)|Mystic Forge||1|Raspberry Peach Bar (Fine)|19|Mystic Crystal|16|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Raspberry Peach Bread (Fine)|Mystic Forge||1|Loaf of Raspberry Peach Bread (Fine)|19|Mystic Crystal|16|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Raspberry Peach Compote (Fine)|Mystic Forge||1|Raspberry Peach Compote (Fine)|19|Mystic Crystal|16|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Rosemary Bread (Fine)|Mystic Forge||1|Loaf of Rosemary Bread (Fine)|12|Mystic Crystal|9|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Saffron Bread (Fine)|Mystic Forge||1|Loaf of Saffron Bread (Fine)|20|Mystic Crystal|17|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Spiced Bread (Fine)|Mystic Forge||1|Slice of Spiced Bread (Fine)|15|Mystic Crystal|12|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Spicy Chocolate Cookies (Fine)|Mystic Forge||1|Spicy Chocolate Cookie (Fine)|20|Mystic Crystal|17|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Strawberry Apple Compote (Fine)|Mystic Forge||1|Bowl of Strawberry Apple Compote (Fine)|9|Mystic Crystal|6|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Strawberry Cookies (Fine)|Mystic Forge||1|Strawberry Cookie (Fine)|9|Mystic Crystal|6|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Strawberry Pies (Fine)|Mystic Forge||1|Strawberry Pie (Fine)|9|Mystic Crystal|6|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Strawberry Tarts (Fine)|Mystic Forge||1|Strawberry Tart (Fine)|9|Mystic Crystal|6|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Tarragon Bread (Fine)|Mystic Forge||1|Loaf of Tarragon Bread (Fine)|19|Mystic Crystal|16|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)
+Recipe|1|Recipe: Tray of Zucchini Bread (Fine)|Mystic Forge||1|Loaf of Zucchini Bread (Fine)|12|Mystic Crystal|9|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)
+Recipe|1|Resilient Infusion (Fine)|Mystic Forge||50|Philosopher's Stone|20|Mystic Coin (Rare)|250|Karka Shell (Fine)|100|Armored Scale (Rare)
+Recipe|16|Scale (Fine)|Mystic Forge||50|Small Scale (Fine)|1|Scale (Fine)|5|Pile of Radiant Dust (Fine)|2|Philosopher's Stone
+Recipe|16|Sharp Claw (Fine)|Mystic Forge||50|Claw (Fine)|1|Sharp Claw (Fine)|5|Pile of Luminous Dust (Fine)|3|Philosopher's Stone
+Recipe|16|Sharp Fang (Fine)|Mystic Forge||50|Fang (Fine)|1|Sharp Fang (Fine)|5|Pile of Luminous Dust (Fine)|3|Philosopher's Stone
+Recipe|16|Small Claw (Fine)|Mystic Forge||50|Tiny Claw (Fine)|1|Small Claw (Fine)|5|Pile of Shimmering Dust (Fine)|1|Philosopher's Stone
+Recipe|16|Small Fang (Fine)|Mystic Forge||50|Tiny Fang (Fine)|1|Small Fang (Fine)|5|Pile of Shimmering Dust (Fine)|1|Philosopher's Stone
+Recipe|16|Small Scale (Fine)|Mystic Forge||50|Tiny Scale (Fine)|1|Small Scale (Fine)|5|Pile of Shimmering Dust (Fine)|1|Philosopher's Stone
+Recipe|16|Small Totem (Fine)|Mystic Forge||50|Tiny Totem (Fine)|1|Small Totem (Fine)|5|Pile of Shimmering Dust (Fine)|1|Philosopher's Stone
+Recipe|16|Small Venom Sac (Fine)|Mystic Forge||50|Tiny Venom Sac (Fine)|1|Small Venom Sac (Fine)|5|Pile of Shimmering Dust (Fine)|1|Philosopher's Stone
+Recipe|16|Smooth Scale (Fine)|Mystic Forge||50|Scale (Fine)|1|Smooth Scale (Fine)|5|Pile of Luminous Dust (Fine)|3|Philosopher's Stone
+Recipe|16|Totem (Fine)|Mystic Forge||50|Small Totem (Fine)|1|Totem (Fine)|5|Pile of Radiant Dust (Fine)|2|Philosopher's Stone
+Recipe|15|Unique Snowflake (Fine)|Mystic Forge||1|Unique Snowflake (Fine)|3|Philosopher's Stone|50|Glittering Snowflake (Fine)|5|Pile of Luminous Dust (Fine)
+Recipe|16|Venom Sac (Fine)|Mystic Forge||50|Small Venom Sac (Fine)|1|Venom Sac (Fine)|5|Pile of Radiant Dust (Fine)|2|Philosopher's Stone
+Recipe|1|Versatile Healing Infusion (Fine)|Mystic Forge||2|Eldritch Scroll (Legendary)|50|Mystic Coin (Rare)|100|Passion Flower [65](Masterwork)|250|Elaborate Totem (Rare)
+Recipe|1|Versatile Malign Infusion (Fine)|Mystic Forge||2|Eldritch Scroll (Legendary)|50|Mystic Coin (Rare)|100|Passion Flower [65](Masterwork)|250|Powerful Venom Sac (Rare)
+Recipe|1|Versatile Mighty Infusion (Fine)|Mystic Forge||2|Eldritch Scroll (Legendary)|50|Mystic Coin (Rare)|100|Passion Flower [65](Masterwork)|250|Vial of Powerful Blood (Rare)
+Recipe|1|Versatile Precise Infusion (Fine)|Mystic Forge||2|Eldritch Scroll (Legendary)|50|Mystic Coin (Rare)|100|Passion Flower [65](Masterwork)|250|Vicious Claw (Rare)
+Recipe|1|Versatile Resilient Infusion (Fine)|Mystic Forge||2|Eldritch Scroll (Legendary)|50|Mystic Coin (Rare)|100|Passion Flower [65](Masterwork)|250|Armored Scale (Rare)
+Recipe|1|Versatile Vital Infusion (Fine)|Mystic Forge||2|Eldritch Scroll (Legendary)|50|Mystic Coin (Rare)|100|Passion Flower [65](Masterwork)|250|Ancient Bone (Rare)
+Recipe|16|Vial of Blood (Fine)|Mystic Forge||50|Vial of Thin Blood (Fine)|1|Vial of Blood (Fine)|5|Pile of Radiant Dust (Fine)|2|Philosopher's Stone
+Recipe|16|Vial of Potent Blood (Fine)|Mystic Forge||50|Vial of Thick Blood (Fine)|1|Vial of Potent Blood (Fine)|5|Pile of Incandescent Dust (Fine)|4|Philosopher's Stone
+Recipe|16|Vial of Thick Blood (Fine)|Mystic Forge||50|Vial of Blood (Fine)|1|Vial of Thick Blood (Fine)|5|Pile of Luminous Dust (Fine)|3|Philosopher's Stone
+Recipe|16|Vial of Thin Blood (Fine)|Mystic Forge||50|Vial of Weak Blood (Fine)|1|Vial of Thin Blood (Fine)|5|Pile of Shimmering Dust (Fine)|1|Philosopher's Stone
+Recipe|1|Vital Infusion (Fine)|Mystic Forge||50|Philosopher's Stone|20|Mystic Coin (Rare)|250|Karka Shell (Fine)|100|Ancient Bone (Rare)
+Recipe|1|Bolt [80](Legendary)|Mystic Forge||1|Gift of Bolt (Legendary)|1|Gift of Mastery (Legendary)|1|Gift of Fortune (Legendary)|1|Zap [80](Exotic)
+Recipe|1|Eternity [80](Legendary)|Mystic Forge||1|Sunrise [80](Legendary)|1|Twilight [80](Legendary)|5|Pile of Crystalline Dust (Rare)|10|Philosopher's Stone
+Recipe|1|Frenzy [80](Legendary)|Mystic Forge||1|Gift of Frenzy (Legendary)|1|Gift of Mastery (Legendary)|1|Gift of Fortune (Legendary)|1|Rage [80](Exotic)
+Recipe|1|Frostfang [80](Legendary)|Mystic Forge||1|Gift of Frostfang (Legendary)|1|Gift of Mastery (Legendary)|1|Gift of Fortune (Legendary)|1|Tooth of Frostfang [80](Exotic)
+Recipe|1|Gift of Bolt (Legendary)|Mystic Forge||100|Icy Runestone (Legendary)|1|Superior Sigil of Air [60](Exotic)|1|Gift of Metal (Legendary)|1|Gift of Lightning (Legendary)
+Recipe|1|Gift of Fortune (Legendary)|Mystic Forge||77|Mystic Clover (Legendary)|250|Glob of Ectoplasm (Exotic)|1|Gift of Might (Legendary)|1|Gift of Magic (Legendary)
+Recipe|1|Gift of Frenzy (Legendary)|Mystic Forge||100|Icy Runestone (Legendary)|1|Superior Sigil of Rage [60](Exotic)|1|Gift of Wood (Legendary)|1|Gift of Water (Legendary)
+Recipe|1|Gift of Frostfang (Legendary)|Mystic Forge||100|Icy Runestone (Legendary)|1|Superior Sigil of Ice [60](Exotic)|1|Gift of Metal (Legendary)|1|Gift of Ice (Legendary)
+Recipe|1|Gift of Howler (Legendary)|Mystic Forge||100|Icy Runestone (Legendary)|1|Superior Sigil of Accuracy [60](Exotic)|1|Gift of Wood (Legendary)|1|Wolf Statue (Legendary)
+Recipe|1|Gift of Incinerator (Legendary)|Mystic Forge||100|Icy Runestone (Legendary)|1|Superior Sigil of Fire [60](Exotic)|1|Gift of Metal (Legendary)|1|Vial of Liquid Flame (Legendary)
+Recipe|1|Gift of Kraitkin (Legendary)|Mystic Forge||100|Icy Runestone (Legendary)|1|Superior Sigil of Venom [60](Exotic)|1|Gift of Energy (Legendary)|1|Eel Statue (Legendary)
+Recipe|1|Gift of Kudzu (Legendary)|Mystic Forge||100|Icy Runestone (Legendary)|1|Superior Sigil of Celerity [60](Exotic)|1|Gift of Wood (Legendary)|1|Gift of Nature (Legendary)
+Recipe|1|Gift of Magic (Legendary)|Mystic Forge||250|Vial of Powerful Blood (Rare)|250|Powerful Venom Sac (Rare)|250|Elaborate Totem (Rare)|250|Pile of Crystalline Dust (Rare)
+Recipe|1|Gift of Mastery (Legendary)|Mystic Forge||1|Bloodstone Shard (Legendary)|250|Obsidian Shard (Legendary)|1|Gift of Exploration (Legendary)|1|Gift of Battle (Legendary)
+Recipe|1|Gift of Kamohoali'i Kotaki (Legendary)|Mystic Forge||100|Icy Runestone (Legendary)|1|Superior Sigil of Agony [60](Exotic)|1|Gift of Metal (Legendary)|1|Shark Statue (Legendary)
+Recipe|1|Gift of Meteorlogicus (Legendary)|Mystic Forge||100|Icy Runestone (Legendary)|1|Superior Sigil of Air [60](Exotic)|1|Gift of Energy (Legendary)|1|Gift of Weather (Legendary)
+Recipe|1|Gift of Might (Legendary)|Mystic Forge||250|Vicious Fang (Rare)|250|Vicious Claw (Rare)|250|Ancient Bone (Rare)|250|Armored Scale (Rare)
+Recipe|1|Gift of Quip (Legendary)|Mystic Forge||100|Icy Runestone (Legendary)|1|Superior Sigil of Stamina [60](Exotic)|1|Gift of Wood (Legendary)|1|Gift of Entertainment (Legendary)
+Recipe|1|Gift of Rodgort (Legendary)|Mystic Forge||100|Icy Runestone (Legendary)|1|Superior Sigil of Fire [60](Exotic)|1|Gift of Wood (Legendary)|1|Vial of Liquid Flame (Legendary)
+Recipe|1|Gift of Sunrise (Legendary)|Mystic Forge||100|Icy Runestone (Legendary)|1|Superior Sigil of Strength [60](Exotic)|1|Gift of Metal (Legendary)|1|Gift of Light (Legendary)
+Recipe|1|Gift of The Bifrost (Legendary)|Mystic Forge||100|Icy Runestone (Legendary)|1|Superior Sigil of Nullification [60](Exotic)|1|Gift of Color (Legendary)|1|Gift of Energy (Legendary)
+Recipe|1|Gift of The Dreamer (Legendary)|Mystic Forge||100|Icy Runestone (Legendary)|1|Superior Sigil of Purity [60](Exotic)|1|Gift of Wood (Legendary)|1|Unicorn Statue (Legendary)
+Recipe|1|Gift of The Flameseeker Prophecies (Legendary)|Mystic Forge||100|Icy Runestone (Legendary)|1|Superior Sigil of Battle [60](Exotic)|1|Gift of Metal (Legendary)|1|Gift of History (Legendary)
+Recipe|1|Gift of The Juggernaut (Legendary)|Mystic Forge||100|Icy Runestone (Legendary)|1|Superior Sigil of Benevolence [60](Exotic)|1|Gift of Metal (Legendary)|1|Vial of Qucksilver (Legendary)
+Recipe|1|Gift of The Minstrel (Legendary)|Mystic Forge||100|Icy Runestone (Legendary)|1|Superior Sigil of Energy [60](Exotic)|1|Gift of Energy (Legendary)|1|Gift of Music (Legendary)
+Recipe|1|Gift of The Moot (Legendary)|Mystic Forge||100|Icy Runestone (Legendary)|1|Superior Sigil of Energy [60](Exotic)|1|Gift of Metal (Legendary)|1|Gift of Entertainment (Legendary)
+Recipe|1|Gift of The Predator (Legendary)|Mystic Forge||100|Icy Runestone (Legendary)|1|Superior Sigil of Force [60](Exotic)|1|Gift of Stealth (Legendary)|1|Gift of Wood (Legendary)
+Recipe|1|Gift of Twilight (Legendary)|Mystic Forge||100|Icy Runestone (Legendary)|1|Superior Sigil of Blood [60](Exotic)|1|Gift of Metal (Legendary)|1|Gift of Darkness (Legendary)
+Recipe|1|Howler [80](Legendary)|Mystic Forge||1|Gift of Howler (Legendary)|1|Gift of Mastery (Legendary)|1|Gift of Fortune (Legendary)|1|Howl [80](Exotic)
+Recipe|1|Incinerator [80](Legendary)|Mystic Forge||1|Gift of Incinerator (Legendary)|1|Gift of Mastery (Legendary)|1|Gift of Fortune (Legendary)|1|Spark [80](Exotic)
+Recipe|1|Kamohoali'i Kotaki [80](Legendary)|Mystic Forge||1|Gift of Kamohoali'i Kotaki (Legendary)|1|Gift of Mastery (Legendary)|1|Gift of Fortune (Legendary)|1|Carcharias [80](Exotic)
+Recipe|1|Kraitkin [80](Legendary)|Mystic Forge||1|Gift of Kraitkin (Legendary)|1|Gift of Mastery (Legendary)|1|Gift of Fortune (Legendary)|1|Venom [80](Exotic)
+Recipe|1|Kudzu [80](Legendary)|Mystic Forge||1|Gift of Kudzu (Legendary)|1|Gift of Mastery (Legendary)|1|Gift of Fortune (Legendary)|1|Leaf of Kudzu [80](Exotic)
+Recipe|1|Meteorlogicus [80](Legendary)|Mystic Forge||1|Gift of Meteorlogicus (Legendary)|1|Gift of Mastery (Legendary)|1|Gift of Fortune (Legendary)|1|Storm [80](Exotic)
+Recipe|3|Mystic Clover (Legendary)|Mystic Forge||10|Obsidian Shard (Legendary)|10|Mystic Coin (Rare)|10|Glob of Ectoplasm (Exotic)|10|Mystic Crystal
+Recipe|1|Quip [80](Legendary)|Mystic Forge||1|Gift of Quip (Legendary)|1|Gift of Mastery (Legendary)|1|Gift of Fortune (Legendary)|1|Chaos Gun [80](Exotic)
+Recipe|1|Rodgort [80](Legendary)|Mystic Forge||1|Gift of Rodgort (Legendary)|1|Gift of Mastery (Legendary)|1|Gift of Fortune (Legendary)|1|Rodgort's Flame [80](Exotic)
+Recipe|1|Sunrise [80](Legendary)|Mystic Forge||1|Gift of Sunrise (Legendary)|1|Gift of Mastery (Legendary)|1|Gift of Fortune (Legendary)|1|Dawn [80](Exotic)
+Recipe|1|The Bifrost [80](Legendary)|Mystic Forge||1|Gift of The Bifrost (Legendary)|1|Gift of Mastery (Legendary)|1|Gift of Fortune (Legendary)|1|The Legend [80](Exotic)
+Recipe|1|The Dreamer [80](Legendary)|Mystic Forge||1|Gift of The Dreamer (Legendary)|1|Gift of Mastery (Legendary)|1|Gift of Fortune (Legendary)|1|The Lover [80](Exotic)
+Recipe|1|The Flameseeker Prophecies [80](Legendary)|Mystic Forge||1|Gift of The Flameseeker Prophecies (Legendary)|1|Gift of Mastery (Legendary)|1|Gift of Fortune (Legendary)|1|The Chosen [80](Exotic)
+Recipe|1|The Juggernaut [80](Legendary)|Mystic Forge||1|Gift of The Juggernaut (Legendary)|1|Gift of Mastery (Legendary)|1|Gift of Fortune (Legendary)|1|The Colossus [80](Exotic)
+Recipe|1|The Minstrel [80](Legendary)|Mystic Forge||1|Gift of The Minstrel (Legendary)|1|Gift of Mastery (Legendary)|1|Gift of Fortune (Legendary)|1|The Bard [80](Exotic)
+Recipe|1|The Moot [80](Legendary)|Mystic Forge||1|Gift of The Moot (Legendary)|1|Gift of Mastery (Legendary)|1|Gift of Fortune (Legendary)|1|The Energizer [80](Exotic)
+Recipe|1|The Predator [80](Legendary)|Mystic Forge||1|Gift of The Predator (Legendary)|1|Gift of Mastery (Legendary)|1|Gift of Fortune (Legendary)|1|The Hunter [80](Exotic)
+Recipe|1|Twilight [80](Legendary)|Mystic Forge||1|Gift of Twilight (Legendary)|1|Gift of Mastery (Legendary)|1|Gift of Fortune (Legendary)|1|Dusk [80](Exotic)
+Recipe|1|Improved Experience Booster (Masterwork)|Mystic Forge||5|Experience Booster (Masterwork)|10|Tiny Totem (Fine)|10|Pile of Glittering Dust (Fine)|1|Philosopher's Stone
+Recipe|1|Plush Griffon (Masterwork)|Mystic Forge||1|Plush Griffon Frame (Rare)|250|Mystical Cog (Exotic)|250|Wad of Enchanted Stuffing (Masterwork)|250|Drop of Magic Glue (Masterwork)
+Recipe|1|Princess Doll (Masterwork)|Mystic Forge||1|Princess Doll Frame (Rare)|250|Mystical Cog (Exotic)|250|Wad of Enchanted Stuffing (Masterwork)|250|Drop of Magic Glue (Masterwork)
+Recipe|1|Toy Golem (Masterwork)|Mystic Forge||1|Toy Golem Frame (Rare)|250|Mystical Cog (Exotic)|250|Wad of Enchanted Stuffing (Masterwork)|250|Drop of Magic Glue (Masterwork)
+Recipe|1|Toy Soldier (Masterwork)|Mystic Forge||1|Toy Soldier Frame (Rare)|250|Mystical Cog (Exotic)|250|Wad of Enchanted Stuffing (Masterwork)|250|Drop of Magic Glue (Masterwork)
+Recipe|1|Toy Ventari (Masterwork)|Mystic Forge||1|Ventari Frame (Rare)|250|Mystical Cog (Exotic)|250|Wad of Enchanted Stuffing (Masterwork)|250|Drop of Magic Glue (Masterwork)
+Recipe|1|Chainsaw the Skeleton (Rare)|Mystic Forge||1|Mini Spooky Ghost (Masterwork)|1|Mini Spooky Skeleton (Masterwork)|1|Mini Spooky Spider (Masterwork)|250|Piece of Candy Corn (Masterwork)
+Recipe|1|Charged Core (Rare)|Mystic Forge||2|Charged Shard (Rare)|1|Bottle of Elonian Wine (Legendary)|1|Mystic Crystal|1|Pile of Incandescent Dust (Fine)
+Recipe|1|Charged Fragment (Rare)|Mystic Forge||2|Charged Sliver (Rare)|1|Bottle of Elonian Wine (Legendary)|1|Mystic Crystal|1|Pile of Radiant Dust (Fine)
+Recipe|1|Charged Lodestone (Exotic)|Mystic Forge||2|Charged Core (Rare)|1|Bottle of Elonian Wine (Legendary)|1|Mystic Crystal|1|Pile of Crystalline Dust (Rare)
+Recipe|1|Charged Shard (Rare)|Mystic Forge||2|Charged Fragment (Rare)|1|Bottle of Elonian Wine (Legendary)|1|Mystic Crystal|1|Pile of Luminous Dust (Fine)
+Recipe|1|Corrupted Core (Rare)|Mystic Forge||2|Corrupted Shard (Rare)|1|Bottle of Elonian Wine (Legendary)|1|Mystic Crystal|1|Pile of Incandescent Dust (Fine)
+Recipe|1|Corrupted Fragment (Rare)|Mystic Forge||2|Corrupted Sliver (Rare)|1|Bottle of Elonian Wine (Legendary)|1|Mystic Crystal|1|Pile of Radiant Dust (Fine)
+Recipe|1|Corrupted Lodestone (Exotic)|Mystic Forge||2|Corrupted Core (Rare)|1|Bottle of Elonian Wine (Legendary)|1|Mystic Crystal|1|Pile of Crystalline Dust (Rare)
+Recipe|1|Corrupted Shard (Rare)|Mystic Forge||2|Corrupted Fragment (Rare)|1|Bottle of Elonian Wine (Legendary)|1|Mystic Crystal|1|Pile of Luminous Dust (Fine)
+Recipe|1|Crystal Core (Rare)|Mystic Forge||2|Crystal Shard (Rare)|1|Bottle of Elonian Wine (Legendary)|1|Mystic Crystal|1|Pile of Incandescent Dust (Fine)
+Recipe|1|Crystal Fragment (Rare)|Mystic Forge||2|Crystal Sliver (Rare)|1|Bottle of Elonian Wine (Legendary)|1|Mystic Crystal|1|Pile of Radiant Dust (Fine)
+Recipe|1|Crystal Lodestone (Exotic)|Mystic Forge||2|Crystal Core (Rare)|1|Bottle of Elonian Wine (Legendary)|1|Mystic Crystal|1|Pile of Crystalline Dust (Rare)
+Recipe|1|Crystal Shard (Rare)|Mystic Forge||2|Crystal Fragment (Rare)|1|Bottle of Elonian Wine (Legendary)|1|Mystic Crystal|1|Pile of Luminous Dust (Fine)
+Recipe|1|Destroyer Core (Rare)|Mystic Forge||2|Destroyer Shard (Rare)|1|Bottle of Elonian Wine (Legendary)|1|Mystic Crystal|1|Pile of Incandescent Dust (Fine)
+Recipe|1|Destroyer Fragment (Rare)|Mystic Forge||2|Destroyer Sliver (Rare)|1|Bottle of Elonian Wine (Legendary)|1|Mystic Crystal|1|Pile of Radiant Dust (Fine)
+Recipe|1|Destroyer Lodestone (Exotic)|Mystic Forge||2|Destroyer Core (Rare)|1|Bottle of Elonian Wine (Legendary)|1|Mystic Crystal|1|Pile of Crystalline Dust (Rare)
+Recipe|1|Destroyer Shard (Rare)|Mystic Forge||2|Destroyer Fragment (Rare)|1|Bottle of Elonian Wine (Legendary)|1|Mystic Crystal|1|Pile of Luminous Dust (Fine)
+Recipe|1|Endless Plush Griffon Tonic (Rare)|Mystic Forge||1|Plush Griffon Frame (Rare)|50|Wad of Enchanted Stuffing (Masterwork)|50|Drop of Magic Glue (Masterwork)|1|Pile of Glittering Dust (Fine)
+Recipe|1|Endless Princess Doll Tonic (Rare)|Mystic Forge||1|Princess Doll Frame (Rare)|50|Wad of Enchanted Stuffing (Masterwork)|50|Drop of Magic Glue (Masterwork)|1|Pile of Glittering Dust (Fine)
+Recipe|1|Endless Toy Golem Tonic (Rare)|Mystic Forge||1|Toy Golem Frame (Rare)|50|Wad of Enchanted Stuffing (Masterwork)|50|Drop of Magic Glue (Masterwork)|1|Pile of Glittering Dust (Fine)
+Recipe|1|Endless Toy Soldier Tonic (Rare)|Mystic Forge||1|Toy Soldier Frame (Rare)|50|Wad of Enchanted Stuffing (Masterwork)|50|Drop of Magic Glue (Masterwork)|1|Pile of Glittering Dust (Fine)
+Recipe|1|Endless Toy Ventari Tonic (Rare)|Mystic Forge||1|Ventari Frame (Rare)|50|Wad of Enchanted Stuffing (Masterwork)|50|Drop of Magic Glue (Masterwork)|1|Pile of Glittering Dust (Fine)
+Recipe|1|Foostivoo the Merry (Rare)|Mystic Forge||1|Mini Festive Golem (Masterwork)|1|Mini Festive Golem (Masterwork)|1|Mini Festive Golem (Masterwork)|50|Wad of Enchanted Stuffing (Masterwork)
+Recipe|1|Foostivoo the Merry (Rare)|Mystic Forge||1|Mini Snowman (Masterwork)|1|Mini Snowman (Masterwork)|1|Mini Infinirarium (Masterwork)|50|Wad of Enchanted Stuffing (Masterwork)
+Recipe|1|Foostivoo the Merry (Rare)|Mystic Forge||1|Mini Infinirarium (Masterwork)|1|Mini Infinirarium (Masterwork)|1|Mini Festive Golem (Masterwork)|50|Wad of Enchanted Stuffing (Masterwork)
+Recipe|1|Foostivoo the Merry (Rare)|Mystic Forge||1|Mini Infinirarium (Masterwork)|1|Mini Infinirarium (Masterwork)|1|Mini Snowman (Masterwork)|50|Wad of Enchanted Stuffing (Masterwork)
+Recipe|1|Foostivoo the Merry (Rare)|Mystic Forge||1|Mini Festive Golem (Masterwork)|1|Mini Festive Golem (Masterwork)|1|Mini Snowman (Masterwork)|50|Wad of Enchanted Stuffing (Masterwork)
+Recipe|1|Foostivoo the Merry (Rare)|Mystic Forge||1|Mini Festive Golem (Masterwork)|1|Mini Festive Golem (Masterwork)|1|Mini Infinirarium (Masterwork)|50|Wad of Enchanted Stuffing (Masterwork)
+Recipe|1|Foostivoo the Merry (Rare)|Mystic Forge||1|Mini Snowman (Masterwork)|1|Mini Snowman (Masterwork)|1|Mini Festive Golem (Masterwork)|50|Wad of Enchanted Stuffing (Masterwork)
+Recipe|1|Foostivoo the Merry (Rare)|Mystic Forge||1|Mini Snowman (Masterwork)|1|Mini Festive Golem (Masterwork)|1|Mini Infinirarium (Masterwork)|50|Wad of Enchanted Stuffing (Masterwork)
+Recipe|1|Foostivoo the Merry (Rare)|Mystic Forge||1|Mini Infinirarium (Masterwork)|1|Mini Infinirarium (Masterwork)|1|Mini Infinirarium (Masterwork)|50|Wad of Enchanted Stuffing (Masterwork)
+Recipe|1|Foostivoo the Merry (Rare)|Mystic Forge||1|Mini Snowman (Masterwork)|1|Mini Snowman (Masterwork)|1|Mini Snowman (Masterwork)|50|Wad of Enchanted Stuffing (Masterwork)
+Recipe|1|Glacial Core (Rare)|Mystic Forge||2|Glacial Shard (Rare)|1|Bottle of Elonian Wine (Legendary)|1|Mystic Crystal|1|Pile of Incandescent Dust (Fine)
+Recipe|1|Glacial Fragment (Rare)|Mystic Forge||2|Glacial Sliver (Rare)|1|Bottle of Elonian Wine (Legendary)|1|Mystic Crystal|1|Pile of Radiant Dust (Fine)
+Recipe|1|Glacial Lodestone (Exotic)|Mystic Forge||2|Glacial Core (Rare)|1|Bottle of Elonian Wine (Legendary)|1|Mystic Crystal|1|Pile of Crystalline Dust (Rare)
+Recipe|1|Glacial Shard (Rare)|Mystic Forge||2|Glacial Fragment (Rare)|1|Bottle of Elonian Wine (Legendary)|1|Mystic Crystal|1|Pile of Luminous Dust (Fine)
+Recipe|1|Molten Core (Rare)|Mystic Forge||2|Molten Shard (Rare)|1|Bottle of Elonian Wine (Legendary)|1|Mystic Crystal|1|Pile of Incandescent Dust (Fine)
+Recipe|1|Molten Fragment (Rare)|Mystic Forge||2|Molten Sliver (Rare)|1|Bottle of Elonian Wine (Legendary)|1|Mystic Crystal|1|Pile of Radiant Dust (Fine)
+Recipe|1|Molten Lodestone (Exotic)|Mystic Forge||2|Molten Core (Rare)|1|Bottle of Elonian Wine (Legendary)|1|Mystic Crystal|1|Pile of Crystalline Dust (Rare)
+Recipe|1|Molten Shard (Rare)|Mystic Forge||2|Molten Fragment (Rare)|1|Bottle of Elonian Wine (Legendary)|1|Mystic Crystal|1|Pile of Luminous Dust (Fine)
+Recipe|1|Mystic Salvage Kit (Rare)|Mystic Forge||1|Fine Salvage Kit (Fine)|1|Journeyman's Salvage Kit (Masterwork)|1|Master's Salvage Kit (Rare)|3|Mystic Forge Stone
+Recipe|1|Onyx Core (Rare)|Mystic Forge||2|Onyx Shard (Rare)|1|Bottle of Elonian Wine (Legendary)|1|Mystic Crystal|1|Pile of Incandescent Dust (Fine)
+Recipe|1|Onyx Fragment (Rare)|Mystic Forge||2|Onyx Sliver (Rare)|1|Bottle of Elonian Wine (Legendary)|1|Mystic Crystal|1|Pile of Radiant Dust (Fine)
+Recipe|1|Onyx Lodestone (Exotic)|Mystic Forge||2|Onyx Core (Rare)|1|Bottle of Elonian Wine (Legendary)|1|Mystic Crystal|1|Pile of Crystalline Dust (Rare)
+Recipe|1|Onyx Shard (Rare)|Mystic Forge||2|Onyx Fragment (Rare)|1|Bottle of Elonian Wine (Legendary)|1|Mystic Crystal|1|Pile of Luminous Dust (Fine)
+Recipe|1|Pile of Filthy Essence (Rare)|Mystic Forge||2|Pile of Foul Essence (Rare)|1|Bottle of Elonian Wine (Legendary)|1|Mystic Crystal|1|Pile of Luminous Dust (Fine)
+Recipe|1|Pile of Foul Essence (Rare)|Mystic Forge||2|Pile of Soiled Essence (Rare)|1|Bottle of Elonian Wine (Legendary)|1|Mystic Crystal|1|Pile of Radiant Dust (Fine)
+Recipe|1|Pile of Putrid Essence (Exotic)|Mystic Forge||2|Pile of Vile Essence (Rare)|1|Bottle of Elonian Wine (Legendary)|1|Mystic Crystal|1|Pile of Crystalline Dust (Rare)
+Recipe|1|Pile of Vile Essence (Rare)|Mystic Forge||2|Pile of Filthy Essence (Rare)|1|Bottle of Elonian Wine (Legendary)|1|Mystic Crystal|1|Pile of Incandescent Dust (Fine)
+Recipe|1|Recipe: Gift of Souls (Rare)|Mystic Forge||250|Piece of Candy Corn|100|Nougat Center (Rare)|40|Bottle of Elonian Wine (Legendary)|10|Pile of Crystalline Dust (Rare)
+Recipe|1|Recipe: Gift of Spiders (Rare)|Mystic Forge||250|Piece of Candy Corn|100|Plastic Fang (Rare)|40|Bottle of Elonian Wine (Legendary)|10|Pile of Crystalline Dust (Rare)
+Recipe|1|Recipe: Gift of the Moon (Rare)|Mystic Forge||250|Piece of Candy Corn|100|Chattering Skull (Rare)|40|Bottle of Elonian Wine (Legendary)|10|Pile of Crystalline Dust (Rare)
+Recipe|1|Recipe: Box of Healing Chain Armor|Mystic Forge||1|Healing Chain Coat [15](Fine)|1|Bottle of Elonian Wine (Legendary)|5|Mystic Coin (Rare)|5|Mystic Crystal
+Recipe|1|Recipe: Box of Malign Chain Armor|Mystic Forge||1|Malign Chain Coat [10](Fine)|1|Bottle of Elonian Wine (Legendary)|2|Mystic Coin (Rare)|4|Mystic Crystal
+Recipe|1|Recipe: Box of Mighty Chain Armor|Mystic Forge||1|Mighty Chain Coat [10](Fine)|1|Bottle of Elonian Wine (Legendary)|2|Mystic Coin (Rare)|4|Mystic Crystal
+Recipe|1|Recipe: Box of Precise Chain Armor|Mystic Forge||1|Precise Chain Coat [15](Fine)|1|Bottle of Elonian Wine (Legendary)|5|Mystic Coin (Rare)|5|Mystic Crystal
+Recipe|1|Recipe: Box of Resilient Chain Armor|Mystic Forge||1|Resilient Chain Coat [15](Fine)|1|Bottle of Elonian Wine (Legendary)|5|Mystic Coin (Rare)|5|Mystic Crystal
+Recipe|1|Recipe: Box of Simple Mighty Chain Armor|Mystic Forge||1|Mighty Chain Coat [5](Fine)|1|Bottle of Elonian Wine (Legendary)|2|Mystic Coin (Rare)|4|Mystic Crystal
+Recipe|1|Recipe: Box of Vital Chain Armor|Mystic Forge||1|Vital Chain Coat [10](Fine)|1|Bottle of Elonian Wine (Legendary)|2|Mystic Coin (Rare)|4|Mystic Crystal
+Recipe|1|Recipe: Satchel of Healing Embroidered Armor|Mystic Forge||1|Healing Embroidered Coat [15](Fine)|1|Bottle of Elonian Wine (Legendary)|5|Mystic Coin (Rare)|5|Mystic Crystal
+Recipe|1|Recipe: Satchel of Healing Seeker Armor|Mystic Forge||1|Healing Seeker Coat [15](Fine)|1|Bottle of Elonian Wine (Legendary)|5|Mystic Coin (Rare)|5|Mystic Crystal
+Recipe|1|Recipe: Satchel of Malign Embroidered Armor|Mystic Forge||1|Malign Embroidered Coat [10](Fine)|1|Bottle of Elonian Wine (Legendary)|2|Mystic Coin (Rare)|4|Mystic Crystal
+Recipe|1|Recipe: Satchel of Malign Seeker Armor|Mystic Forge||1|Malign Seeker Coat [10](Fine)|1|Bottle of Elonian Wine (Legendary)|2|Mystic Coin (Rare)|4|Mystic Crystal
+Recipe|1|Recipe: Satchel of Mighty Embroidered Armor [10]|Mystic Forge||1|Mighty Embroidered Coat [10](Fine)|1|Bottle of Elonian Wine (Legendary)|2|Mystic Coin (Rare)|4|Mystic Crystal
+Recipe|1|Recipe: Satchel of Mighty Embroidered Armor [5]|Mystic Forge||1|Mighty Embroidered Coat [5](Fine)|1|Bottle of Elonian Wine (Legendary)|2|Mystic Coin (Rare)|4|Mystic Crystal
+Recipe|1|Recipe: Satchel of Mighty Seeker Armor [10]|Mystic Forge||1|Mighty Seeker Coat [10](Fine)|1|Bottle of Elonian Wine (Legendary)|2|Mystic Coin (Rare)|4|Mystic Crystal
+Recipe|1|Recipe: Satchel of Mighty Seeker Armor [5]|Mystic Forge||1|Mighty Seeker Coat [5](Fine)|1|Bottle of Elonian Wine (Legendary)|2|Mystic Coin (Rare)|4|Mystic Crystal
+Recipe|1|Recipe: Satchel of Precise Embroidered Armor|Mystic Forge||1|Precise Embroidered Coat [15](Fine)|1|Bottle of Elonian Wine (Legendary)|5|Mystic Coin (Rare)|5|Mystic Crystal
+Recipe|1|Recipe: Satchel of Precise Seeker Armor|Mystic Forge||1|Precise Seeker Coat [15](Fine)|1|Bottle of Elonian Wine (Legendary)|5|Mystic Coin (Rare)|5|Mystic Crystal
+Recipe|1|Recipe: Satchel of Resilient Embroidered Armor|Mystic Forge||1|Resilient Embroidered Coat [15](Fine)|1|Bottle of Elonian Wine (Legendary)|5|Mystic Coin (Rare)|5|Mystic Crystal
+Recipe|1|Recipe: Satchel of Resilient Seeker Armor|Mystic Forge||1|Resilient Seeker Coat [15](Fine)|1|Bottle of Elonian Wine (Legendary)|5|Mystic Coin (Rare)|5|Mystic Crystal
+Recipe|1|Recipe: Satchel of Vital Embroidered Armor|Mystic Forge||1|Vital Embroidered Coat [10](Fine)|1|Bottle of Elonian Wine (Legendary)|2|Mystic Coin (Rare)|4|Mystic Crystal
+Recipe|1|Recipe: Satchel of Vital Seeker Armor|Mystic Forge||1|Vital Seeker Coat [10](Fine)|1|Bottle of Elonian Wine (Legendary)|2|Mystic Coin (Rare)|4|Mystic Crystal
+Recipe|1|Recipe: Box of Berserker's Draconic Armor (Exotic) (Exotic)|Mystic Forge||1|Berserker's Draconic Coat [80](Exotic)|5|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)|20|Mystic Crystal
+Recipe|1|Recipe: Box of Carrion Draconic Armor (Exotic) (Exotic)|Mystic Forge||1|Carrion Draconic Coat [80](Exotic)|5|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)|20|Mystic Crystal
+Recipe|1|Recipe: Box of Cleric's Draconic Armor (Exotic) (Exotic)|Mystic Forge||1|Cleric's Draconic Coat [80](Exotic)|5|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)|20|Mystic Crystal
+Recipe|1|Recipe: Box of Explorer's Draconic Armor (Exotic) (Exotic)|Mystic Forge||1|Explorer's Draconic Coat [80](Exotic)|5|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)|20|Mystic Crystal
+Recipe|1|Recipe: Box of Giver's Draconic Armor (Exotic)|Mystic Forge||1|Giver's Draconic Coat [80](Exotic)|5|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)|20|Mystic Crystal
+Recipe|1|Recipe: Box of Knight's Draconic Armor (Exotic) (Exotic)|Mystic Forge||1|Knight's Draconic Coat [80](Exotic)|5|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)|20|Mystic Crystal
+Recipe|1|Recipe: Box of Rampager's Draconic Armor (Exotic) (Exotic)|Mystic Forge||1|Rampager's Draconic Coat [80](Exotic)|5|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)|20|Mystic Crystal
+Recipe|1|Recipe: Box of Valkyrie Draconic Armor (Exotic) (Exotic)|Mystic Forge||1|Valkyrie Draconic Coat [80](Exotic)|5|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)|20|Mystic Crystal
+Recipe|1|Recipe: Satchel of Berserker's Emblazoned Armor (Exotic) (Exotic)|Mystic Forge||1|Berserker's Emblazoned Coat [80](Exotic)|5|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)|20|Mystic Crystal
+Recipe|1|Recipe: Satchel of Berserker's Exalted Armor (Exotic) (Exotic)|Mystic Forge||1|Berserker's Exalted Coat [80](Exotic)|5|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)|20|Mystic Crystal
+Recipe|1|Recipe: Satchel of Carrion Emblazoned Armor (Exotic) (Exotic)|Mystic Forge||1|Carrion Emblazoned Coat [80](Exotic)|5|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)|20|Mystic Crystal
+Recipe|1|Recipe: Satchel of Carrion Exalted Armor (Exotic) (Exotic)|Mystic Forge||1|Carrion Exalted Coat [80](Exotic)|5|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)|20|Mystic Crystal
+Recipe|1|Recipe: Satchel of Cleric's Emblazoned Armor (Exotic) (Exotic)|Mystic Forge||1|Cleric's Emblazoned Coat [80](Exotic)|5|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)|20|Mystic Crystal
+Recipe|1|Recipe: Satchel of Cleric's Exalted Armor (Exotic) (Exotic)|Mystic Forge||1|Cleric's Exalted Coat [80](Exotic)|5|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)|20|Mystic Crystal
+Recipe|1|Recipe: Satchel of Explorer's Emblazoned Armor (Exotic) (Exotic)|Mystic Forge||1|Explorer's Emblazoned Coat [80](Exotic)|5|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)|20|Mystic Crystal
+Recipe|1|Recipe: Satchel of Explorer's Exalted Armor (Exotic) (Exotic)|Mystic Forge||1|Explorer's Exalted Coat [80](Exotic)|5|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)|20|Mystic Crystal
+Recipe|1|Recipe: Satchel of Giver's Emblazoned Armor (Exotic)|Mystic Forge||1|Giver's Emblazoned Coat [80](Exotic)|5|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)|20|Mystic Crystal
+Recipe|1|Recipe: Satchel of Giver's Exalted Armor (Exotic)|Mystic Forge||1|Giver's Exalted Coat [80](Exotic)|5|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)|20|Mystic Crystal
+Recipe|1|Recipe: Satchel of Knight's Emblazoned Armor (Exotic) (Exotic)|Mystic Forge||1|Knight's Emblazoned Coat [80](Exotic)|5|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)|20|Mystic Crystal
+Recipe|1|Recipe: Satchel of Knight's Exalted Armor (Exotic) (Exotic)|Mystic Forge||1|Knight's Exalted Coat [80](Exotic)|5|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)|20|Mystic Crystal
+Recipe|1|Recipe: Satchel of Rampager's Emblazoned Armor (Exotic) (Exotic)|Mystic Forge||1|Rampager's Emblazoned Coat [80](Exotic)|5|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)|20|Mystic Crystal
+Recipe|1|Recipe: Satchel of Rampager's Exalted Armor (Exotic) (Exotic)|Mystic Forge||1|Rampager's Exalted Coat [80](Exotic)|5|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)|20|Mystic Crystal
+Recipe|1|Recipe: Satchel of Valkyrie Emblazoned Armor (Exotic) (Exotic)|Mystic Forge||1|Valkyrie Emblazoned Coat [80](Exotic)|5|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)|20|Mystic Crystal
+Recipe|1|Recipe: Satchel of Valkyrie Exalted Armor (Exotic) (Exotic)|Mystic Forge||1|Valkyrie Exalted Coat [80](Exotic)|5|Bottle of Elonian Wine (Legendary)|50|Mystic Coin (Rare)|20|Mystic Crystal
+Recipe|1|Recipe: Box of Berserker's Barbaric Armor (Fine)|Mystic Forge||1|Berserker's Barbaric Coat [75](Fine)|4|Bottle of Elonian Wine (Legendary)|41|Mystic Coin (Rare)|17|Mystic Crystal
+Recipe|1|Recipe: Box of Berserker's Reinforced Scale Armor (Fine)|Mystic Forge||1|Berserker's Reinforced Scale Chest [60](Fine)|3|Bottle of Elonian Wine (Legendary)|32|Mystic Coin (Rare)|14|Mystic Crystal
+Recipe|1|Recipe: Box of Carrion Barbaric Armor (Fine)|Mystic Forge||1|Carrion Barbaric Coat [70](Fine)|4|Bottle of Elonian Wine (Legendary)|38|Mystic Coin (Rare)|16|Mystic Crystal
+Recipe|1|Recipe: Box of Carrion Reinforced Scale Armor (Fine)|Mystic Forge||1|Carrion Reinforced Scale Chest [55](Fine)|3|Bottle of Elonian Wine (Legendary)|29|Mystic Coin (Rare)|13|Mystic Crystal
+Recipe|1|Recipe: Box of Cleric's Barbaric Armor (Fine)|Mystic Forge||1|Cleric's Barbaric Coat [75](Fine)|4|Bottle of Elonian Wine (Legendary)|41|Mystic Coin (Rare)|17|Mystic Crystal
+Recipe|1|Recipe: Box of Cleric's Reinforced Scale Armor (Fine)|Mystic Forge||1|Cleric's Reinforced Scale Chest [60](Fine)|3|Bottle of Elonian Wine (Legendary)|32|Mystic Coin (Rare)|14|Mystic Crystal
+Recipe|1|Recipe: Box of Explorer's Barbaric Armor (Fine)|Mystic Forge||1|Explorer's Barbaric Coat [75](Fine)|4|Bottle of Elonian Wine (Legendary)|41|Mystic Coin (Rare)|17|Mystic Crystal
+Recipe|1|Recipe: Box of Explorer's Reinforced Scale Armor (Fine)|Mystic Forge||1|Explorer's Reinforced Scale Chest [60](Fine)|3|Bottle of Elonian Wine (Legendary)|32|Mystic Coin (Rare)|14|Mystic Crystal
+Recipe|1|Recipe: Box of Hearty Scale Armor (Fine)|Mystic Forge||1|Hearty Scale Coat [30](Fine)|2|Bottle of Elonian Wine (Legendary)|14|Mystic Coin (Rare)|8|Mystic Crystal
+Recipe|1|Recipe: Box of Hearty Splint Armor (Fine)|Mystic Forge||1|Hearty Splint Coat [45](Fine)|2|Bottle of Elonian Wine (Legendary)|23|Mystic Coin (Rare)|11|Mystic Crystal
+Recipe|1|Recipe: Box of Honed Scale Armor (Fine)|Mystic Forge||1|Honed Scale Coat [30](Fine)|2|Bottle of Elonian Wine (Legendary)|14|Mystic Coin (Rare)|8|Mystic Crystal
+Recipe|1|Recipe: Box of Honed Splint Armor (Fine)|Mystic Forge||1|Honed Splint Coat [45](Fine)|2|Bottle of Elonian Wine (Legendary)|23|Mystic Coin (Rare)|11|Mystic Crystal
+Recipe|1|Recipe: Box of Knight's Barbaric Armor (Fine)|Mystic Forge||1|Knight's Barbaric Coat [70](Fine)|4|Bottle of Elonian Wine (Legendary)|38|Mystic Coin (Rare)|16|Mystic Crystal
+Recipe|1|Recipe: Box of Knight's Reinforced Scale Armor (Fine)|Mystic Forge||1|Knight's Reinforced Scale Chest [55](Fine)|3|Bottle of Elonian Wine (Legendary)|29|Mystic Coin (Rare)|13|Mystic Crystal
+Recipe|1|Recipe: Box of Pillaging Scale Armor (Fine)|Mystic Forge||1|Pillaging Scale Coat [25](Fine)|1|Bottle of Elonian Wine (Legendary)|11|Mystic Coin (Rare)|7|Mystic Crystal
+Recipe|1|Recipe: Box of Pillaging Splint Armor (Fine)|Mystic Forge||1|Pillaging Splint Coat [40](Fine)|2|Bottle of Elonian Wine (Legendary)|20|Mystic Coin (Rare)|10|Mystic Crystal
+Recipe|1|Recipe: Box of Rampager's Barbaric Armor (Fine)|Mystic Forge||1|Rampager's Barbaric Coat [75](Fine)|4|Bottle of Elonian Wine (Legendary)|41|Mystic Coin (Rare)|17|Mystic Crystal
+Recipe|1|Recipe: Box of Rampager's Reinforced Scale Armor (Fine)|Mystic Forge||1|Rampager's Reinforced Scale Chest [60](Fine)|3|Bottle of Elonian Wine (Legendary)|32|Mystic Coin (Rare)|14|Mystic Crystal
+Recipe|1|Recipe: Box of Ravaging Scale Armor (Fine)|Mystic Forge||1|Ravaging Scale Coat [25](Fine)|1|Bottle of Elonian Wine (Legendary)|11|Mystic Coin (Rare)|7|Mystic Crystal
+Recipe|1|Recipe: Box of Ravaging Splint Armor (Fine)|Mystic Forge||1|Ravaging Splint Coat [40](Fine)|2|Bottle of Elonian Wine (Legendary)|20|Mystic Coin (Rare)|10|Mystic Crystal
+Recipe|1|Recipe: Box of Rejuvenating Scale Armor (Fine)|Mystic Forge||1|Rejuvenating Scale Coat [30](Fine)|1|Bottle of Elonian Wine (Legendary)|11|Mystic Coin (Rare)|7|Mystic Crystal
+Recipe|1|Recipe: Box of Rejuvenating Splint Armor (Fine)|Mystic Forge||1|Rejuvenating Splint Coat [45](Fine)|2|Bottle of Elonian Wine (Legendary)|23|Mystic Coin (Rare)|11|Mystic Crystal
+Recipe|1|Recipe: Box of Strong Scale Armor (Fine)|Mystic Forge||1|Strong Scale Coat [30](Fine)|2|Bottle of Elonian Wine (Legendary)|14|Mystic Coin (Rare)|8|Mystic Crystal
+Recipe|1|Recipe: Box of Strong Splint Armor (Fine)|Mystic Forge||1|Strong Splint Coat [45](Fine)|2|Bottle of Elonian Wine (Legendary)|23|Mystic Coin (Rare)|11|Mystic Crystal
+Recipe|1|Recipe: Box of Valkyrie Barbaric Armor (Fine)|Mystic Forge||1|Valkyrie Barbaric Coat [70](Fine)|4|Bottle of Elonian Wine (Legendary)|38|Mystic Coin (Rare)|16|Mystic Crystal
+Recipe|1|Recipe: Box of Valkyrie Reinforced Scale Armor (Fine)|Mystic Forge||1|Valkyrie Reinforced Scale Chest [55](Fine)|3|Bottle of Elonian Wine (Legendary)|29|Mystic Coin (Rare)|13|Mystic Crystal
+Recipe|1|Recipe: Box of Vigorous Scale Armor (Fine)|Mystic Forge||1|Vigorous Scale Coat [25](Fine)|1|Bottle of Elonian Wine (Legendary)|11|Mystic Coin (Rare)|7|Mystic Crystal
+Recipe|1|Recipe: Box of Vigorous Splint Armor (Fine)|Mystic Forge||1|Vigorous Splint Coat [40](Fine)|2|Bottle of Elonian Wine (Legendary)|20|Mystic Coin (Rare)|10|Mystic Crystal
+Recipe|1|Recipe: Satchel of Berserker's Feathered Armor (Fine)|Mystic Forge||1|Berserker's Feathered Vestments [75](Fine)|4|Bottle of Elonian Wine (Legendary)|41|Mystic Coin (Rare)|17|Mystic Crystal
+Recipe|1|Recipe: Satchel of Berserker's Prowler Armor (Fine)|Mystic Forge||1|Berserker's Prowler Coat [75](Fine)|4|Bottle of Elonian Wine (Legendary)|41|Mystic Coin (Rare)|17|Mystic Crystal
+Recipe|1|Recipe: Satchel of Berserker's Rascal Armor (Fine)|Mystic Forge||1|Berserker's Rascal Coat [60](Fine)|3|Bottle of Elonian Wine (Legendary)|32|Mystic Coin (Rare)|14|Mystic Crystal
+Recipe|1|Recipe: Satchel of Berserker's Winged Armor (Fine)|Mystic Forge||1|Berserker's Winged Tunic [60](Fine)|3|Bottle of Elonian Wine (Legendary)|32|Mystic Coin (Rare)|14|Mystic Crystal
+Recipe|1|Recipe: Satchel of Carrion Feathered Armor (Fine)|Mystic Forge||1|Carrion Feathered Vestments [70](Fine)|4|Bottle of Elonian Wine (Legendary)|38|Mystic Coin (Rare)|16|Mystic Crystal
+Recipe|1|Recipe: Satchel of Carrion Prowler Armor (Fine)|Mystic Forge||1|Carrion Prowler Coat [70](Fine)|4|Bottle of Elonian Wine (Legendary)|38|Mystic Coin (Rare)|16|Mystic Crystal
+Recipe|1|Recipe: Satchel of Carrion Rascal Armor (Fine)|Mystic Forge||1|Carrion Rascal Coat [55](Fine)|3|Bottle of Elonian Wine (Legendary)|29|Mystic Coin (Rare)|13|Mystic Crystal
+Recipe|1|Recipe: Satchel of Carrion Winged Armor (Fine)|Mystic Forge||1|Carrion Winged Tunic [55](Fine)|3|Bottle of Elonian Wine (Legendary)|29|Mystic Coin (Rare)|13|Mystic Crystal
+Recipe|1|Recipe: Satchel of Cleric's Feathered Armor (Fine)|Mystic Forge||1|Cleric's Feathered Vestments [75](Fine)|4|Bottle of Elonian Wine (Legendary)|41|Mystic Coin (Rare)|17|Mystic Crystal
+Recipe|1|Recipe: Satchel of Cleric's Prowler Armor (Fine)|Mystic Forge||1|Cleric's Prowler Coat [75](Fine)|4|Bottle of Elonian Wine (Legendary)|41|Mystic Coin (Rare)|17|Mystic Crystal
+Recipe|1|Recipe: Satchel of Cleric's Rascal Armor (Fine)|Mystic Forge||1|Cleric's Rascal Coat [60](Fine)|3|Bottle of Elonian Wine (Legendary)|32|Mystic Coin (Rare)|14|Mystic Crystal
+Recipe|1|Recipe: Satchel of Cleric's Winged Armor (Fine)|Mystic Forge||1|Cleric's Winged Tunic [60](Fine)|3|Bottle of Elonian Wine (Legendary)|32|Mystic Coin (Rare)|14|Mystic Crystal
+Recipe|1|Recipe: Satchel of Explorer's Feathered Armor (Fine)|Mystic Forge||1|Explorer's Feathered Vestments [75](Fine)|4|Bottle of Elonian Wine (Legendary)|41|Mystic Coin (Rare)|17|Mystic Crystal
+Recipe|1|Recipe: Satchel of Explorer's Prowler Armor (Fine)|Mystic Forge||1|Explorer's Prowler Coat [75](Fine)|4|Bottle of Elonian Wine (Legendary)|41|Mystic Coin (Rare)|17|Mystic Crystal
+Recipe|1|Recipe: Satchel of Explorer's Rascal Armor (Fine)|Mystic Forge||1|Explorer's Rascal Coat [60](Fine)|3|Bottle of Elonian Wine (Legendary)|32|Mystic Coin (Rare)|14|Mystic Crystal
+Recipe|1|Recipe: Satchel of Explorer's Winged Armor (Fine)|Mystic Forge||1|Explorer's Winged Tunic [60](Fine)|3|Bottle of Elonian Wine (Legendary)|32|Mystic Coin (Rare)|14|Mystic Crystal
+Recipe|1|Recipe: Satchel of Hearty Acolyte Armor (Fine)|Mystic Forge||1|Hearty Acolyte Coat [45](Fine)|2|Bottle of Elonian Wine (Legendary)|23|Mystic Coin (Rare)|11|Mystic Crystal
+Recipe|1|Recipe: Satchel of Hearty Leather Armor (Fine)|Mystic Forge||1|Hearty Leather Coat [45](Fine)|2|Bottle of Elonian Wine (Legendary)|23|Mystic Coin (Rare)|11|Mystic Crystal
+Recipe|1|Recipe: Satchel of Hearty Outlaw Armor (Fine)|Mystic Forge||1|Hearty Outlaw Coat [30](Fine)|2|Bottle of Elonian Wine (Legendary)|14|Mystic Coin (Rare)|8|Mystic Crystal
+Recipe|1|Recipe: Satchel of Hearty Student Armor (Fine)|Mystic Forge||1|Hearty Student Coat [30](Fine)|2|Bottle of Elonian Wine (Legendary)|14|Mystic Coin (Rare)|8|Mystic Crystal
+Recipe|1|Recipe: Satchel of Honed Acolyte Armor (Fine)|Mystic Forge||1|Honed Acolyte Coat [45](Fine)|2|Bottle of Elonian Wine (Legendary)|23|Mystic Coin (Rare)|11|Mystic Crystal
+Recipe|1|Recipe: Satchel of Honed Leather Armor (Fine)|Mystic Forge||1|Honed Leather Coat [45](Fine)|2|Bottle of Elonian Wine (Legendary)|23|Mystic Coin (Rare)|11|Mystic Crystal
+Recipe|1|Recipe: Satchel of Honed Outlaw Armor (Fine)|Mystic Forge||1|Honed Outlaw Coat [30](Fine)|2|Bottle of Elonian Wine (Legendary)|14|Mystic Coin (Rare)|8|Mystic Crystal
+Recipe|1|Recipe: Satchel of Honed Student Armor (Fine)|Mystic Forge||1|Honed Student Coat [30](Fine)|2|Bottle of Elonian Wine (Legendary)|14|Mystic Coin (Rare)|8|Mystic Crystal
+Recipe|1|Recipe: Satchel of Knight's Feathered Armor (Fine)|Mystic Forge||1|Knight's Feathered Vestments [70](Fine)|4|Bottle of Elonian Wine (Legendary)|38|Mystic Coin (Rare)|16|Mystic Crystal
+Recipe|1|Recipe: Satchel of Knight's Prowler Armor (Fine)|Mystic Forge||1|Knight's Prowler Coat [70](Fine)|4|Bottle of Elonian Wine (Legendary)|38|Mystic Coin (Rare)|16|Mystic Crystal
+Recipe|1|Recipe: Satchel of Knight's Rascal Armor (Fine)|Mystic Forge||1|Knight's Rascal Coat [55](Fine)|3|Bottle of Elonian Wine (Legendary)|29|Mystic Coin (Rare)|13|Mystic Crystal
+Recipe|1|Recipe: Satchel of Knight's Winged Armor (Fine)|Mystic Forge||1|Knight's Winged Tunic [55](Fine)|3|Bottle of Elonian Wine (Legendary)|29|Mystic Coin (Rare)|13|Mystic Crystal
+Recipe|1|Recipe: Satchel of Pillaging Acolyte Armor (Fine)|Mystic Forge||1|Pillaging Acolyte Coat [40](Fine)|2|Bottle of Elonian Wine (Legendary)|20|Mystic Coin (Rare)|10|Mystic Crystal
+Recipe|1|Recipe: Satchel of Pillaging Leather Armor (Fine)|Mystic Forge||1|Pillaging Leather Coat [40](Fine)|2|Bottle of Elonian Wine (Legendary)|20|Mystic Coin (Rare)|10|Mystic Crystal
+Recipe|1|Recipe: Satchel of Pillaging Outlaw Armor (Fine)|Mystic Forge||1|Pillaging Outlaw Coat [25](Fine)|1|Bottle of Elonian Wine (Legendary)|11|Mystic Coin (Rare)|7|Mystic Crystal
+Recipe|1|Recipe: Satchel of Pillaging Student Armor (Fine)|Mystic Forge||1|Pillaging Student Coat [25](Fine)|1|Bottle of Elonian Wine (Legendary)|11|Mystic Coin (Rare)|7|Mystic Crystal
+Recipe|1|Recipe: Satchel of Rampager's Feathered Armor (Fine)|Mystic Forge||1|Rampager's Feathered Vestments [75](Fine)|4|Bottle of Elonian Wine (Legendary)|41|Mystic Coin (Rare)|17|Mystic Crystal
+Recipe|1|Recipe: Satchel of Rampager's Prowler Armor (Fine)|Mystic Forge||1|Rampager's Prowler Coat [75](Fine)|4|Bottle of Elonian Wine (Legendary)|41|Mystic Coin (Rare)|17|Mystic Crystal
+Recipe|1|Recipe: Satchel of Rampager's Rascal Armor (Fine)|Mystic Forge||1|Rampager's Rascal Coat [60](Fine)|3|Bottle of Elonian Wine (Legendary)|32|Mystic Coin (Rare)|14|Mystic Crystal
+Recipe|1|Recipe: Satchel of Rampager's Winged Armor (Fine)|Mystic Forge||1|Rampager's Winged Tunic [60](Fine)|3|Bottle of Elonian Wine (Legendary)|32|Mystic Coin (Rare)|14|Mystic Crystal
+Recipe|1|Recipe: Satchel of Ravaging Acolyte Armor (Fine)|Mystic Forge||1|Ravaging Acolyte Coat [40](Fine)|2|Bottle of Elonian Wine (Legendary)|20|Mystic Coin (Rare)|10|Mystic Crystal
+Recipe|1|Recipe: Satchel of Ravaging Leather Armor (Fine)|Mystic Forge||1|Ravaging Leather Coat [40](Fine)|2|Bottle of Elonian Wine (Legendary)|20|Mystic Coin (Rare)|10|Mystic Crystal
+Recipe|1|Recipe: Satchel of Ravaging Outlaw Armor (Fine)|Mystic Forge||1|Ravaging Outlaw Coat [25](Fine)|1|Bottle of Elonian Wine (Legendary)|11|Mystic Coin (Rare)|7|Mystic Crystal
+Recipe|1|Recipe: Satchel of Ravaging Student Armor (Fine)|Mystic Forge||1|Ravaging Student Coat [25](Fine)|1|Bottle of Elonian Wine (Legendary)|11|Mystic Coin (Rare)|7|Mystic Crystal
+Recipe|1|Recipe: Satchel of Rejuvenating Acolyte Armor (Fine)|Mystic Forge||1|Rejuvenating Acolyte Coat [45](Fine)|2|Bottle of Elonian Wine (Legendary)|20|Mystic Coin (Rare)|10|Mystic Crystal
+Recipe|1|Recipe: Satchel of Rejuvenating Leather Armor (Fine)|Mystic Forge||1|Rejuvenating Leather Coat [45](Fine)|2|Bottle of Elonian Wine (Legendary)|23|Mystic Coin (Rare)|11|Mystic Crystal
+Recipe|1|Recipe: Satchel of Rejuvenating Outlaw Armor (Fine)|Mystic Forge||1|Rejuvenating Outlaw Coat [30](Fine)|1|Bottle of Elonian Wine (Legendary)|11|Mystic Coin (Rare)|7|Mystic Crystal
+Recipe|1|Recipe: Satchel of Rejuvenating Student Armor (Fine)|Mystic Forge||1|Rejuvenating Student Coat [30](Fine)|1|Bottle of Elonian Wine (Legendary)|11|Mystic Coin (Rare)|7|Mystic Crystal
+Recipe|1|Recipe: Satchel of Strong Acolyte Armor (Fine)|Mystic Forge||1|Strong Acolyte Coat [45](Fine)|2|Bottle of Elonian Wine (Legendary)|23|Mystic Coin (Rare)|11|Mystic Crystal
+Recipe|1|Recipe: Satchel of Strong Leather Armor (Fine)|Mystic Forge||1|Strong Leather Coat [45](Fine)|2|Bottle of Elonian Wine (Legendary)|23|Mystic Coin (Rare)|11|Mystic Crystal
+Recipe|1|Recipe: Satchel of Strong Outlaw Armor (Fine)|Mystic Forge||1|Strong Outlaw Coat [30](Fine)|2|Bottle of Elonian Wine (Legendary)|14|Mystic Coin (Rare)|8|Mystic Crystal
+Recipe|1|Recipe: Satchel of Strong Student Armor (Fine)|Mystic Forge||1|Strong Student Coat [30](Fine)|2|Bottle of Elonian Wine (Legendary)|14|Mystic Coin (Rare)|8|Mystic Crystal
+Recipe|1|Recipe: Satchel of Valkyrie Feathered Armor (Fine)|Mystic Forge||1|Valkyrie Feathered Vestments [70](Fine)|4|Bottle of Elonian Wine (Legendary)|38|Mystic Coin (Rare)|16|Mystic Crystal
+Recipe|1|Recipe: Satchel of Valkyrie Prowler Armor (Fine)|Mystic Forge||1|Valkyrie Prowler Coat [70](Fine)|4|Bottle of Elonian Wine (Legendary)|38|Mystic Coin (Rare)|16|Mystic Crystal
+Recipe|1|Recipe: Satchel of Valkyrie Rascal Armor (Fine)|Mystic Forge||1|Valkyrie Rascal Coat [55](Fine)|3|Bottle of Elonian Wine (Legendary)|29|Mystic Coin (Rare)|13|Mystic Crystal
+Recipe|1|Recipe: Satchel of Valkyrie Winged Armor (Fine)|Mystic Forge||1|Valkyrie Winged Tunic [55](Fine)|3|Bottle of Elonian Wine (Legendary)|29|Mystic Coin (Rare)|13|Mystic Crystal
+Recipe|1|Recipe: Satchel of Vigorous Acolyte Armor (Fine)|Mystic Forge||1|Vigorous Acolyte Coat [40](Fine)|2|Bottle of Elonian Wine (Legendary)|20|Mystic Coin (Rare)|10|Mystic Crystal
+Recipe|1|Recipe: Satchel of Vigorous Leather Armor (Fine)|Mystic Forge||1|Vigorous Leather Coat [40](Fine)|2|Bottle of Elonian Wine (Legendary)|20|Mystic Coin (Rare)|10|Mystic Crystal
+Recipe|1|Recipe: Satchel of Vigorous Outlaw Armor (Fine)|Mystic Forge||1|Vigorous Outlaw Coat [25](Fine)|1|Bottle of Elonian Wine (Legendary)|11|Mystic Coin (Rare)|7|Mystic Crystal
+Recipe|1|Recipe: Satchel of Vigorous Student Armor (Fine)|Mystic Forge||1|Vigorous Student Coat [25](Fine)|1|Bottle of Elonian Wine (Legendary)|11|Mystic Coin (Rare)|7|Mystic Crystal
+Recipe|1|Recipe: Box of Berserker's Barbaric Armor (Masterwork)|Mystic Forge||1|Berserker's Barbaric Coat [80](Masterwork)|4|Bottle of Elonian Wine (Legendary)|44|Mystic Coin (Rare)|18|Mystic Crystal
+Recipe|1|Recipe: Box of Berserker's Reinforced Scale Armor (Masterwork)|Mystic Forge||1|Berserker's Reinforced Scale Chest [65](Masterwork)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Box of Carrion Barbaric Armor (Masterwork)|Mystic Forge||1|Carrion Barbaric Coat [80](Masterwork)|4|Bottle of Elonian Wine (Legendary)|44|Mystic Coin (Rare)|18|Mystic Crystal
+Recipe|1|Recipe: Box of Carrion Reinforced Scale Armor (Masterwork)|Mystic Forge||1|Carrion Reinforced Scale Chest [65](Masterwork)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Box of Cleric's Barbaric Armor (Masterwork)|Mystic Forge||1|Cleric's Barbaric Coat [80](Masterwork)|4|Bottle of Elonian Wine (Legendary)|44|Mystic Coin (Rare)|18|Mystic Crystal
+Recipe|1|Recipe: Box of Cleric's Reinforced Scale Armor (Masterwork)|Mystic Forge||1|Cleric's Reinforced Scale Chest [65](Masterwork)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Box of Explorer's Barbaric Armor (Masterwork)|Mystic Forge||1|Explorer's Barbaric Coat [80](Masterwork)|4|Bottle of Elonian Wine (Legendary)|44|Mystic Coin (Rare)|18|Mystic Crystal
+Recipe|1|Recipe: Box of Explorer's Reinforced Scale Armor (Masterwork)|Mystic Forge||1|Explorer's Reinforced Scale Chest [65](Masterwork)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Box of Healing Chain Armor (Master) (Masterwork)|Mystic Forge||1|Healing Chain Coat [20](Masterwork)|1|Bottle of Elonian Wine (Legendary)|8|Mystic Coin (Rare)|6|Mystic Crystal
+Recipe|1|Recipe: Box of Hearty Scale Armor (Masterwork)|Mystic Forge||1|Hearty Scale Coat [35](Masterwork)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Box of Hearty Splint Armor (Masterwork)|Mystic Forge||1|Hearty Splint Coat [50](Masterwork)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Box of Honed Scale Armor (Masterwork)|Mystic Forge||1|Honed Scale Coat [35](Masterwork)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Box of Honed Splint Armor (Masterwork)|Mystic Forge||1|Honed Splint Coat [50](Masterwork)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Box of Knight's Barbaric Armor (Masterwork)|Mystic Forge||1|Knight's Barbaric Coat [80](Masterwork)|4|Bottle of Elonian Wine (Legendary)|44|Mystic Coin (Rare)|18|Mystic Crystal
+Recipe|1|Recipe: Box of Knight's Reinforced Scale Armor (Masterwork)|Mystic Forge||1|Knight's Reinforced Scale Chest [65](Masterwork)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Box of Malign Chain Armor (Master) (Masterwork)|Mystic Forge||1|Malign Chain Coat [20](Masterwork)|1|Bottle of Elonian Wine (Legendary)|8|Mystic Coin (Rare)|6|Mystic Crystal
+Recipe|1|Recipe: Box of Mighty Chain Armor (Master) (Masterwork)|Mystic Forge||1|Mighty Chain Coat [20](Masterwork)|1|Bottle of Elonian Wine (Legendary)|8|Mystic Coin (Rare)|6|Mystic Crystal
+Recipe|1|Recipe: Box of Pillaging Scale Armor (Masterwork)|Mystic Forge||1|Pillaging Scale Coat [35](Masterwork)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Box of Pillaging Splint Armor (Masterwork)|Mystic Forge||1|Pillaging Splint Coat [50](Masterwork)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Box of Precise Chain Armor (Master) (Masterwork)|Mystic Forge||1|Precise Chain Coat [20](Masterwork)|1|Bottle of Elonian Wine (Legendary)|8|Mystic Coin (Rare)|6|Mystic Crystal
+Recipe|1|Recipe: Box of Rampager's Barbaric Armor (Masterwork)|Mystic Forge||1|Rampager's Barbaric Coat [80](Masterwork)|4|Bottle of Elonian Wine (Legendary)|44|Mystic Coin (Rare)|18|Mystic Crystal
+Recipe|1|Recipe: Box of Rampager's Reinforced Scale Armor (Masterwork)|Mystic Forge||1|Rampager's Reinforced Scale Chest [65](Masterwork)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Box of Ravaging Scale Armor (Masterwork)|Mystic Forge||1|Ravaging Scale Coat [35](Masterwork)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Box of Ravaging Splint Armor (Masterwork)|Mystic Forge||1|Ravaging Splint Coat [50](Masterwork)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Box of Rejuvenating Scale Armor (Masterwork)|Mystic Forge||1|Rejuvenating Scale Coat [35](Masterwork)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Box of Rejuvenating Splint Armor (Masterwork)|Mystic Forge||1|Rejuvenating Splint Coat [50](Masterwork)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Box of Resilient Chain Armor (Master) (Masterwork)|Mystic Forge||1|Resilient Chain Coat [20](Masterwork)|1|Bottle of Elonian Wine (Legendary)|8|Mystic Coin (Rare)|6|Mystic Crystal
+Recipe|1|Recipe: Box of Strong Scale Armor (Masterwork)|Mystic Forge||1|Strong Scale Coat [35](Masterwork)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Box of Strong Splint Armor (Masterwork)|Mystic Forge||1|Strong Splint Coat [50](Masterwork)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Box of Valkyrie Barbaric Armor (Masterwork)|Mystic Forge||1|Valkyrie Barbaric Coat [80](Masterwork)|4|Bottle of Elonian Wine (Legendary)|44|Mystic Coin (Rare)|18|Mystic Crystal
+Recipe|1|Recipe: Box of Valkyrie Reinforced Scale Armor (Masterwork)|Mystic Forge||1|Valkyrie Reinforced Scale Chest [65](Masterwork)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Box of Vigorous Scale Armor (Masterwork)|Mystic Forge||1|Vigorous Scale Coat [35](Masterwork)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Box of Vigorous Splint Armor (Masterwork)|Mystic Forge||1|Vigorous Splint Coat [50](Masterwork)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Box of Vital Chain Armor (Master) (Masterwork)|Mystic Forge||1|Vital Chain Coat [20](Masterwork)|1|Bottle of Elonian Wine (Legendary)|8|Mystic Coin (Rare)|6|Mystic Crystal
+Recipe|1|Recipe: Satchel of Berserker's Feathered Armor (Master) (Masterwork)|Mystic Forge||1|Berserker's Feathered Vestments [80](Masterwork)|4|Bottle of Elonian Wine (Legendary)|44|Mystic Coin (Rare)|18|Mystic Crystal
+Recipe|1|Recipe: Satchel of Berserker's Prowler Armor (Master) (Masterwork)|Mystic Forge||1|Berserker's Prowler Coat [80](Masterwork)|4|Bottle of Elonian Wine (Legendary)|44|Mystic Coin (Rare)|18|Mystic Crystal
+Recipe|1|Recipe: Satchel of Berserker's Rascal Armor (Masterwork)|Mystic Forge||1|Berserker's Rascal Coat [65](Masterwork)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Satchel of Berserker's Winged Armor (Master) (Masterwork)|Mystic Forge||1|Berserker's Winged Tunic [65](Masterwork)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Satchel of Carrion Feathered Armor (Master) (Masterwork)|Mystic Forge||1|Carrion Feathered Vestments [80](Masterwork)|4|Bottle of Elonian Wine (Legendary)|44|Mystic Coin (Rare)|18|Mystic Crystal
+Recipe|1|Recipe: Satchel of Carrion Prowler Armor (Master) (Masterwork)|Mystic Forge||1|Carrion Prowler Coat [80](Masterwork)|4|Bottle of Elonian Wine (Legendary)|44|Mystic Coin (Rare)|18|Mystic Crystal
+Recipe|1|Recipe: Satchel of Carrion Rascal Armor (Masterwork)|Mystic Forge||1|Carrion Rascal Coat [65](Masterwork)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Satchel of Carrion Winged Armor (Master) (Masterwork)|Mystic Forge||1|Carrion Winged Tunic [65](Masterwork)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Satchel of Cleric's Feathered Armor (Master) (Masterwork)|Mystic Forge||1|Cleric's Feathered Vestments [80](Masterwork)|4|Bottle of Elonian Wine (Legendary)|44|Mystic Coin (Rare)|18|Mystic Crystal
+Recipe|1|Recipe: Satchel of Cleric's Prowler Armor (Master) (Masterwork)|Mystic Forge||1|Cleric's Prowler Coat [80](Masterwork)|4|Bottle of Elonian Wine (Legendary)|44|Mystic Coin (Rare)|18|Mystic Crystal
+Recipe|1|Recipe: Satchel of Cleric's Rascal Armor (Masterwork)|Mystic Forge||1|Cleric's Rascal Coat [65](Masterwork)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Satchel of Cleric's Winged Armor (Master) (Masterwork)|Mystic Forge||1|Cleric's Winged Tunic [65](Masterwork)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Satchel of Explorer's Feathered Armor (Master) (Masterwork)|Mystic Forge||1|Explorer's Feathered Vestments [80](Masterwork)|4|Bottle of Elonian Wine (Legendary)|44|Mystic Coin (Rare)|18|Mystic Crystal
+Recipe|1|Recipe: Satchel of Explorer's Prowler Armor (Master) (Masterwork)|Mystic Forge||1|Explorer's Prowler Coat [80](Masterwork)|4|Bottle of Elonian Wine (Legendary)|44|Mystic Coin (Rare)|18|Mystic Crystal
+Recipe|1|Recipe: Satchel of Explorer's Rascal Armor (Masterwork)|Mystic Forge||1|Explorer's Rascal Coat [65](Masterwork)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Satchel of Explorer's Winged Armor (Master) (Masterwork)|Mystic Forge||1|Explorer's Winged Tunic [65](Masterwork)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Satchel of Healing Embroidered Armor (Masterwork)|Mystic Forge||1|Healing Embroidered Coat [20](Masterwork)|1|Bottle of Elonian Wine (Legendary)|8|Mystic Coin (Rare)|6|Mystic Crystal
+Recipe|1|Recipe: Satchel of Healing Seeker Armor (Masterwork)|Mystic Forge||1|Healing Seeker Coat [20](Masterwork)|1|Bottle of Elonian Wine (Legendary)|8|Mystic Coin (Rare)|6|Mystic Crystal
+Recipe|1|Recipe: Satchel of Hearty Acolyte Armor (Masterwork)|Mystic Forge||1|Hearty Acolyte Coat [50](Masterwork)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Satchel of Hearty Leather Armor (Masterwork)|Mystic Forge||1|Hearty Leather Coat [50](Masterwork)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Satchel of Hearty Outlaw Armor (Masterwork)|Mystic Forge||1|Hearty Outlaw Coat [35](Masterwork)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Satchel of Hearty Student Armor (Masterwork)|Mystic Forge||1|Hearty Student Coat [35](Masterwork)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Satchel of Honed Acolyte Armor (Masterwork)|Mystic Forge||1|Honed Acolyte Coat [50](Masterwork)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Satchel of Honed Leather Armor (Masterwork)|Mystic Forge||1|Honed Leather Coat [50](Masterwork)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Satchel of Honed Outlaw Armor (Masterwork)|Mystic Forge||1|Honed Outlaw Coat [35](Masterwork)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Satchel of Honed Student Armor (Masterwork)|Mystic Forge||1|Honed Student Coat [35](Masterwork)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Satchel of Knight's Feathered Armor (Master) (Masterwork)|Mystic Forge||1|Knight's Feathered Vestments [80](Masterwork)|4|Bottle of Elonian Wine (Legendary)|44|Mystic Coin (Rare)|18|Mystic Crystal
+Recipe|1|Recipe: Satchel of Knight's Prowler Armor (Master) (Masterwork)|Mystic Forge||1|Knight's Prowler Coat [80](Masterwork)|4|Bottle of Elonian Wine (Legendary)|44|Mystic Coin (Rare)|18|Mystic Crystal
+Recipe|1|Recipe: Satchel of Knight's Rascal Armor (Masterwork)|Mystic Forge||1|Knight's Rascal Coat [65](Masterwork)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Satchel of Knight's Winged Armor (Master) (Masterwork)|Mystic Forge||1|Knight's Winged Tunic [65](Masterwork)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Satchel of Malign Embroidered Armor (Masterwork)|Mystic Forge||1|Malign Embroidered Coat [20](Masterwork)|1|Bottle of Elonian Wine (Legendary)|8|Mystic Coin (Rare)|6|Mystic Crystal
+Recipe|1|Recipe: Satchel of Malign Seeker Armor (Masterwork)|Mystic Forge||1|Malign Seeker Coat [20](Masterwork)|1|Bottle of Elonian Wine (Legendary)|8|Mystic Coin (Rare)|6|Mystic Crystal
+Recipe|1|Recipe: Satchel of Mighty Embroidered Armor (Masterwork)|Mystic Forge||1|Mighty Embroidered Coat [20](Masterwork)|1|Bottle of Elonian Wine (Legendary)|8|Mystic Coin (Rare)|6|Mystic Crystal
+Recipe|1|Recipe: Satchel of Mighty Seeker Armor (Masterwork)|Mystic Forge||1|Mighty Seeker Coat [20](Masterwork)|1|Bottle of Elonian Wine (Legendary)|8|Mystic Coin (Rare)|6|Mystic Crystal
+Recipe|1|Recipe: Satchel of Pillaging Acolyte Armor (Masterwork)|Mystic Forge||1|Pillaging Acolyte Coat [50](Masterwork)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Satchel of Pillaging Leather Armor (Masterwork)|Mystic Forge||1|Pillaging Leather Coat [50](Masterwork)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Satchel of Pillaging Outlaw Armor (Masterwork)|Mystic Forge||1|Pillaging Outlaw Coat [35](Masterwork)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Satchel of Pillaging Student Armor (Masterwork)|Mystic Forge||1|Pillaging Student Coat [35](Masterwork)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Satchel of Precise Embroidered Armor (Masterwork)|Mystic Forge||1|Precise Embroidered Coat [20](Masterwork)|1|Bottle of Elonian Wine (Legendary)|8|Mystic Coin (Rare)|6|Mystic Crystal
+Recipe|1|Recipe: Satchel of Precise Seeker Armor (Masterwork)|Mystic Forge||1|Precise Seeker Coat [20](Masterwork)|1|Bottle of Elonian Wine (Legendary)|8|Mystic Coin (Rare)|6|Mystic Crystal
+Recipe|1|Recipe: Satchel of Rampager's Feathered Armor (Master) (Masterwork)|Mystic Forge||1|Rampager's Feathered Vestments [80](Masterwork)|4|Bottle of Elonian Wine (Legendary)|44|Mystic Coin (Rare)|18|Mystic Crystal
+Recipe|1|Recipe: Satchel of Rampager's Prowler Armor (Master) (Masterwork)|Mystic Forge||1|Rampager's Prowler Coat [80](Masterwork)|4|Bottle of Elonian Wine (Legendary)|44|Mystic Coin (Rare)|18|Mystic Crystal
+Recipe|1|Recipe: Satchel of Rampager's Rascal Armor (Masterwork)|Mystic Forge||1|Rampager's Rascal Coat [65](Masterwork)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Satchel of Rampager's Winged Armor (Master) (Masterwork)|Mystic Forge||1|Rampager's Winged Tunic [65](Masterwork)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Satchel of Ravaging Acolyte Armor (Masterwork)|Mystic Forge||1|Ravaging Acolyte Coat [50](Masterwork)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Satchel of Ravaging Leather Armor (Masterwork)|Mystic Forge||1|Ravaging Leather Coat [50](Masterwork)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Satchel of Ravaging Outlaw Armor (Masterwork)|Mystic Forge||1|Ravaging Outlaw Coat [35](Masterwork)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Satchel of Ravaging Student Armor (Masterwork)|Mystic Forge||1|Ravaging Student Coat [35](Masterwork)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Satchel of Rejuvenating Acolyte Armor (Masterwork)|Mystic Forge||1|Rejuvenating Acolyte Coat [50](Masterwork)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Satchel of Rejuvenating Leather Armor (Masterwork)|Mystic Forge||1|Rejuvenating Leather Coat [50](Masterwork)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Satchel of Rejuvenating Outlaw Armor (Masterwork)|Mystic Forge||1|Rejuvenating Outlaw Coat [35](Masterwork)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Satchel of Rejuvenating Student Armor (Masterwork)|Mystic Forge||1|Rejuvenating Student Coat [35](Masterwork)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Satchel of Resilient Embroidered Armor (Masterwork)|Mystic Forge||1|Resilient Embroidered Coat [20](Masterwork)|1|Bottle of Elonian Wine (Legendary)|8|Mystic Coin (Rare)|6|Mystic Crystal
+Recipe|1|Recipe: Satchel of Resilient Seeker Armor (Masterwork)|Mystic Forge||1|Resilient Seeker Coat [20](Masterwork)|1|Bottle of Elonian Wine (Legendary)|8|Mystic Coin (Rare)|6|Mystic Crystal
+Recipe|1|Recipe: Satchel of Strong Acolyte Armor (Masterwork)|Mystic Forge||1|Strong Acolyte Coat [50](Masterwork)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Satchel of Strong Leather Armor (Masterwork)|Mystic Forge||1|Strong Leather Coat [50](Masterwork)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Satchel of Strong Outlaw Armor (Masterwork)|Mystic Forge||1|Strong Outlaw Coat [35](Masterwork)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Satchel of Strong Student Armor (Masterwork)|Mystic Forge||1|Strong Student Coat [35](Masterwork)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Satchel of Valkyrie Feathered Armor (Master) (Masterwork)|Mystic Forge||1|Valkyrie Feathered Vestments [80](Masterwork)|4|Bottle of Elonian Wine (Legendary)|44|Mystic Coin (Rare)|18|Mystic Crystal
+Recipe|1|Recipe: Satchel of Valkyrie Prowler Armor (Master) (Masterwork)|Mystic Forge||1|Valkyrie Prowler Coat [80](Masterwork)|4|Bottle of Elonian Wine (Legendary)|44|Mystic Coin (Rare)|18|Mystic Crystal
+Recipe|1|Recipe: Satchel of Valkyrie Rascal Armor (Masterwork)|Mystic Forge||1|Valkyrie Rascal Coat [65](Masterwork)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Satchel of Valkyrie Winged Armor (Master) (Masterwork)|Mystic Forge||1|Valkyrie Winged Tunic [65](Masterwork)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Satchel of Vigorous Acolyte Armor (Masterwork)|Mystic Forge||1|Vigorous Acolyte Coat [50](Masterwork)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Satchel of Vigorous Leather Armor (Masterwork)|Mystic Forge||1|Vigorous Leather Coat [50](Masterwork)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Satchel of Vigorous Outlaw Armor (Masterwork)|Mystic Forge||1|Vigorous Outlaw Coat [35](Masterwork)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Satchel of Vigorous Student Armor (Masterwork)|Mystic Forge||1|Vigorous Student Coat [35](Masterwork)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Satchel of Vital Embroidered Armor (Masterwork)|Mystic Forge||1|Vital Embroidered Coat [20](Masterwork)|1|Bottle of Elonian Wine (Legendary)|8|Mystic Coin (Rare)|6|Mystic Crystal
+Recipe|1|Recipe: Satchel of Vital Seeker Armor (Masterwork)|Mystic Forge||1|Vital Seeker Coat [20](Masterwork)|1|Bottle of Elonian Wine (Legendary)|8|Mystic Coin (Rare)|6|Mystic Crystal
+Recipe|1|Recipe: Box of Berserker's Gladiator Armor (Rare) [65](Rare)|Mystic Forge||1|Berserker's Gladiator Chestplate [65](Rare)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Box of Berserker's Gladiator Armor (Rare) [80](Rare)|Mystic Forge||1|Berserker's Gladiator Chestplate [80](Rare)|4|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)|19|Mystic Crystal
+Recipe|1|Recipe: Box of Carrion Gladiator Armor (Rare) [65](Rare)|Mystic Forge||1|Carrion Gladiator Chestplate [65](Rare)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Box of Carrion Gladiator Armor (Rare) [80](Rare)|Mystic Forge||1|Carrion Gladiator Chestplate [80](Rare)|4|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)|19|Mystic Crystal
+Recipe|1|Recipe: Box of Cleric's Gladiator Armor (Rare) [65](Rare)|Mystic Forge||1|Cleric's Gladiator Chestplate [65](Rare)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Box of Cleric's Gladiator Armor (Rare) [80](Rare)|Mystic Forge||1|Cleric's Gladiator Chestplate [80](Rare)|4|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)|19|Mystic Crystal
+Recipe|1|Recipe: Box of Explorer's Gladiator Armor (Rare) [80](Rare)|Mystic Forge||1|Explorer's Gladiator Chestplate [80](Rare)|4|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)|19|Mystic Crystal
+Recipe|1|Recipe: Box of Explorer's Gladiator Armor (Rare) [65](Rare)|Mystic Forge||1|Explorer's Gladiator Chestplate [65](Rare)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Box of Hearty Gladiator Armor (Rare) [35](Rare)|Mystic Forge||1|Hearty Gladiator Chestplate [35](Rare)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Box of Hearty Gladiator Armor (Rare) [50](Rare)|Mystic Forge||1|Hearty Gladiator Chestplate [50](Rare)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Box of Honed Gladiator Armor (Rare) [35](Rare)|Mystic Forge||1|Honed Gladiator Chestplate [35](Rare)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Box of Honed Gladiator Armor (Rare) [50](Rare)|Mystic Forge||1|Honed Gladiator Chestplate [50](Rare)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Box of Knight's Gladiator Armor (Rare) [65](Rare)|Mystic Forge||1|Knight's Gladiator Chestplate [65](Rare)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Box of Knight's Gladiator Armor (Rare) [80](Rare)|Mystic Forge||1|Knight's Gladiator Chestplate [80](Rare)|4|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)|19|Mystic Crystal
+Recipe|1|Recipe: Box of Pillaging Gladiator Armor (Rare) [35](Rare)|Mystic Forge||1|Pillaging Gladiator Chestplate [35](Rare)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Box of Pillaging Gladiator Armor (Rare) [50](Rare)|Mystic Forge||1|Pillaging Gladiator Chestplate [50](Rare)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Box of Rampager's Gladiator Armor (Rare) [65](Rare)|Mystic Forge||1|Rampager's Gladiator Chestplate [65](Rare)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Box of Rampager's Gladiator Armor (Rare) [80](Rare)|Mystic Forge||1|Rampager's Gladiator Chestplate [80](Rare)|4|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)|19|Mystic Crystal
+Recipe|1|Recipe: Box of Ravaging Gladiator Armor (Rare) [35](Rare)|Mystic Forge||1|Ravaging Gladiator Chestplate [35](Rare)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Box of Ravaging Gladiator Armor (Rare) [50](Rare)|Mystic Forge||1|Ravaging Gladiator Chestplate [50](Rare)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Box of Rejuvenating Gladiator Armor (Rare) [35](Rare)|Mystic Forge||1|Rejuvenating Gladiator Chestplate [35](Rare)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Box of Rejuvenating Gladiator Armor (Rare) [50](Rare)|Mystic Forge||1|Rejuvenating Gladiator Chestplate [50](Rare)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Box of Strong Gladiator Armor (Rare) [35](Rare)|Mystic Forge||1|Strong Gladiator Chestplate [35](Rare)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Box of Strong Gladiator Armor (Rare) [50](Rare)|Mystic Forge||1|Strong Gladiator Chestplate [50](Rare)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Box of Valkyrie Gladiator Armor (Rare) [65](Rare)|Mystic Forge||1|Valkyrie Gladiator Chestplate [65](Rare)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Box of Valkyrie Gladiator Armor (Rare) [80](Rare)|Mystic Forge||1|Valkyrie Gladiator Chestplate [80](Rare)|4|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)|19|Mystic Crystal
+Recipe|1|Recipe: Box of Vigorous Gladiator Armor (Rare) [35](Rare)|Mystic Forge||1|Vigorous Gladiator Chestplate [35](Rare)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Box of Vigorous Gladiator Armor (Rare) [50](Rare)|Mystic Forge||1|Vigorous Gladiator Chestplate [50](Rare)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Satchel of Berserker's Masquerade Armor (Rare) [65](Rare)|Mystic Forge||1|Berserker's Masquerade Raiments [65](Rare)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Satchel of Berserker's Masquerade Armor (Rare) [80](Rare)|Mystic Forge||1|Berserker's Masquerade Raiments [80](Rare)|4|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)|19|Mystic Crystal
+Recipe|1|Recipe: Satchel of Berserker's Noble Armor (Rare) [65](Rare)|Mystic Forge||1|Berserker's Noble Coat [65](Rare)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Satchel of Berserker's Noble Armor (Rare) [80](Rare)|Mystic Forge||1|Berserker's Noble Coat [80](Rare)|4|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)|19|Mystic Crystal
+Recipe|1|Recipe: Satchel of Carrion Masquerade Armor (Rare) [65](Rare)|Mystic Forge||1|Carrion Masquerade Raiments [65](Rare)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Satchel of Carrion Masquerade Armor (Rare) [80](Rare)|Mystic Forge||1|Carrion Masquerade Raiments [80](Rare)|4|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)|19|Mystic Crystal
+Recipe|1|Recipe: Satchel of Carrion Noble Armor (Rare) [65](Rare)|Mystic Forge||1|Carrion Noble Coat [65](Rare)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Satchel of Carrion Noble Armor (Rare) [80](Rare)|Mystic Forge||1|Carrion Noble Coat [80](Rare)|4|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)|19|Mystic Crystal
+Recipe|1|Recipe: Satchel of Cleric's Masquerade Armor (Rare) [65](Rare)|Mystic Forge||1|Cleric's Masquerade Raiments [65](Rare)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Satchel of Cleric's Masquerade Armor (Rare) [80](Rare)|Mystic Forge||1|Cleric's Masquerade Raiments [80](Rare)|4|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)|19|Mystic Crystal
+Recipe|1|Recipe: Satchel of Cleric's Noble Armor (Rare) [65](Rare)|Mystic Forge||1|Cleric's Noble Coat [65](Rare)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Satchel of Cleric's Noble Armor (Rare) [80](Rare)|Mystic Forge||1|Cleric's Noble Coat [80](Rare)|4|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)|19|Mystic Crystal
+Recipe|1|Recipe: Satchel of Explorer's Masquerade Armor (Rare) [65](Rare)|Mystic Forge||1|Explorer's Masquerade Raiments [65](Rare)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Satchel of Explorer's Masquerade Armor (Rare) [80](Rare)|Mystic Forge||1|Explorer's Masquerade Raiments [80](Rare)|4|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)|19|Mystic Crystal
+Recipe|1|Recipe: Satchel of Explorer's Noble Armor (Rare) [65](Rare)|Mystic Forge||1|Explorer's Noble Coat [65](Rare)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Satchel of Explorer's Noble Armor (Rare) [80](Rare)|Mystic Forge||1|Explorer's Noble Coat [80](Rare)|4|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)|19|Mystic Crystal
+Recipe|1|Recipe: Satchel of Hearty Masquerade Armor (Rare) [35](Rare)|Mystic Forge||1|Hearty Masquerade Raiments [35](Rare)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Satchel of Hearty Masquerade Armor (Rare) [50](Rare)|Mystic Forge||1|Hearty Masquerade Raiments [50](Rare)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Satchel of Hearty Noble Armor (Rare) [35](Rare)|Mystic Forge||1|Hearty Noble Coat [35](Rare)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Satchel of Hearty Noble Armor (Rare) [50](Rare)|Mystic Forge||1|Hearty Noble Coat [50](Rare)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Satchel of Honed Masquerade Armor (Rare) [35](Rare)|Mystic Forge||1|Honed Masquerade Raiments [35](Rare)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Satchel of Honed Masquerade Armor (Rare) [50](Rare)|Mystic Forge||1|Honed Masquerade Raiments [50](Rare)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Satchel of Honed Noble Armor (Rare) [35](Rare)|Mystic Forge||1|Honed Noble Coat [35](Rare)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Satchel of Honed Noble Armor (Rare) [50](Rare)|Mystic Forge||1|Honed Noble Coat [50](Rare)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Satchel of Knight's Masquerade Armor (Rare) [65](Rare)|Mystic Forge||1|Knight's Masquerade Raiments [65](Rare)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Satchel of Knight's Masquerade Armor (Rare) [80](Rare)|Mystic Forge||1|Knight's Masquerade Raiments [80](Rare)|4|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)|19|Mystic Crystal
+Recipe|1|Recipe: Satchel of Knight's Noble Armor (Rare) [65](Rare)|Mystic Forge||1|Knight's Noble Coat [65](Rare)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Satchel of Knight's Noble Armor (Rare) [80](Rare)|Mystic Forge||1|Knight's Noble Coat [80](Rare)|4|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)|19|Mystic Crystal
+Recipe|1|Recipe: Satchel of Pillaging Masquerade Armor (Rare) [35](Rare)|Mystic Forge||1|Pillaging Masquerade Raiments [35](Rare)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Satchel of Pillaging Masquerade Armor (Rare) [50](Rare)|Mystic Forge||1|Pillaging Masquerade Raiments [50](Rare)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Satchel of Pillaging Noble Armor (Rare) [35](Rare)|Mystic Forge||1|Pillaging Noble Coat [35](Rare)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Satchel of Pillaging Noble Armor (Rare) [50](Rare)|Mystic Forge||1|Pillaging Noble Coat [50](Rare)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Satchel of Rampager's Masquerade Armor (Rare) [65](Rare)|Mystic Forge||1|Rampager's Masquerade Raiments [65](Rare)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Satchel of Rampager's Masquerade Armor (Rare) [80](Rare)|Mystic Forge||1|Rampager's Masquerade Raiments [80](Rare)|4|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)|19|Mystic Crystal
+Recipe|1|Recipe: Satchel of Rampager's Noble Armor (Rare) [65](Rare)|Mystic Forge||1|Rampager's Noble Coat [65](Rare)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Satchel of Rampager's Noble Armor (Rare) [80](Rare)|Mystic Forge||1|Rampager's Noble Coat [80](Rare)|4|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)|19|Mystic Crystal
+Recipe|1|Recipe: Satchel of Ravaging Masquerade Armor (Rare) [35](Rare)|Mystic Forge||1|Ravaging Masquerade Raiments [35](Rare)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Satchel of Ravaging Masquerade Armor (Rare) [50](Rare)|Mystic Forge||1|Ravaging Masquerade Raiments [50](Rare)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Satchel of Ravaging Noble Armor (Rare) [35](Rare)|Mystic Forge||1|Ravaging Noble Coat [35](Rare)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Satchel of Ravaging Noble Armor (Rare) [50](Rare)|Mystic Forge||1|Ravaging Noble Coat [50](Rare)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Satchel of Rejuvenating Masquerade Armor (Rare) [35](Rare)|Mystic Forge||1|Rejuvenating Masquerade Raiments [35](Rare)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Satchel of Rejuvenating Masquerade Armor (Rare) [50](Rare)|Mystic Forge||1|Rejuvenating Masquerade Raiments [50](Rare)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Satchel of Rejuvenating Noble Armor (Rare) [35](Rare)|Mystic Forge||1|Rejuvenating Noble Coat [35](Rare)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Satchel of Rejuvenating Noble Armor (Rare) [50](Rare)|Mystic Forge||1|Rejuvenating Noble Coat [50](Rare)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Satchel of Strong Masquerade Armor (Rare) [35](Rare)|Mystic Forge||1|Strong Masquerade Raiments [35](Rare)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Satchel of Strong Masquerade Armor (Rare) [50](Rare)|Mystic Forge||1|Strong Masquerade Raiments [50](Rare)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Satchel of Strong Noble Armor (Rare) [35](Rare)|Mystic Forge||1|Strong Noble Coat [35](Rare)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Satchel of Strong Noble Armor (Rare) [50](Rare)|Mystic Forge||1|Strong Noble Coat [50](Rare)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Satchel of Valkyrie Masquerade Armor (Rare) [65](Rare)|Mystic Forge||1|Valkyrie Masquerade Raiments [65](Rare)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Satchel of Valkyrie Masquerade Armor (Rare) [80](Rare)|Mystic Forge||1|Valkyrie Masquerade Raiments [80](Rare)|4|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)|19|Mystic Crystal
+Recipe|1|Recipe: Satchel of Valkyrie Noble Armor (Rare) [65](Rare)|Mystic Forge||1|Valkyrie Noble Coat [65](Rare)|3|Bottle of Elonian Wine (Legendary)|35|Mystic Coin (Rare)|15|Mystic Crystal
+Recipe|1|Recipe: Satchel of Valkyrie Noble Armor (Rare) [80](Rare)|Mystic Forge||1|Valkyrie Noble Coat [80](Rare)|4|Bottle of Elonian Wine (Legendary)|47|Mystic Coin (Rare)|19|Mystic Crystal
+Recipe|1|Recipe: Satchel of Vigorous Masquerade Armor (Rare) [35](Rare)|Mystic Forge||1|Vigorous Masquerade Raiments [35](Rare)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Satchel of Vigorous Masquerade Armor (Rare) [50](Rare)|Mystic Forge||1|Vigorous Masquerade Raiments [50](Rare)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|1|Recipe: Satchel of Vigorous Noble Armor (Rare) [35](Rare)|Mystic Forge||1|Vigorous Noble Coat [35](Rare)|2|Bottle of Elonian Wine (Legendary)|17|Mystic Coin (Rare)|9|Mystic Crystal
+Recipe|1|Recipe: Satchel of Vigorous Noble Armor (Rare) [50](Rare)|Mystic Forge||1|Vigorous Noble Coat [50](Rare)|3|Bottle of Elonian Wine (Legendary)|26|Mystic Coin (Rare)|12|Mystic Crystal
+Recipe|2|Charged Core (Rare)|Mystic Forge||4|Charged Shard (Rare)|1|Mystic Binding Agent (Fine)|1|Mystic Crystal|1|Pile of Incandescent Dust (Fine)
+Recipe|4|Charged Fragment (Rare)|Mystic Forge||8|Charged Sliver (Rare)|1|Mystic Binding Agent (Fine)|1|Mystic Crystal|1|Pile of Radiant Dust (Fine)
+Recipe|1|Charged Lodestone (Exotic)|Mystic Forge||2|Charged Core (Rare)|1|Mystic Binding Agent (Fine)|1|Mystic Crystal|1|Pile of Crystalline Dust (Rare)
+Recipe|3|Charged Shard (Rare)|Mystic Forge||6|Charged Fragment (Rare)|1|Mystic Binding Agent (Fine)|1|Mystic Crystal|1|Pile of Luminous Dust (Fine)
+Recipe|2|Corrupted Core (Rare)|Mystic Forge||4|Corrupted Shard (Rare)|1|Mystic Binding Agent (Fine)|1|Mystic Crystal|1|Pile of Incandescent Dust (Fine)
+Recipe|4|Corrupted Fragment (Rare)|Mystic Forge||8|Corrupted Sliver (Rare)|1|Mystic Binding Agent (Fine)|1|Mystic Crystal|1|Pile of Radiant Dust (Fine)
+Recipe|1|Corrupted Lodestone (Exotic)|Mystic Forge||2|Corrupted Core (Rare)|1|Mystic Binding Agent (Fine)|1|Mystic Crystal|1|Pile of Crystalline Dust (Rare)
+Recipe|3|Corrupted Shard (Rare)|Mystic Forge||6|Corrupted Fragment (Rare)|1|Mystic Binding Agent (Fine)|1|Mystic Crystal|1|Pile of Luminous Dust (Fine)
+Recipe|2|Crystal Core (Rare)|Mystic Forge||4|Crystal Shard (Rare)|1|Mystic Binding Agent (Fine)|1|Mystic Crystal|1|Pile of Incandescent Dust (Fine)
+Recipe|4|Crystal Fragment (Rare)|Mystic Forge||8|Crystal Sliver (Rare)|1|Mystic Binding Agent (Fine)|1|Mystic Crystal|1|Pile of Radiant Dust (Fine)
+Recipe|1|Crystal Lodestone (Exotic)|Mystic Forge||2|Crystal Core (Rare)|1|Mystic Binding Agent (Fine)|1|Mystic Crystal|1|Pile of Crystalline Dust (Rare)
+Recipe|3|Crystal Shard (Rare)|Mystic Forge||6|Crystal Fragment (Rare)|1|Mystic Binding Agent (Fine)|1|Mystic Crystal|1|Pile of Luminous Dust (Fine)
+Recipe|2|Destroyer Core (Rare)|Mystic Forge||4|Destroyer Shard (Rare)|1|Mystic Binding Agent (Fine)|1|Mystic Crystal|1|Pile of Incandescent Dust (Fine)
+Recipe|4|Destroyer Fragment (Rare)|Mystic Forge||8|Destroyer Sliver (Rare)|1|Mystic Binding Agent (Fine)|1|Mystic Crystal|1|Pile of Radiant Dust (Fine)
+Recipe|1|Destroyer Lodestone (Exotic)|Mystic Forge||2|Destroyer Core (Rare)|1|Mystic Binding Agent (Fine)|1|Mystic Crystal|1|Pile of Crystalline Dust (Rare)
+Recipe|3|Destroyer Shard (Rare)|Mystic Forge||6|Destroyer Fragment (Rare)|1|Mystic Binding Agent (Fine)|1|Mystic Crystal|1|Pile of Luminous Dust (Fine)
+Recipe|2|Glacial Core (Rare)|Mystic Forge||4|Glacial Shard (Rare)|1|Mystic Binding Agent (Fine)|1|Mystic Crystal|1|Pile of Incandescent Dust (Fine)
+Recipe|4|Glacial Fragment (Rare)|Mystic Forge||8|Glacial Sliver (Rare)|1|Mystic Binding Agent (Fine)|1|Mystic Crystal|1|Pile of Radiant Dust (Fine)
+Recipe|1|Glacial Lodestone (Exotic)|Mystic Forge||2|Glacial Core (Rare)|1|Mystic Binding Agent (Fine)|1|Mystic Crystal|1|Pile of Crystalline Dust (Rare)
+Recipe|3|Glacial Shard (Rare)|Mystic Forge||6|Glacial Fragment (Rare)|1|Mystic Binding Agent (Fine)|1|Mystic Crystal|1|Pile of Luminous Dust (Fine)
+Recipe|2|Molten Core (Rare)|Mystic Forge||4|Molten Shard (Rare)|1|Mystic Binding Agent (Fine)|1|Mystic Crystal|1|Pile of Incandescent Dust (Fine)
+Recipe|4|Molten Fragment (Rare)|Mystic Forge||8|Molten Sliver (Rare)|1|Mystic Binding Agent (Fine)|1|Mystic Crystal|1|Pile of Radiant Dust (Fine)
+Recipe|1|Molten Lodestone (Exotic)|Mystic Forge||2|Molten Core (Rare)|1|Mystic Binding Agent (Fine)|1|Mystic Crystal|1|Pile of Crystalline Dust (Rare)
+Recipe|3|Molten Shard (Rare)|Mystic Forge||6|Molten Fragment (Rare)|1|Mystic Binding Agent (Fine)|1|Mystic Crystal|1|Pile of Luminous Dust (Fine)
+Recipe|2|Onyx Core (Rare)|Mystic Forge||4|Onyx Shard (Rare)|1|Mystic Binding Agent (Fine)|1|Mystic Crystal|1|Pile of Incandescent Dust (Fine)
+Recipe|4|Onyx Fragment (Rare)|Mystic Forge||8|Onyx Sliver (Rare)|1|Mystic Binding Agent (Fine)|1|Mystic Crystal|1|Pile of Radiant Dust (Fine)
+Recipe|1|Onyx Lodestone (Exotic)|Mystic Forge||2|Onyx Core (Rare)|1|Mystic Binding Agent (Fine)|1|Mystic Crystal|1|Pile of Crystalline Dust (Rare)
+Recipe|3|Onyx Shard (Rare)|Mystic Forge||6|Onyx Fragment (Rare)|1|Mystic Binding Agent (Fine)|1|Mystic Crystal|1|Pile of Luminous Dust (Fine)
+
+#New stuffs
+Recipe|1|Mawdrey (Infused) [80](Ascended)|Mystic Forge||1|Mawdrey [80](Ascended)|1|Gift of Ascension (Ascended)|1|Glob of Coagulated Mists Essence (Ascended)|10|Pile of Crystalline Dust (Rare)
+Consume|1|Mawdrey [80](Ascended)|1|Pet Plantling (Ascended)|1|Destroyer Heated Stone (Ascended)
+Recipe|1|Destroyer Heated Stone (Ascended)|Mystic Forge||1|Heat Stone (Ascended)|3|Bloodstone Brick (Ascended)|1|+5 Agony Infusion [80](Ascended)|1|Heart of the Destroyer (Exotic)
+Task|Heart of the Destroyer (Exotic)|Visit|Visit Heart of the Destroyer|the object Heart of the Destroyer in Mount Maelstrom
+Task|Box of Captured Light (Exotic)|Visit|Visit Ray of Light|the Forsaken Fortune mini-dungeon in Dredgehaunt Cliffs
+Task|Water of Rhand (Exotic)|Visit|Visit Fresh Water|the Font of Rhand mini-dungeon in Flame Temple Tombs, Diessa Plateau
+Task|Pile of Elemental Essence (Exotic)|Visit|Visit Cluster|the Hidden Garden jumping puzzle in Diedre's Steps, Mount Maelstrom
+Task|Pile of Crackling Ley Line Dust (Exotic)|Complete|Complete Recalibrating the Waypoints|Story Mission Recalibrating the Waypoints, then take the dust from Braham to the Waypoint Research material in Vexa's Lab.
+Consume|1|Pet Plantling (Ascended)|1|Pet Shoot (Ascended)|1|Powerful Grow Lamp (Ascended)
+Consume|1|Pet Shoot (Ascended)|1|Pet Sprout (Ascended)|1|Package of Rhand Blessed Plant Food (Ascended)
+Consume|1|Pet Sprout (Ascended)|1|Pet Seedling (Ascended)|1|Package of Elementally Charged Plant Food (Ascended)
+Consume|1|Pet Seedling (Ascended)|1|Pet Seed (Exotic)|1|Mists Infused Clay Pot (Ascended)
+Recipe|1|Mists Infused Clay Pot (Ascended)|Mystic Forge||1|Clay Pot (Rare)|20|Foxfire Cluster (Rare)|100|Pile of Bloodstone Dust (Ascended)|1|Mists Stone (Exotic)
+Recipe|1|Powerful Grow Lamp (Ascended)|Mystic Forge||1|Grow Lamp (Exotic)|3|Bloodstone Brick (Ascended)|4|Essence of Luck (Exotic)|1|Box of Captured Light (Exotic)
+Recipe|1|Package of Rhand Blessed Plant Food (Ascended)|Mystic Forge||100|Thick Leather Section|100|Pile of Bloodstone Dust (Ascended)|7|Plate of Meaty Plant Food (Rare)|1|Water of Rhand (Exotic)
+Recipe|1|Package of Elementally Charged Plant Food (Ascended)|Mystic Forge||100|Thick Leather Section|100|Pile of Bloodstone Dust (Ascended)|7|Plate of Meaty Plant Food (Rare)|1|Pile of Elemental Essence (Exotic)
+Recipe|1|Package of Ley Line Dusted Plant Food (Exotic)|Mystic Forge||100|Thick Leather Section|100|Pile of Bloodstone Dust (Ascended)|7|Plate of Meaty Plant Food (Rare)|1|Pile of Crackling Ley Line Dust (Exotic)
+
+##
+Consume|1|Pet Seed (Exotic)|1|Cultivated Shoot (Exotic)|1|Attuned Grow Lamp (Exotic)
+Consume|1|Cultivated Vine [80](Exotic)|1|Cultivated Shoot (Exotic)|1|Attuned Grow Lamp (Exotic)
+#
+Consume|1|Cultivated Shoot (Exotic)|1|Cultivated Sprout (Exotic)|1|Package of Oasis Soaked Plant Food (Exotic)
+Consume|1|Cultivated Sprout (Exotic)|1|Cultivated Seedling (Exotic)|1|Package of Ley Line Dusted Plant Food (Exotic)
+Consume|1|Cultivated Seedling (Exotic)|1|Cultivated Seed (Exotic)|1|Chaos Infused Clay Pot (Exotic)
+Recipe|1|Chaos Infused Clay Pot (Exotic)|Mystic Forge||1|Clay Pot (Rare)|20|Foxfire Cluster (Rare)|100|Pile of Bloodstone Dust (Ascended)|1|Resonating Chaos Orb (Exotic)
+Recipe|1|Attuned Grow Lamp (Exotic)|Mystic Forge||1|Grow Lamp (Exotic)|3|Bloodstone Brick (Ascended)|4|Essence of Luck (Exotic)|1|Germinated Foxfire Cluster (Exotic)
+Recipe|1|Package of Oasis Soaked Plant Food (Exotic)|Mystic Forge||100|Thick Leather Section|100|Pile of Bloodstone Dust (Ascended)|7|Plate of Piquant Plant Food (Rare)|1|Vial of Mending Oasis Water (Exotic)
+Recipe|1|Package of Phantasmally Infused Plant Food (Exotic)|Mystic Forge||100|Thick Leather Section|100|Pile of Bloodstone Dust (Ascended)|7|Plate of Piquant Plant Food (Rare)|1|Weirded Phantasmal Residue (Exotic)
+Task|Resonating Chaos Orb (Exotic)|Complete|Complete Party Politics|Party Politics, then take the orb to the Steam Ogre in metrica
+Task|Germinated Foxfire Cluster (Exotic)|Complete|Complete The World Summit|The World Summit story mission, then take the foxfire cluster to the Pollen-Rich Zephyr in Aurora's Remains
+Task|Weirded Phantasmal Residue (Exotic)|Complete|Complete The Dragon's Reach Part 1|Dragons Reach Part 1, then take the Phantasmal Resudue to the Ascalonian Aqueduct skill point in Diessa Plateau
+Task|Vial of Mending Oasis Water (Exotic)|Visit|Visit Gleam|Gleam in Restoration Refuge, get something to hold magic water.  Use the vial below the Mending Waters skill point waterfall
+##
+Consume|1|Cultivated Seed (Exotic)|1|Mysterious Sprout (Exotic)|1|Package of Phantasmally Infused Plant Food (Exotic)
+Consume|1|Mysterious Vine [80](Exotic)|1|Mysterious Sprout (Exotic)|1|Package of Phantasmally Infused Plant Food (Exotic)
+#
+Consume|1|Mysterious Sprout (Exotic)|1|Mysterious Seedling (Exotic)|1|Package of Sacred Plant Food (Exotic)
+Consume|1|Mysterious Seedling (Exotic)|1|Mysterious Seed (Rare)|1|Ley Line Infused Clay Pot (Exotic)
+Task|Mysterious Seed (Rare)|Complete|Complete Uprooting the Iron Marches quest|Complete Uprooting the Iron Marches quest as part of Dragons Reach: Part 1
+Recipe|1|Ley Line Infused Clay Pot (Exotic)|Mystic Forge||1|Clay Pot (Rare)|20|Foxfire Cluster (Rare)|100|Pile of Bloodstone Dust (Ascended)|1|Polarized Ley Line Infused Stone (Rare)
+Recipe|1|Package of Sacred Plant Food (Exotic)|Mystic Forge||100|Thick Leather Section|7|Plate of Meaty Plant Food (Rare)|100|Pile of Bloodstone Dust (Ascended)|1|Purified Vial of Sacred Glacial Water (Exotic)
+Task|Polarized Ley Line Infused Stone (Rare)|Visit|Visit the drill bit|the drill bit in Lions Arch with a Ley Line Infused Stone from The Waypoint Conundrum
+Task|Purified Vial of Sacred Glacial Water (Exotic)|Complete|Complete Summit Invitations|Summit invitations, then take the Sacred Glacial water to the Shatterd Ice Ruins Jumping Puzzle in Frostgorge Sound
+
+

@@ -1,0 +1,22 @@
+RESOURCE=Heavy Ritual Bag
+# Line 1 is always to identify what bag is being opened.
+# The remaining lines are the contents, in the format of:
+#<setSize>|<Item 1>|<Item 1 Count>|<Item 2>|<Item 2 Count> | ...
+#Tokens/Coins are represented with their enum type, eg: COIN_TOKEN, KARMA_TOKEN, etc
+########################
+#Begin drops 2016-04-19
+50|COIN_TOKEN|78|Silk Scrap|16|Gossamer Scrap|1|Thick Leather Section|11|Hardened Leather Section|4|Intricate Totem (Fine)|9|Elaborate Totem (Rare)|2|Vial of Potent Blood (Fine)|14|Vial of Powerful Blood (Rare)|1|Crystal Core (Rare)|0|Crystal Lodestone (Exotic)|0|Molten Core (Rare)|1|Molten Lodestone (Exotic)|0
+50|COIN_TOKEN|77|Silk Scrap|28|Gossamer Scrap|0|Thick Leather Section|9|Hardened Leather Section|1|Intricate Totem (Fine)|13|Elaborate Totem (Rare)|3|Vial of Potent Blood (Fine)|14|Vial of Powerful Blood (Rare)|0|Crystal Core (Rare)|0|Crystal Lodestone (Exotic)|0|Molten Core (Rare)|0|Molten Lodestone (Exotic)|0
+50|COIN_TOKEN|70|Silk Scrap|17|Gossamer Scrap|3|Thick Leather Section|18|Hardened Leather Section|0|Intricate Totem (Fine)|13|Elaborate Totem (Rare)|1|Vial of Potent Blood (Fine)|10|Vial of Powerful Blood (Rare)|2|Crystal Core (Rare)|0|Crystal Lodestone (Exotic)|0|Molten Core (Rare)|0|Molten Lodestone (Exotic)|0
+50|COIN_TOKEN|91|Silk Scrap|22|Gossamer Scrap|0|Thick Leather Section|24|Hardened Leather Section|2|Intricate Totem (Fine)|5|Elaborate Totem (Rare)|2|Vial of Potent Blood (Fine)|10|Vial of Powerful Blood (Rare)|5|Crystal Core (Rare)|0|Crystal Lodestone (Exotic)|0|Molten Core (Rare)|0|Molten Lodestone (Exotic)|0
+50|COIN_TOKEN|72|Silk Scrap|27|Gossamer Scrap|2|Thick Leather Section|22|Hardened Leather Section|0|Intricate Totem (Fine)|9|Elaborate Totem (Rare)|1|Vial of Potent Blood (Fine)|13|Vial of Powerful Blood (Rare)|1|Crystal Core (Rare)|0|Crystal Lodestone (Exotic)|0|Molten Core (Rare)|0|Molten Lodestone (Exotic)|0
+#Begin drops 2016-05-22
+250|COIN_TOKEN|308|Silk Scrap| 85|Gossamer Scrap|10|Thick Leather Section|68|Hardened Leather Section|6|Intricate Totem (Fine)|64|Elaborate Totem (Rare)|3|Vial of Potent Blood (Fine)|65|Vial of Powerful Blood (Rare)|8|Crystal Core (Rare)|3|Crystal Lodestone (Exotic)|0|Molten Core (Rare)|0|Molten Lodestone (Exotic)|1
+250|COIN_TOKEN|437|Silk Scrap| 79|Gossamer Scrap| 7|Thick Leather Section|77|Hardened Leather Section|4|Intricate Totem (Fine)|70|Elaborate Totem (Rare)|8|Vial of Potent Blood (Fine)|60|Vial of Powerful Blood (Rare)|9|Crystal Core (Rare)|1|Crystal Lodestone (Exotic)|0|Molten Core (Rare)|1|Molten Lodestone (Exotic)|1
+250|COIN_TOKEN|339|Silk Scrap| 95|Gossamer Scrap| 5|Thick Leather Section|74|Hardened Leather Section|9|Intricate Totem (Fine)|60|Elaborate Totem (Rare)|2|Vial of Potent Blood (Fine)|65|Vial of Powerful Blood (Rare)|7|Crystal Core (Rare)|0|Crystal Lodestone (Exotic)|0|Molten Core (Rare)|1|Molten Lodestone (Exotic)|0
+250|COIN_TOKEN|377|Silk Scrap|111|Gossamer Scrap| 8|Thick Leather Section|63|Hardened Leather Section|7|Intricate Totem (Fine)|75|Elaborate Totem (Rare)|3|Vial of Potent Blood (Fine)|50|Vial of Powerful Blood (Rare)|6|Crystal Core (Rare)|1|Crystal Lodestone (Exotic)|1|Molten Core (Rare)|2|Molten Lodestone (Exotic)|0
+#Begin drops 2016-07-03
+250|COIN_TOKEN|315|Silk Scrap|89|Gossamer Scrap|9|Thick Leather Section|73|Hardened Leather Section|8|Intricate Totem (Fine)|66|Elaborate Totem (Rare)|6|Vial of Potent Blood (Fine)|61|Vial of Powerful Blood (Rare)|1|Crystal Core (Rare)|1|Crystal Lodestone (Exotic)|0|Molten Core (Rare)|1|Molten Lodestone (Exotic)|0
+250|COIN_TOKEN|370|Silk Scrap|92|Gossamer Scrap|6|Thick Leather Section|64|Hardened Leather Section|8|Intricate Totem (Fine)|69|Elaborate Totem (Rare)|3|Vial of Potent Blood (Fine)|64|Vial of Powerful Blood (Rare)|4|Crystal Core (Rare)|3|Crystal Lodestone (Exotic)|0|Molten Core (Rare)|1|Molten Lodestone (Exotic)|0
+#Null Row:
+#0|COIN_TOKEN|0|Silk Scrap|0|Gossamer Scrap|0|Thick Leather Section|0|Hardened Leather Section|0|Intricate Totem (Fine)|0|Elaborate Totem (Rare)|0|Vial of Potent Blood (Fine)|0|Vial of Powerful Blood (Rare)|0|Crystal Core (Rare)|0|Crystal Lodestone (Exotic)|0|Molten Core (Rare)|0|Molten Lodestone (Exotic)|0
