@@ -42,8 +42,10 @@ public class Item extends ItemKey
    private APIItem apiItem = null;
 
    private Collection<Source> sources = Collections.synchronizedCollection(new HashSet<Source>());
+   private Object sourcesLock = new Object();
    Collection<Source> unmodifiableSources = Collections.unmodifiableCollection(sources);
    private Collection<Destination> destinations = Collections.synchronizedCollection(new HashSet<Destination>());
+   private Object destinationsLock = new Object();
    Collection<Destination> unmodifiableDestinations = Collections.unmodifiableCollection(destinations);
 
    private Vector<Item> products = new Vector<Item>();
@@ -94,7 +96,7 @@ public class Item extends ItemKey
       Value value = destinationValueNetBest;
       if(value == null)
       {
-         synchronized(destinations)
+         synchronized(destinationsLock)
          {
             for(Destination destination : destinations)
             {
@@ -128,7 +130,7 @@ public class Item extends ItemKey
       Value value = destinationValueNetFast;
       if(value == null)
       {
-         synchronized(destinations)
+         synchronized(destinationsLock)
          {
             for(Destination destination : destinations)
             {
@@ -218,7 +220,7 @@ public class Item extends ItemKey
       }
 
       source.linkToTradingPost();
-      synchronized(sources)
+      synchronized(sourcesLock)
       {
          sources.add(source);
       }
@@ -294,7 +296,7 @@ public class Item extends ItemKey
       
       boolean broadcast = false;
       // Evaluate preferred source
-      synchronized(sources)
+      synchronized(sourcesLock)
       {
          for(Source method : sources)
          {
@@ -373,7 +375,7 @@ public class Item extends ItemKey
       }
       
       // Evaluate preferred destination
-      synchronized(destinations)
+      synchronized(destinationsLock)
       {
          // We want the best value based on net (sale value less any market costs)
          // So evaluate accordingly, and capture net and gross values both.
@@ -645,7 +647,7 @@ public class Item extends ItemKey
    public synchronized void clearMarketPrices()
    {
 
-      synchronized(sources)
+      synchronized(sourcesLock)
       {
          for(Source source : sources.toArray(new Source[0]) )
          {

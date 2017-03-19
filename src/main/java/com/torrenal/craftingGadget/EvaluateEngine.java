@@ -1,5 +1,6 @@
 package com.torrenal.craftingGadget;
 
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Vector;
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -9,7 +10,8 @@ import java.util.concurrent.Executors;
 public class EvaluateEngine
 {
 	static private ConcurrentLinkedQueue<Item> queue = new ConcurrentLinkedQueue<Item>();
-	static private HashSet<Item> preQueue = new HashSet<>();
+	static private Object queueLock = new Object();
+	static private EvaluatePreQueue preQueue = new EvaluatePreQueue();
 	static private Thread worker = null;
 	private static boolean reevaluateAll;
 	private static ExecutorService executor = Executors.newSingleThreadExecutor();
@@ -79,17 +81,17 @@ public class EvaluateEngine
 	   		try
 	   		{
 	   			Item victim = null;
-	   			synchronized(queue)
+	   			synchronized(queueLock)
 	   			{
 	   				if(queue.isEmpty())
 	   				{
 	   					ContextUpdateNotifier.notifyContentUpdates();
-	   					queue.notifyAll();
+	   					queueLock.notifyAll();
 	   					while(queue.isEmpty() && preQueue.isEmpty())
 	   					{
 	   						try
 	   						{
-	   							queue.wait(100);
+	   							queueLock.wait(100);
 	   						} catch (InterruptedException e)
 	   						{
 	   						}
@@ -97,11 +99,11 @@ public class EvaluateEngine
 	   					napTime = true;
 	   					if(!preQueue.isEmpty())
 	   					{
-	   						HashSet<Item> oldPreQueue = preQueue;
-	   						preQueue = new HashSet<>();
+	   						EvaluatePreQueue oldPreQueue = preQueue;
+	   						preQueue = new EvaluatePreQueue();
 	   						synchronized(oldPreQueue)
 	   						{
-	   							queue.addAll(oldPreQueue);
+	   							queue.addAll(oldPreQueue.getItems());
 	   						}
 	   					}
 	   					continue;
@@ -140,13 +142,13 @@ public class EvaluateEngine
 
 	public static void blockUntilDone()
 	{
-		synchronized(queue)
+		synchronized(queueLock)
 		{
 			while(!queue.isEmpty() || !preQueue.isEmpty())
 			{
 				try
             {
-	            queue.wait();
+	            queueLock.wait();
             } catch (InterruptedException e)
             {
             }
@@ -179,5 +181,36 @@ public class EvaluateEngine
 	   };
 	   executor.execute(doRun);
    }
+	
+	/** Utility class to wrap a native java collection with 
+	 * something we can synchronize to... since synchronizing to
+	 * native java collections courts deadlock.
+	 * @author Eric
+	 *
+	 */
+	private static class EvaluatePreQueue
+	{
+		private HashSet<Item> preQueue = new HashSet<>();
+
+		public void addAll(Collection<? extends Item> itemsToAdd)
+		{
+			preQueue.addAll(itemsToAdd);
+		}
+
+		public void add(Item item)
+		{
+			preQueue.add(item);
+		}
+		
+		public boolean isEmpty()
+		{
+			return preQueue.isEmpty();
+		}
+
+		public Collection<? extends Item> getItems() {
+			return preQueue;
+		}
+
+	}
 
 }

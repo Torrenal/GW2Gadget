@@ -6,5 +6,14 @@ SALVAGE/BASIC=Salvageable Hide
 ########################
 #Begin drops 2016-05-22
 6|Thick Leather Section|7|Hardened Leather Section|1
+#Begin drops 2017-03-18
+25|Thick Leather Section|35|Hardened Leather Section|1
+25|Thick Leather Section|32|Hardened Leather Section|1
+25|Thick Leather Section|25|Hardened Leather Section|4
+25|Thick Leather Section|39|Hardened Leather Section|0
+25|Thick Leather Section|45|Hardened Leather Section|0
+25|Thick Leather Section|27|Hardened Leather Section|4
+25|Thick Leather Section|33|Hardened Leather Section|1
+25|Thick Leather Section|33|Hardened Leather Section|1
 #Null Row:
 #0|Thick Leather Section|0|Hardened Leather Section|0

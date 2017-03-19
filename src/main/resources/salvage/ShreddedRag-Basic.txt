@@ -7,5 +7,16 @@ SALVAGE/BASIC=Shredded Rag
 #Begin drops 2016-05-22
 50|Jute Scrap|86
 15|Jute Scrap|27
+#Begin drops 2017-03-18
+50|Jute Scrap|89
+50|Jute Scrap|89
+50|Jute Scrap|94
+50|Jute Scrap|97
+50|Jute Scrap|93
+50|Jute Scrap|91
+50|Jute Scrap|84
+50|Jute Scrap|95
+50|Jute Scrap|98
+25|Jute Scrap|51
 #Null Row:
 #0|Jute Scrap|0

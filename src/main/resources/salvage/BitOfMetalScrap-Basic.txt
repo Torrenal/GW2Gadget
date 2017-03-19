@@ -81,6 +81,8 @@ SALVAGE/BASIC=Bit of Metal Scrap
 125|Copper Ore|228
 125|Copper Ore|221
 125|Copper Ore|219
+#Begin drops 2017-3-18
+100|Copper Ore|180
 #Null Row:
 #0|Copper Ore|0
 

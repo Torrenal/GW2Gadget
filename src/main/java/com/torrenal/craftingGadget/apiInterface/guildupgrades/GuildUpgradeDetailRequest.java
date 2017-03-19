@@ -23,12 +23,13 @@ public class GuildUpgradeDetailRequest extends HttpRequest
    static final long RECENT_LOAD_INTERVAL = 10*60*1000;
 
    static private PriorityQueue<GuildUpgradeDetailRequestInfo> queue = new PriorityQueue<>();
+   static private Object queueLock = new Object();
    static private boolean requestInProgress = false;
 
    static public void requestUpgradeDetailFor(long upgradeID, long lastUpdateTimestamp)
    {
       GuildUpgradeDetailRequestInfo request = new GuildUpgradeDetailRequestInfo(upgradeID, lastUpdateTimestamp);
-      synchronized(queue)
+      synchronized(queueLock)
       {
          queue.add(request);
          if(!requestInProgress)
@@ -40,7 +41,7 @@ public class GuildUpgradeDetailRequest extends HttpRequest
 
    static public int getQueueDepth()
    {
-      synchronized(queue)
+      synchronized(queueLock)
       {
          return queue.size();
       }
@@ -55,7 +56,7 @@ public class GuildUpgradeDetailRequest extends HttpRequest
       boolean isPriority = false;
       long  oldestTimestamp = Long.MAX_VALUE;
 
-      synchronized(queue)
+      synchronized(queueLock)
       {
          if(requestInProgress)
          {
@@ -211,7 +212,7 @@ public class GuildUpgradeDetailRequest extends HttpRequest
          }
       } finally
       {
-         synchronized(queue)
+         synchronized(queueLock)
          {
             requestInProgress = false;
             processNextRequest();

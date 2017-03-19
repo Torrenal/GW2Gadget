@@ -20,6 +20,7 @@ import com.torrenal.craftingGadget.dataModel.value.Value;
 public class DropsDataSet
 {
    private Vector<DropDataRow<Item>> rows = new Vector<>();
+   private Object rowLock = new Object();
    private ItemQuantitySet[] outputsMinimum = null;
    private Hashtable<Item, DropsDataSeries<Double>> parsedOutputs = null;
    private ItemQuantitySet[] outputsAverage = null;
@@ -32,7 +33,77 @@ public class DropsDataSet
     */
    public void addRow(DropDataRow<Item> row)
    {
-      rows.add(row);
+	   synchronized(rowLock)
+	   {
+		   rows.add(row);
+	   }
+   }
+   
+   @SuppressWarnings("unchecked")
+   protected Vector<DropDataRow<Item>> getRows()
+   {
+	   return (Vector<DropDataRow<Item>>) rows.clone();
+   }
+
+   /**
+    * Ideally, we want n rows of n samples each.
+    * While I realize that such ideal outcomes are impossible,
+    * this will combine rows towards that goal.
+    * 
+    * Note that it will only combine adjacent rows to acomplish this goal, as rows
+    * are ordered by time, and that ordering is important if we ever want to catch
+    * changes to drop rates.
+    */
+   protected void normalize()
+   {
+	   synchronized(rowLock)
+	   {
+		   while(true)
+		   {
+			   //Gotta have at least 2 rows to combine them.
+			   if(rows.size() < 2)
+			   {
+				   return;
+			   }
+			   int sampleCount = rows.size();
+			   int smallRowSize = Integer.MAX_VALUE;
+			   int smallRowIndex = Integer.MAX_VALUE;
+			   for(int index = 0; index < sampleCount; index++)
+			   {
+				   int rowSize = rows.get(index).sampleSize;
+				   if(rowSize < smallRowSize)
+				   {
+					   smallRowSize = rowSize;
+					   smallRowIndex = index;
+				   }
+			   }
+			   if(sampleCount <= smallRowSize)
+			   {
+				   return;
+			   }
+			   // Ok, we want to join smallRowIndex with either smallRowIndex+1 or smallRowIndex-1...
+			   // the +1 and -1 versions might not exist.
+			   int combineWithIndex = smallRowIndex - 1;
+			   int combineWithSize = Integer.MAX_VALUE;
+			   if(combineWithIndex >= 0)
+			   {
+				   combineWithSize = rows.get(combineWithIndex).sampleSize;
+			   }
+			   int checkRowIndex = smallRowIndex + 1;
+			   if(checkRowIndex < rows.size())
+			   {
+				   int checkRowSize = rows.get(checkRowIndex).sampleSize;
+				   if(checkRowSize < combineWithSize)
+				   {
+					   combineWithIndex = checkRowIndex;
+					   combineWithSize = checkRowSize;
+				   }
+			   }
+			   DropDataRow<Item> combinedRow = new DropDataRow<Item>(rows.get(smallRowIndex), rows.get(combineWithIndex));
+			   rows.set(smallRowIndex, combinedRow);
+			   rows.remove(combineWithIndex);
+		   }
+	   }
    }
 
    private DropDataRow<Item> getValueRowFor(DropDataRow<Item> row)
@@ -61,8 +132,14 @@ public class DropsDataSet
       {
          return;
       }
+      
+      normalize();
       // Identify all possible drops.
-      Hashtable<Item, DropsDataSeries<Double>> outputs = parseRowsIntoOutputs(rows);
+      Hashtable<Item, DropsDataSeries<Double>> outputs;
+      synchronized(rowLock)
+      {
+    	  outputs = parseRowsIntoOutputs(rows);
+      }
       ItemQuantitySet[][] results = calculateMinMaxAverage(outputs);
       outputsAverage = results[0];
       outputsMinimum = results[1];
@@ -155,9 +232,13 @@ public class DropsDataSet
       // in the Source. 
       Vector<DropDataRow<Item>> valueRows = new Vector<>();
       
-      for(DropDataRow<Item> row : rows)
+      normalize();
+      synchronized(rowLock)
       {
-        valueRows.add(getValueRowFor(row));
+    	  for(DropDataRow<Item> row : rows)
+    	  {
+    		  valueRows.add(getValueRowFor(row));
+    	  }
       }
          
       Hashtable<Item, DropsDataSeries<Double>> outputs = parseRowsIntoOutputs(valueRows);

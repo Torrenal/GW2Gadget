@@ -49,6 +49,10 @@ Known bugs/concerns:
 * The API for getting gold/gem price conversions is currently broken and needs updating.
 * The Mystic Forge recipes may need updates, 
   They are static and not obtained from any API
+* Threading - it's been fixed (again) - but this time from lessons-learned.  Hopefully the 
+  whole 'locking up' or 'failing to load items/update prices/etc' is resolved?  
+  Lesson?  Don't synchronize on a Java collection.
+  
 
 
 Author requests:
@@ -56,5 +60,7 @@ Author requests:
   at there omits little things like # of bags opened, or amount of gold obtained
   Pulling in incomplete stuff, or trying to infer what's missing will skew the results.
 * Seriously do not merge drops/salvage data rows.  The more detail the better (to a
-  point, but there's a trick I have for coping *correctly* with too much detail,
-  which not yet implemented).
+  point, but excess detail won't hurt any)
+  
+Release notes:
+* 2.16 - Fix threading, add normalize() to the drops data handling.  Add to drops data

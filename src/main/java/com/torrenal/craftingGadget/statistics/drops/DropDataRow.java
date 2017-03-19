@@ -3,6 +3,7 @@ package com.torrenal.craftingGadget.statistics.drops;
 import java.util.List;
 import java.util.Vector;
 
+import com.torrenal.craftingGadget.Item;
 import com.torrenal.craftingGadget.ItemQuantitySet;
 import com.torrenal.craftingGadget.ObjectQuantitySet;
 import com.torrenal.craftingGadget.dataModel.value.Value;
@@ -19,7 +20,52 @@ public class DropDataRow<T extends Object>
       this.drops = new Vector<>(drops);
    }
    
-   public int getSampleSize()
+   /**
+    * Use this to combine two drops rows together
+    * @param dropDataRow
+    * @param dropDataRow2
+    */
+   public DropDataRow(DropDataRow<Item> rowA, DropDataRow<Item> rowB)
+   {
+	   this.sampleSize = rowA.sampleSize + rowB.sampleSize;
+	   this.drops = new Vector<>();
+	   
+	   // Add in drops from rowA
+	   for(ObjectQuantitySet<?> drop : rowA.drops)
+	   {
+		   @SuppressWarnings("unchecked")
+		   ObjectQuantitySet<T> dropClone = (ObjectQuantitySet<T>) drop.clone();
+		   drops.add(dropClone);
+	   }
+	   // Add in drops from rowB.
+	   for(ObjectQuantitySet<?> drop : rowB.drops)
+	   {
+		   // this actually gets tricky cause moving target...
+		   // items may be redefined as this is running XD
+
+		   ObjectQuantitySet<?> matchingDrop = null;
+		   for(ObjectQuantitySet<T> candidateMatch : drops)
+		   {
+			   if(candidateMatch.getItem().equals(drop.getItem()))
+			   {
+				   matchingDrop = candidateMatch;
+				   break;
+			   }  
+		   }
+		   if(matchingDrop == null)
+		   {
+			   @SuppressWarnings("unchecked")
+			   ObjectQuantitySet<T> dropClone = (ObjectQuantitySet<T>) drop.clone();
+			   drops.add(dropClone);
+		   } else
+		   {
+			   matchingDrop.addToQuantity(drop.getQuantity());
+		   }
+	   }
+	   
+   }
+
+public int getSampleSize()
    {
       return sampleSize;
    }

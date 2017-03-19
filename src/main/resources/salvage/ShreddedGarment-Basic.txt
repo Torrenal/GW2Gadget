@@ -27,5 +27,7 @@ SALVAGE/BASIC=Shredded Garment
 125|Jute Scrap|232
 125|Jute Scrap|221
 100|Jute Scrap|184
+#Begin drops 2017-03-18
+100|Jute Scrap|177
 #Null Row:
 #0|Jute Scrap|0

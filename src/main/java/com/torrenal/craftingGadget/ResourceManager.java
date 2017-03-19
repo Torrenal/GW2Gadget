@@ -24,7 +24,7 @@ public class ResourceManager
 {
 
 	public final static Charset ENCODING = StandardCharsets.UTF_8;
-	public final static String VERSION = "2.15";
+	public final static String VERSION = "2.16";
 	public final static String PROGRAM_NAME = "Torrenal's GW2 Crafting Gadget";
 	public static final boolean isReleaseVersion = false; // Enabling this tweaks threading to grief debuggers.
 	public static final double dropRateBoundsPercent = 0.975; /* Two Tail, so 95% = half the error */

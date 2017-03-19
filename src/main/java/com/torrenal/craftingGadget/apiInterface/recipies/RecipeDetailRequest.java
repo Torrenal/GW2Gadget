@@ -25,12 +25,13 @@ public class RecipeDetailRequest extends HttpRequest
    static final long RECENT_LOAD_INTERVAL = 10*60*1000;
 
    static private PriorityQueue<RecipeDetailRequestInfo> queue = new PriorityQueue<>();
+   static private Object queueLock = new Object();
    static private boolean requestInProgress = false;
 
    static public void requestRecipeDetailFor(long recipeID, long lastUpdateTimestamp)
    {
       RecipeDetailRequestInfo request = new RecipeDetailRequestInfo(recipeID, lastUpdateTimestamp);
-      synchronized(queue)
+      synchronized(queueLock)
       {
          queue.add(request);
          if(!requestInProgress)
@@ -42,7 +43,7 @@ public class RecipeDetailRequest extends HttpRequest
 
    static public int getQueueDepth()
    {
-      synchronized(queue)
+      synchronized(queueLock)
       {
          return queue.size();
       }
@@ -57,7 +58,7 @@ public class RecipeDetailRequest extends HttpRequest
       boolean isPriority = false;
       long  oldestTimestamp = Long.MAX_VALUE;
 
-      synchronized(queue)
+      synchronized(queueLock)
       {
          if(requestInProgress)
          {
@@ -103,7 +104,7 @@ public class RecipeDetailRequest extends HttpRequest
             {
                try
                {
-                  queue.wait(1000);
+                  queueLock.wait(1000);
                } catch (InterruptedException e)
                { // Harmless
                }
@@ -186,7 +187,7 @@ public class RecipeDetailRequest extends HttpRequest
          }
       } finally
       {
-         synchronized(queue)
+         synchronized(queueLock)
          {
             requestInProgress = false;
             processNextRequest();

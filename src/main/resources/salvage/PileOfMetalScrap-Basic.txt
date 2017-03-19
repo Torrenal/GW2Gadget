@@ -6,5 +6,27 @@ SALVAGE/BASIC=Pile of Metal Scrap
 ########################
 #Begin drops 2016-05-22
 5|Silver Ore|1|Iron Ore|6|Copper Ore|2
+#Begin drops 2017-03-18
+50|Silver Ore|34|Iron Ore|41|Copper Ore|15
+50|Silver Ore|33|Iron Ore|29|Copper Ore|20
+50|Silver Ore|42|Iron Ore|31|Copper Ore|15
+50|Silver Ore|28|Iron Ore|31|Copper Ore|27
+50|Silver Ore|36|Iron Ore|27|Copper Ore|37
+50|Silver Ore|31|Iron Ore|37|Copper Ore|22
+50|Silver Ore|38|Iron Ore|27|Copper Ore|23
+50|Silver Ore|25|Iron Ore|34|Copper Ore|28
+50|Silver Ore|33|Iron Ore|25|Copper Ore|26
+50|Silver Ore|35|Iron Ore|33|Copper Ore|20
+50|Silver Ore|41|Iron Ore|34|Copper Ore|19
+50|Silver Ore|48|Iron Ore|23|Copper Ore|29
+50|Silver Ore|30|Iron Ore|34|Copper Ore|26
+50|Silver Ore|35|Iron Ore|34|Copper Ore|22
+50|Silver Ore|33|Iron Ore|29|Copper Ore|26
+50|Silver Ore|31|Iron Ore|36|Copper Ore|19
+50|Silver Ore|25|Iron Ore|40|Copper Ore|27
+50|Silver Ore|34|Iron Ore|32|Copper Ore|25
+50|Silver Ore|14|Iron Ore|44|Copper Ore|29
+50|Silver Ore|39|Iron Ore|28|Copper Ore|32
+50|Silver Ore|27|Iron Ore|33|Copper Ore|31
 #Null Row:
 #0|Silver Ore|0|Iron Ore|0|Copper Ore|0

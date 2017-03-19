@@ -44,6 +44,7 @@ public class PriceTool
    private static final long REQUEST_INTERVAL = 1000;
 
    private HashSet<Item> updateList = new HashSet<>(7000);
+   private Object updateListLock = new Object();
    private HashSet<Long> additionsList = new HashSet<>(50);
    private Object additionsListLockObject = new Object();
    private final QueueComparator<Item> comparator = new QueueComparator<>();
@@ -141,7 +142,7 @@ public class PriceTool
          }
          ArrayList<Item> getList = new ArrayList<Item>();
 
-         synchronized(updateList)
+         synchronized(updateListLock)
          {
             while(getList.size() < REQUEST_SIZE && !processQueue.isEmpty())
             {
@@ -569,7 +570,7 @@ public class PriceTool
          return;
       }
 
-      synchronized(updateList)
+      synchronized(updateListLock)
       {
          if(!additionsList.isEmpty())
          {

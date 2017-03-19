@@ -6,5 +6,11 @@ SALVAGE/BASIC=Discarded Garment
 ########################
 #Begin drops 2016-05-22
 16|Silk Scrap|26|Gossamer Scrap|1
+#Begin drops 2017-3-18
+50|Silk Scrap|72|Gossamer Scrap|5
+50|Silk Scrap|78|Gossamer Scrap|6
+50|Silk Scrap|84|Gossamer Scrap|1
+50|Silk Scrap|90|Gossamer Scrap|1
+50|Silk Scrap|86|Gossamer Scrap|3
 #Null Row:
 #0|Silk Scrap|0|Gossamer Scrap|0

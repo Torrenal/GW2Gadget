@@ -81,6 +81,11 @@ public class GuildUpgradeRecord implements Serializable
                break;
             }
          }
+         if(itemId == null)
+         {
+        	 this.itemId = itemId;
+        	 return;
+         }
          if(itemId == null && this.itemId == null)
          {
             return;

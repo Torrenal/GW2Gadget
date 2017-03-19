@@ -31,6 +31,7 @@ public class RecipeDB
    static final public long DEMAND_REFRESH_WINDOW = 6 * 60 * 60 * 1000; /* 6 hours */
 
    static public Hashtable<Long,RecipeRecord> recipeRecords = null;
+   static private Object recipeRecordsLock = new Object();
    static public Hashtable<Long,APIRecipe> recipes = null;
 
    static private Thread updateRunner = null;
@@ -123,12 +124,12 @@ public class RecipeDB
          }
          if(recipeRecord.getLastUpdateTimestamp() > 1)
          {
-            synchronized(recipeRecords)
+            synchronized(recipeRecordsLock)
             {
                recipeRecords.put(recipeRecord.getRecipeID(), recipeRecord);
             }
             APIRecipe recipe = new APIRecipe(recipeRecord);
-            synchronized(recipeRecords)
+            synchronized(recipeRecordsLock)
             {
                recipes.put(recipeRecord.getRecipeID(), recipe);
             }
@@ -150,7 +151,7 @@ public class RecipeDB
 
    private static void updateValidRecipes()
    {
-      synchronized(recipeRecords)
+      synchronized(recipeRecordsLock)
       {
 
          JSONNode replyJSON = new RecipeListRequest().getReplyJSON();
@@ -207,7 +208,7 @@ public class RecipeDB
 
    public static RecipeRecord getRecipeRecord(long recipeID)
    {
-      synchronized(recipeRecords)
+      synchronized(recipeRecordsLock)
       {
          return recipeRecords.get(recipeID);
       }
@@ -215,14 +216,14 @@ public class RecipeDB
    public static APIRecipe getRecipe(long recipeID)
    {
       APIRecipe recipe;
-      synchronized(recipeRecords)
+      synchronized(recipeRecordsLock)
       {
          recipe = recipes.get(recipeID);
       }
       if(recipe == null)
       {
          RecipeRecord recipeRecord;
-         synchronized(recipeRecords)
+         synchronized(recipeRecordsLock)
          {
             recipeRecord = recipeRecords.get(recipeID);
             if(recipeRecord == null)
@@ -294,7 +295,7 @@ public class RecipeDB
             ObjectOutputStream saveObjectStream = ResourceManager.getObjectOutputStream(saveFile);
 
             Hashtable<Long, RecipeRecord> recipeCopy;
-            synchronized(recipeRecords)
+            synchronized(recipeRecordsLock)
             {
                recipeCopy = recipeRecords;
             }
